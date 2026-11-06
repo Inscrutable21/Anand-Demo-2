@@ -1,12 +1,11 @@
 {
   "name": "casa-momo-graz-replica",
   "version": "1.0.0",
-  "description": "Pixel-perfect modular replica of Casa Momo • Boutique Apartments in Graz with signature Tunnel Parallax animations",
-  "main": "index.html",
+  "private": true,
+  "description": "Pixel-perfect modular replica of Casa Momo • Boutique Apartments in Graz",
   "scripts": {
     "build": "node build.js",
     "dev": "node server.js",
-    "start": "node build.js",
     "watch": "node build.js --watch"
   },
   "keywords": [
@@ -14,8 +13,6 @@
     "framer",
     "gsap",
     "lenis",
-    "parallax",
-    "tunnel-parallax",
     "boutique-apartments"
   ],
   "author": "Casa Momo Graz Replica",
