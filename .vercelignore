@@ -1,0 +1,13 @@
+# Ignore local screenshot captures and diagnostics
+*.png
+!assets/*.png
+shot_*.png
+local_*.png
+diag_*.png
+casamomo_snap.png
+
+# Ignore development inspection scripts
+scripts/
+site_structure.json
+cdp_capture.js
+server.js

@@ -1,0 +1,14 @@
+# Dependencies
+node_modules/
+
+# Local mirrors generated dynamically by node build.js
+dist/
+public/
+
+# Local debug captures & logs
+*.log
+local_*.png
+shot_*.png
+diag_*.png
+casamomo_snap.png
+scripts/

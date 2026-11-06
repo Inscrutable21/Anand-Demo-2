@@ -2,6 +2,7 @@
  * CASA MOMO • MODULAR BUILD SCRIPT
  * Combines modular section files (/sections) into index.html
  * and modular stylesheets (/styles) into style.css
+ * Synchronizes build artifacts to root, /public, and /dist for universal Vercel deployment compatibility.
  */
 
 const fs = require('fs');
@@ -70,10 +71,39 @@ function buildCSS() {
   console.log(`[CSS] Successfully compiled style.css (${bundle.length} bytes)`);
 }
 
+function syncDirectories() {
+  // Ensure public/ and dist/ both contain index.html, style.css, script.js, and assets/
+  // This guarantees 100% deployment success regardless of Vercel dashboard output directory setting
+  ['public', 'dist'].forEach(dirName => {
+    const targetDir = path.join(__dirname, dirName);
+    if (!fs.existsSync(targetDir)) {
+      fs.mkdirSync(targetDir, { recursive: true });
+    }
+
+    // Copy index.html, style.css, script.js
+    ['index.html', 'style.css', 'script.js'].forEach(file => {
+      const src = path.join(__dirname, file);
+      const dest = path.join(targetDir, file);
+      if (fs.existsSync(src)) {
+        fs.copyFileSync(src, dest);
+      }
+    });
+
+    // Copy assets folder
+    const assetsSrc = path.join(__dirname, 'assets');
+    const assetsDest = path.join(targetDir, 'assets');
+    if (fs.existsSync(assetsSrc)) {
+      fs.cpSync(assetsSrc, assetsDest, { recursive: true });
+    }
+  });
+  console.log('[SYNC] Successfully mirrored build artifacts to /public and /dist for Vercel');
+}
+
 function buildAll() {
   console.log('--- Building Casa Momo Project ---');
   buildHTML();
   buildCSS();
+  syncDirectories();
   console.log('--- Build Complete! ---');
 }
 
@@ -98,10 +128,9 @@ if (process.argv.includes('--watch') || process.argv.includes('-w')) {
     }, 100);
   };
 
-  watchDirs.forEach(target => {
-    if (fs.existsSync(target)) {
-      fs.watch(target, { recursive: true }, triggerDebouncedBuild);
+  watchDirs.forEach(dir => {
+    if (fs.existsSync(dir)) {
+      fs.watch(dir, { recursive: true }, triggerDebouncedBuild);
     }
   });
 }
-

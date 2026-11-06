@@ -5,8 +5,9 @@
   "main": "index.html",
   "scripts": {
     "build": "node build.js",
-    "watch": "node build.js --watch",
-    "start": "node server.js"
+    "dev": "node server.js",
+    "start": "node build.js",
+    "watch": "node build.js --watch"
   },
   "keywords": [
     "casa-momo",
@@ -20,4 +21,3 @@
   "author": "Casa Momo Graz Replica",
   "license": "MIT"
 }
-
