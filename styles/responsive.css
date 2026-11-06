@@ -1,0 +1,92 @@
+/* --------------------------------------------------------------------------
+   17. RESPONSIVE BREAKPOINTS
+   -------------------------------------------------------------------------- */
+@media (max-width: 1080px) {
+  .nav-links, .live-status-pill {
+    display: none;
+  }
+  
+  .mobile-toggle {
+    display: flex;
+  }
+  
+  .apartments-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .pillars-grid, .amenities-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .guide-spots-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .footer-top-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .calc-interactive-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --header-height: 72px;
+  }
+
+  .hero-headline {
+    font-size: 2.8rem;
+  }
+
+  .hero-booking-bar {
+    flex-direction: column;
+    border-radius: var(--radius-lg);
+    padding: 24px;
+  }
+
+  .booking-divider {
+    display: none;
+  }
+
+  .booking-field, .booking-submit-btn {
+    width: 100%;
+  }
+
+  .apartments-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pillars-grid, .amenities-grid, .guide-spots-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .host-card-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .modal-content-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .modal-main-img-wrap {
+    height: 280px;
+  }
+
+  .modal-specs-bar {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-top-row {
+    grid-template-columns: 1fr;
+  }
+
+  .calc-row-2col, .form-row-2col {
+    grid-template-columns: 1fr;
+  }
+
+  .booking-modal-window {
+    padding: 32px 20px;
+  }
+}

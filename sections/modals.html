@@ -1,0 +1,182 @@
+<!-- APARTMENT DETAIL MODAL (FULL EXPERIENCE) -->
+  <div class="modal-backdrop" id="aptModal" aria-hidden="true" role="dialog">
+    <div class="modal-window">
+      <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close details">&times;</button>
+      
+      <div class="modal-content-grid">
+        <!-- Modal Gallery Column -->
+        <div class="modal-gallery-col">
+          <div class="modal-main-img-wrap">
+            <img src="" alt="Suite Gallery View" id="modalMainImg" class="modal-main-img">
+          </div>
+          <div class="modal-thumbs-row" id="modalThumbs"></div>
+        </div>
+
+        <!-- Modal Info Column -->
+        <div class="modal-info-col">
+          <div class="modal-badge-row">
+            <span class="modal-category" id="modalCategory">Boutique</span>
+            <span class="modal-status">Available for Direct Booking</span>
+          </div>
+
+          <h2 class="modal-title" id="modalTitle">Boutique N°1</h2>
+          
+          <div class="modal-specs-bar">
+            <div class="m-spec"><strong id="modalArea">60 m²</strong><span>Space</span></div>
+            <div class="m-spec"><strong id="modalGuests">3 Guests</strong><span>Capacity</span></div>
+            <div class="m-spec"><strong id="modalBed">King Bed</strong><span>Comfort</span></div>
+            <div class="m-spec"><strong id="modalView">Schlossberg</strong><span>View</span></div>
+          </div>
+
+          <p class="modal-description" id="modalDesc">
+            Description goes here.
+          </p>
+
+          <div class="modal-amenities-section">
+            <h4 class="subhead">Included Amenities</h4>
+            <div class="modal-amenity-tags" id="modalAmenities">
+              <span class="m-tag">Nespresso Machine</span>
+              <span class="m-tag">Stone-washed European Linen</span>
+              <span class="m-tag">300 Mbps Fiber Wi-Fi</span>
+              <span class="m-tag">Rain Shower</span>
+              <span class="m-tag">Keyless Self Check-in</span>
+              <span class="m-tag">Full Kitchenette</span>
+            </div>
+          </div>
+
+          <div class="modal-booking-box">
+            <div class="modal-price-display">
+              <span class="m-price" id="modalPrice">€145</span>
+              <span class="m-unit">/ night (direct booking rate)</span>
+            </div>
+            <button class="btn btn-primary w-100 modal-reserve-btn" id="modalReserveBtn">
+              Book this Suite Direct
+            </button>
+            <span class="m-guarantee">
+              <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle; margin-right:4px;" aria-hidden="true">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              </svg>
+              Free cancellation up to 5 days before check-in
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DIRECT RESERVATION MODAL FORM -->
+  <div class="modal-backdrop" id="bookingModal" aria-hidden="true" role="dialog">
+    <div class="modal-window booking-modal-window">
+      <button class="modal-close-btn" id="bookingModalCloseBtn" aria-label="Close booking">&times;</button>
+      
+      <div class="booking-form-wrap">
+        <span class="section-tag">DIRECT BOOKING</span>
+        <h2 class="modal-title">Reserve with Casa Momo</h2>
+        <p class="modal-subtext">Book directly for best guaranteed rates, personal host contact with Moritz, and flexible cancellation.</p>
+
+        <form id="directReservationForm" class="direct-res-form">
+          <div class="form-row-2col">
+            <div class="form-group">
+              <label>First Name</label>
+              <input type="text" required placeholder="Elena" class="form-input" id="rfFirstName">
+            </div>
+            <div class="form-group">
+              <label>Last Name</label>
+              <input type="text" required placeholder="Kovacs" class="form-input" id="rfLastName">
+            </div>
+          </div>
+
+          <div class="form-row-2col">
+            <div class="form-group">
+              <label>Email Address</label>
+              <input type="email" required placeholder="elena@example.com" class="form-input" id="rfEmail">
+            </div>
+            <div class="form-group">
+              <label>Phone Number</label>
+              <input type="tel" required placeholder="+43 664 1234567" class="form-input" id="rfPhone">
+            </div>
+          </div>
+
+          <div class="form-row-2col">
+            <div class="form-group">
+              <label>Selected Suite</label>
+              <select class="form-select" id="rfSuiteSelect">
+                <option value="Boutique N°1">Boutique N°1 (€145/night)</option>
+                <option value="Boutique N°2">Boutique N°2 (€135/night)</option>
+                <option value="Boutique N°3">Boutique N°3 Flagship (€220/night)</option>
+                <option value="Boutique N°4">Boutique N°4 (€130/night)</option>
+                <option value="Loft N°1">Loft N°1 (€125/night)</option>
+                <option value="Loft N°2">Loft N°2 (€150/night)</option>
+                <option value="Loft N°3">Loft N°3 Panorama (€195/night)</option>
+                <option value="Garden N°1">Garden N°1 (€140/night)</option>
+                <option value="Urban N°1">Urban N°1 (€120/night)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Guests</label>
+              <select class="form-select" id="rfGuestsSelect">
+                <option value="1">1 Guest</option>
+                <option value="2" selected>2 Guests</option>
+                <option value="3">3 Guests</option>
+                <option value="4">4 Guests</option>
+                <option value="5">5 Guests</option>
+                <option value="6">6 Guests</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row-2col">
+            <div class="form-group">
+              <label>Check In</label>
+              <input type="date" required class="form-input" id="rfCheckin">
+            </div>
+            <div class="form-group">
+              <label>Check Out</label>
+              <input type="date" required class="form-input" id="rfCheckout">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Personal Note / Special Requests (Optional)</label>
+            <textarea class="form-textarea" rows="2" placeholder="Late arrival, baby crib request, courtyard parking reservation..." id="rfNotes"></textarea>
+          </div>
+
+          <div class="form-summary-pill" id="rfSummaryPill">
+            Estimated Total: <strong>€435</strong> (3 Nights, Direct 10% discount included)
+          </div>
+
+          <button type="submit" class="btn btn-primary w-100" id="btnSubmitReservation">
+            Complete Reservation Request
+          </button>
+        </form>
+
+        <!-- Success Message -->
+        <div class="booking-success-screen" id="bookingSuccessScreen" style="display:none;">
+          <div class="success-icon">
+            <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+          </div>
+          <h3 class="success-title">Your stay is reserved!</h3>
+          <p class="success-desc">
+            Vielen Dank! Moritz and the Casa Momo team have received your reservation request. A confirmation email with your digital check-in guide and entry code will arrive shortly.
+          </p>
+          <button class="btn btn-outline" id="btnCloseSuccessModal">Return to Website</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LEGAL INFO MODAL (IMPRINT, PRIVACY, TERMS) -->
+  <div class="modal-backdrop" id="legalModal" aria-hidden="true" role="dialog">
+    <div class="modal-window legal-modal-window">
+      <button class="modal-close-btn" id="legalModalCloseBtn" aria-label="Close legal modal">&times;</button>
+      <div class="legal-modal-content">
+        <span class="section-tag" id="legalModalTag">LEGAL NOTICE</span>
+        <h2 class="modal-title" id="legalModalTitle">Imprint</h2>
+        <div class="legal-modal-body" id="legalModalBody">
+          <!-- Dynamic Content Injected via JS -->
+        </div>
+      </div>
+    </div>
+  </div>

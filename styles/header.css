@@ -1,0 +1,326 @@
+/* --------------------------------------------------------------------------
+   4. NAVIGATION & HEADER (AUTHENTIC CASA MOMO FLOATING CAPSULE)
+   Matches reference screenshot exactly with frosted pill & audio toggle
+   -------------------------------------------------------------------------- */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  z-index: 999;
+  pointer-events: none;
+  box-sizing: border-box;
+  padding: clamp(20px, 3.8vw, 42px) clamp(24px, 4.2vw, 56px);
+  transition: padding var(--transition-normal);
+}
+
+.site-header .header-container {
+  width: 100%;
+  max-width: 1680px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Top-Left: CASA MOMO Wordmark */
+.brand-wordmark {
+  pointer-events: auto;
+  text-decoration: none;
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 1.7vw, 1.75rem);
+  color: var(--color-cream);
+  letter-spacing: 0.04em;
+  line-height: 1;
+  font-weight: 400;
+  user-select: none;
+  opacity: 0;
+  transform: translateY(-6px);
+  transition: opacity 0.4s var(--ease-out-expo), transform 0.4s var(--ease-out-expo);
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.4);
+}
+
+.brand-wordmark:hover {
+  opacity: 0.85;
+}
+
+/* Header past hero: wordmark becomes visible */
+.site-header.scrolled .brand-wordmark {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Top-Right: Navigation & Audio Group */
+.header-right-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  pointer-events: auto;
+}
+
+/* Authentic Frosted Capsule Navbar (Matches Image 1 & 2) */
+.nav-capsule {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+  background-color: rgba(22, 21, 19, 0.58);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  padding: 5px 6px 5px 24px;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(255, 240, 202, 0.18);
+  box-shadow: 0 10px 32px rgba(0, 0, 0, 0.3);
+  transition: background-color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.nav-capsule:hover {
+  background-color: rgba(24, 23, 20, 0.72);
+  border-color: rgba(255, 240, 202, 0.28);
+}
+
+.nav-item {
+  font-family: var(--font-sans);
+  font-size: 13.5px;
+  color: var(--color-cream);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+  transition: opacity var(--transition-fast);
+  white-space: nowrap;
+}
+
+.nav-item:hover {
+  opacity: 0.72;
+}
+
+/* Capsule Book Now CTA Button */
+.nav-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: var(--color-cream);
+  color: #141312;
+  border-radius: var(--radius-full);
+  padding: 8px 18px;
+  font-family: var(--font-sans);
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  border: none;
+  cursor: pointer;
+  transition: transform var(--transition-fast), background-color var(--transition-fast), box-shadow var(--transition-fast);
+  white-space: nowrap;
+}
+
+.nav-cta-btn:hover {
+  background-color: #FFFFFF;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+.nav-cta-btn .cta-arrow {
+  font-size: 13px;
+  line-height: 1;
+  transition: transform var(--transition-fast);
+}
+
+.nav-cta-btn:hover .cta-arrow {
+  transform: translate(2px, -2px);
+}
+
+/* Circular Sound Toggle Button (Matches Image 1) */
+.sound-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(22, 21, 19, 0.58);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(255, 240, 202, 0.18);
+  color: var(--color-cream);
+  cursor: pointer;
+  transition: background-color var(--transition-fast), transform var(--transition-fast), border-color var(--transition-fast);
+  box-shadow: 0 10px 32px rgba(0, 0, 0, 0.3);
+  padding: 0;
+}
+
+.sound-toggle-btn:hover {
+  background-color: rgba(28, 27, 24, 0.8);
+  border-color: rgba(255, 240, 202, 0.3);
+  transform: scale(1.05);
+}
+
+.sound-svg {
+  width: 17px;
+  height: 17px;
+  stroke: var(--color-cream);
+  pointer-events: none;
+}
+
+/* Mobile Toggle Hamburger Button */
+.mobile-toggle-btn {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-full);
+  background-color: rgba(22, 21, 19, 0.58);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 240, 202, 0.18);
+  cursor: pointer;
+  padding: 0;
+}
+
+.toggle-line {
+  width: 16px;
+  height: 1.5px;
+  background-color: var(--color-cream);
+  transition: transform var(--transition-fast), opacity var(--transition-fast);
+}
+
+/* --------------------------------------------------------------------------
+   RESPONSIVE NAVBAR
+   -------------------------------------------------------------------------- */
+/* --------------------------------------------------------------------------
+   RESPONSIVE NAVBAR & MOBILE MENU OVERLAY
+   -------------------------------------------------------------------------- */
+.mobile-menu-overlay {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(14, 13, 12, 0.96);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  color: var(--color-cream);
+  z-index: 2000;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.35s ease, visibility 0.35s ease;
+  display: flex;
+  overflow-y: auto;
+}
+
+@media (min-width: 861px) {
+  .mobile-menu-overlay {
+    display: none !important;
+  }
+}
+
+.mobile-menu-overlay.active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.mobile-menu-inner {
+  width: 100%;
+  min-height: 100%;
+  padding: 32px clamp(20px, 5vw, 40px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.mobile-menu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.mobile-menu-brand {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  letter-spacing: 0.05em;
+  color: var(--color-cream);
+}
+
+.mobile-menu-close {
+  font-size: 2.2rem;
+  line-height: 1;
+  cursor: pointer;
+  color: var(--color-cream);
+  opacity: 0.8;
+  padding: 8px;
+}
+
+.mobile-nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.mobile-nav-link {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  color: var(--color-cream);
+  font-family: var(--font-sans);
+  font-size: clamp(1.8rem, 6vw, 2.6rem);
+  text-decoration: none;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255, 240, 202, 0.12);
+}
+
+.link-idx {
+  font-size: 12px;
+  color: #BC6F45;
+  letter-spacing: 0.1em;
+}
+
+.mobile-menu-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.mobile-contact {
+  font-size: 13px;
+  color: rgba(255, 240, 202, 0.65);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.mobile-contact a {
+  color: var(--color-cream);
+  text-decoration: none;
+}
+
+@media (max-width: 860px) {
+  .nav-capsule .nav-item {
+    display: none;
+  }
+  
+  .nav-capsule {
+    padding: 4px;
+    gap: 0;
+  }
+
+  .mobile-toggle-btn {
+    display: flex;
+  }
+}
+
+@media (max-width: 540px) {
+  .site-header {
+    padding: 18px 20px;
+  }
+
+  .nav-cta-btn {
+    padding: 8px 14px;
+    font-size: 11.5px;
+  }
+}

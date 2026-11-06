@@ -1,0 +1,277 @@
+/* --------------------------------------------------------------------------
+   8. APARTMENTS SHOWCASE / COLLECTION
+   Authentic Casa Momo Graz 2-column editorial staggered layout
+   Matches screenshot media_1793985276070_4aa4d0fb.png
+   -------------------------------------------------------------------------- */
+.apartments-section {
+  padding: clamp(100px, 12vh, 160px) 0 clamp(90px, 12vw, 160px);
+  background-color: #0E0D0C;
+  color: var(--color-cream);
+  position: relative;
+}
+
+.apartments-container {
+  width: 100%;
+  max-width: 1680px;
+  margin: 0 auto;
+  padding: 0 clamp(24px, 4.8vw, 72px);
+  box-sizing: border-box;
+}
+
+/* Header row with 9 Apartments counter & Category filter */
+.apartments-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 32px;
+  margin-bottom: clamp(48px, 6vw, 80px);
+  flex-wrap: wrap;
+}
+
+.apt-badge-title-group {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.apt-count-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: rgba(22, 21, 19, 0.65);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 240, 202, 0.18);
+  border-radius: var(--radius-full);
+  padding: 7px 18px;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  color: var(--color-cream);
+  letter-spacing: 0.03em;
+}
+
+.apt-count-pill .count-num {
+  color: #BC6F45;
+  font-weight: 600;
+}
+
+.apartments-heading {
+  font-family: var(--font-sans);
+  font-size: clamp(2.4rem, 5vw, 4.5rem);
+  font-weight: 500;
+  letter-spacing: -0.025em;
+  color: var(--color-cream);
+  line-height: 1;
+  margin: 0;
+}
+
+/* Category Filter Pills */
+.apartment-category-filters {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.filter-pill {
+  padding: 8px 18px;
+  border-radius: var(--radius-full);
+  background-color: rgba(22, 21, 19, 0.55);
+  border: 1px solid rgba(255, 240, 202, 0.16);
+  font-family: var(--font-sans);
+  font-size: 12.5px;
+  letter-spacing: 0.02em;
+  color: rgba(255, 240, 202, 0.75);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+}
+
+.filter-pill span {
+  font-size: 11px;
+  opacity: 0.65;
+  margin-left: 2px;
+}
+
+.filter-pill:hover {
+  color: var(--color-cream);
+  border-color: rgba(255, 240, 202, 0.35);
+  background-color: rgba(30, 28, 25, 0.75);
+}
+
+.filter-pill.active {
+  background-color: var(--color-cream);
+  color: #141312;
+  border-color: var(--color-cream);
+  font-weight: 600;
+}
+
+.filter-pill.active span {
+  color: #141312;
+}
+
+/* 2-Column Grid with Top-Aligned Rows Creating Authentic Height Differences */
+.apartments-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: clamp(16px, 2.5vw, 32px);
+  row-gap: clamp(72px, 8.5vw, 128px);
+  align-items: start;
+}
+
+/* Individual Apartment Card */
+.apt-card {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  user-select: none;
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+  width: 100%;
+}
+
+/* Image Container */
+.apt-image-box {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background-color: #151412;
+}
+
+/* Square vs Horizontal aspect ratio */
+.apt-variant-square .apt-image-box {
+  aspect-ratio: 1 / 1;
+}
+
+.apt-variant-horizontal .apt-image-box {
+  aspect-ratio: 10 / 7;
+}
+
+.apt-main-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transform: scale(1.001);
+  transition: transform 0.9s cubic-bezier(0.16, 1, 0.3, 1), filter 0.6s ease;
+}
+
+.apt-card:hover .apt-main-photo {
+  transform: scale(1.038);
+}
+
+/* Center Hover Pill (Matches Screenshot media_1793985276070_4aa4d0fb.png) */
+.apt-hover-pill {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.94);
+  background-color: rgba(14, 13, 12, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 240, 202, 0.22);
+  border-radius: 4px;
+  padding: 8px 18px;
+  color: var(--color-cream);
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  white-space: nowrap;
+}
+
+.apt-hover-pill .pill-arrow {
+  font-size: 13px;
+  line-height: 1;
+  transition: transform 0.3s ease;
+}
+
+.apt-card:hover .apt-hover-pill {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.apt-card:hover .pill-arrow {
+  transform: translate(2px, -2px);
+}
+
+/* Caption bar under image */
+.apt-caption-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 18px;
+}
+
+.apt-caption-title {
+  font-family: var(--font-sans);
+  font-size: clamp(1.2rem, 1.55vw, 1.65rem);
+  font-weight: 400;
+  color: var(--color-cream);
+  letter-spacing: -0.01em;
+  margin: 0;
+  transition: opacity var(--transition-fast);
+}
+
+.apt-card:hover .apt-caption-title {
+  opacity: 0.8;
+}
+
+.apt-caption-specs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.apt-spec-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 11px;
+  background-color: rgba(255, 240, 202, 0.06);
+  border: 1px solid rgba(255, 240, 202, 0.16);
+  border-radius: var(--radius-full);
+  font-family: var(--font-sans);
+  font-size: 12px;
+  color: rgba(255, 240, 202, 0.85);
+  letter-spacing: 0.01em;
+  user-select: none;
+}
+
+.spec-svg {
+  stroke: rgba(255, 240, 202, 0.7);
+  fill: none;
+}
+
+.apt-spec-pill svg[fill="currentColor"] {
+  fill: rgba(255, 240, 202, 0.7);
+  stroke: none;
+}
+
+/* --------------------------------------------------------------------------
+   RESPONSIVE APARTMENTS GRID
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  .apartments-grid {
+    grid-template-columns: 1fr;
+    row-gap: 48px;
+  }
+
+  .apt-hover-pill {
+    display: none; /* Mobile tap opens modal directly */
+  }
+
+  .apartments-header-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+}

@@ -1,0 +1,68 @@
+/* --------------------------------------------------------------------------
+   2. CUSTOM MAGNETIC CURSOR
+   -------------------------------------------------------------------------- */
+.cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 6px;
+  height: 6px;
+  background-color: var(--text-primary);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 10000;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.2s ease, transform 0.1s ease;
+}
+
+.cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 36px;
+  height: 36px;
+  border: 1px solid rgba(27, 25, 23, 0.4);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s var(--ease-out-expo), height 0.3s var(--ease-out-expo), background-color 0.3s var(--ease-out-expo), border-color 0.3s var(--ease-out-expo), opacity 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cursor-text {
+  font-size: 9px;
+  letter-spacing: 0.15em;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #fff;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+/* Cursor states */
+.cursor-ring.hovering {
+  width: 64px;
+  height: 64px;
+  background-color: rgba(27, 25, 23, 0.08);
+  border-color: rgba(27, 25, 23, 0.2);
+}
+
+.cursor-ring.active-view {
+  width: 80px;
+  height: 80px;
+  background-color: var(--text-primary);
+  border-color: var(--text-primary);
+}
+
+.cursor-ring.active-view .cursor-text {
+  opacity: 1;
+}
+
+@media (pointer: coarse) {
+  .cursor-dot, .cursor-ring {
+    display: none !important;
+  }
+}

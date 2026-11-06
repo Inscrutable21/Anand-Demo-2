@@ -1,0 +1,135 @@
+/* --------------------------------------------------------------------------
+   HOST SECTION ("HI, I'M MORITZ") - AUTHENTIC CASA MOMO GRAZ
+   Matches user screenshots:
+   - Giant "Hi, I'm Moritz" headline
+   - Left column story text & cream pill button
+   - Right column Moritz photo with scroll-flattening corner transition
+   -------------------------------------------------------------------------- */
+.host-section {
+  padding: clamp(100px, 14vh, 180px) 0 clamp(80px, 12vh, 140px);
+  background-color: #0E0D0C;
+  color: var(--color-cream);
+  position: relative;
+  overflow: hidden;
+}
+
+.host-container {
+  width: 100%;
+  max-width: 1680px;
+  margin: 0 auto;
+  padding: 0 clamp(24px, 4.8vw, 72px);
+  box-sizing: border-box;
+}
+
+.host-headline {
+  font-family: var(--font-sans);
+  font-size: clamp(3.6rem, 9.2vw, 8.5rem);
+  line-height: 1.0;
+  letter-spacing: -0.025em;
+  font-weight: 400;
+  color: #FFF0CA;
+  margin: 0 0 clamp(40px, 6vh, 70px) 0;
+  user-select: none;
+}
+
+.host-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(36px, 5vw, 80px);
+  align-items: flex-start;
+}
+
+.host-story-col {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(32px, 4.5vh, 48px);
+}
+
+.host-paragraphs {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(24px, 3.5vh, 36px);
+}
+
+.host-p {
+  font-family: var(--font-sans);
+  font-size: clamp(1.15rem, 1.85vw, 1.75rem);
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+  font-weight: 400;
+  color: #FFF0CA;
+  margin: 0;
+}
+
+.host-book-pill-btn {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #FFF0CA;
+  color: #0E0D0C;
+  border: none;
+  border-radius: 100px;
+  padding: 10px 22px;
+  font-family: var(--font-sans);
+  font-size: clamp(13px, 0.95vw, 14.5px);
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s ease;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+}
+
+.host-book-pill-btn:hover {
+  transform: translateY(-2px);
+  background-color: #FFFFFF;
+}
+
+.host-book-pill-btn .btn-arrow {
+  font-size: 1.1em;
+  transition: transform 0.3s ease;
+}
+
+.host-book-pill-btn:hover .btn-arrow {
+  transform: translate(2px, -2px);
+}
+
+/* Right Photo Frame with Scroll-Transition (starts rounded, flattens to 0px on scroll) */
+.host-photo-col {
+  position: relative;
+  width: 100%;
+}
+
+.host-photo-frame {
+  position: relative;
+  width: 100%;
+  height: clamp(520px, 86vh, 980px);
+  border-radius: 140px;
+  overflow: hidden;
+  box-shadow: 0 32px 80px rgba(0, 0, 0, 0.55);
+  transform-origin: center center;
+  will-change: border-radius, transform;
+}
+
+.host-photo-img {
+  width: 100%;
+  height: 115%;
+  position: absolute;
+  top: -8%;
+  left: 0;
+  object-fit: cover;
+  display: block;
+  transform: scale(1.08);
+  will-change: transform;
+}
+
+@media (max-width: 900px) {
+  .host-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .host-photo-frame {
+    height: clamp(400px, 65vh, 600px);
+    border-radius: 60px;
+  }
+}

@@ -1,0 +1,350 @@
+/* --------------------------------------------------------------------------
+   16. MODALS & DRAWERS
+   -------------------------------------------------------------------------- */
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(21, 20, 19, 0.7);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s var(--ease-out-expo);
+}
+
+.modal-backdrop.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-window {
+  background-color: var(--bg-card);
+  width: 100%;
+  max-width: 1050px;
+  max-height: 90vh;
+  border-radius: var(--radius-lg);
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.3);
+  transform: translateY(30px) scale(0.98);
+  transition: transform 0.4s var(--ease-out-expo);
+}
+
+.modal-backdrop.active .modal-window {
+  transform: translateY(0) scale(1);
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  line-height: 1;
+  color: var(--text-primary);
+  z-index: 20;
+  transition: all var(--transition-fast);
+}
+
+.modal-close-btn:hover {
+  background-color: var(--text-primary);
+  color: var(--bg-primary);
+}
+
+/* Apartment Details Modal Grid */
+.modal-content-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+}
+
+.modal-gallery-col {
+  padding: 32px;
+  background-color: var(--bg-secondary);
+}
+
+.modal-main-img-wrap {
+  width: 100%;
+  height: 420px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+
+.modal-main-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.modal-thumbs-row {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+}
+
+.modal-thumb {
+  width: 80px;
+  height: 60px;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  cursor: pointer;
+  opacity: 0.6;
+  border: 2px solid transparent;
+  transition: all var(--transition-fast);
+}
+
+.modal-thumb.active {
+  opacity: 1;
+  border-color: var(--text-primary);
+}
+
+.modal-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.modal-info-col {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-badge-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.modal-category {
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent-terracotta);
+  font-weight: 600;
+}
+
+.modal-status {
+  font-size: 11px;
+  color: #16A34A;
+  font-weight: 500;
+}
+
+.modal-title {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+}
+
+.modal-specs-bar {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  background-color: var(--bg-primary);
+  padding: 14px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-light);
+  margin-bottom: 24px;
+}
+
+.m-spec {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.m-spec strong {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+}
+
+.m-spec span {
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.modal-description {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: var(--text-muted);
+  margin-bottom: 28px;
+}
+
+.modal-amenities-section {
+  margin-bottom: 32px;
+}
+
+.modal-amenities-section .subhead {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+}
+
+.modal-amenity-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.m-tag {
+  font-size: 11px;
+  padding: 6px 12px;
+  border-radius: var(--radius-full);
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-light);
+  color: var(--text-primary);
+}
+
+.modal-booking-box {
+  margin-top: auto;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-light);
+}
+
+.modal-price-display {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.m-price {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.m-unit {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.m-guarantee {
+  display: block;
+  font-size: 11px;
+  text-align: center;
+  color: var(--text-muted);
+  margin-top: 10px;
+}
+
+/* Booking Modal Form */
+.booking-modal-window {
+  max-width: 680px;
+  padding: 48px;
+}
+
+.booking-form-wrap .modal-title {
+  font-size: 2rem;
+  margin-bottom: 8px;
+}
+
+.modal-subtext {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-bottom: 32px;
+}
+
+.direct-res-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.form-row-2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.form-input, .form-select, .form-textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-medium);
+  font-family: inherit;
+  font-size: 14px;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  outline: none;
+  transition: border-color var(--transition-fast);
+}
+
+.form-input:focus, .form-select:focus, .form-textarea:focus {
+  border-color: var(--text-primary);
+}
+
+.form-summary-pill {
+  background-color: var(--bg-secondary);
+  padding: 14px 20px;
+  border-radius: var(--radius-md);
+  font-size: 13px;
+  text-align: center;
+  border: 1px dashed var(--border-medium);
+}
+
+/* Success Screen */
+.booking-success-screen {
+  text-align: center;
+  padding: 40px 0;
+}
+
+.success-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background-color: #22C55E;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  margin: 0 auto 24px;
+}
+
+.success-title {
+  font-size: 2rem;
+  margin-bottom: 12px;
+}
+
+.success-desc {
+  font-size: 1rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  max-width: 480px;
+  margin: 0 auto 32px;
+}

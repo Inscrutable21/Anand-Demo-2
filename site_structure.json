@@ -1,0 +1,1192 @@
+[
+  {
+    "name": "Navbar Wrapper",
+    "tag": "HEADER",
+    "id": "",
+    "className": "framer-bg7hsc",
+    "text": "Apartments A A p p a a r r t t m m e e n n t t s s About A A b b o o u u t t Contact C C o o n n t t"
+  },
+  {
+    "name": "Navbar Menu",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-1nw9de0-container hidden-o5o8qi",
+    "text": "Apartments A A p p a a r r t t m m e e n n t t s s About A A b b o o u u t t Contact C C o o n n t t"
+  },
+  {
+    "name": "Light",
+    "tag": "NAV",
+    "id": "",
+    "className": "framer-uYnNg framer-1dc0xew framer-v-1dc0xew",
+    "text": "Apartments A A p p a a r r t t m m e e n n t t s s About A A b b o o u u t t Contact C C o o n n t t"
+  },
+  {
+    "name": "Nav Link",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-1kcv8in",
+    "text": "Apartments A A p p a a r r t t m m e e n n t t s s About A A b b o o u u t t Contact C C o o n n t t"
+  },
+  {
+    "name": "Nav Link",
+    "tag": "A",
+    "id": "",
+    "className": "framer-5m8qjw framer-p8bmaz",
+    "text": "Apartments A A p p a a r r t t m m e e n n t t s s"
+  },
+  {
+    "name": "Medium",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-ypCW0 framer-zl1g6k framer-v-zl1g6k",
+    "text": "Apartments A A p p a a r r t t m m e e n n t t s s"
+  },
+  {
+    "name": "Nav Link",
+    "tag": "A",
+    "id": "",
+    "className": "framer-1jbrocx framer-p8bmaz",
+    "text": "About A A b b o o u u t t"
+  },
+  {
+    "name": "Medium",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-ypCW0 framer-zl1g6k framer-v-zl1g6k",
+    "text": "About A A b b o o u u t t"
+  },
+  {
+    "name": "Nav Link",
+    "tag": "A",
+    "id": "",
+    "className": "framer-1yt0oai framer-p8bmaz",
+    "text": "Contact C C o o n n t t a a c c t t"
+  },
+  {
+    "name": "Medium",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-ypCW0 framer-zl1g6k framer-v-zl1g6k",
+    "text": "Contact C C o o n n t t a a c c t t"
+  },
+  {
+    "name": "White",
+    "tag": "A",
+    "id": "",
+    "className": "framer-vO7O2 framer-9t14z3 framer-v-wf9qrl framer-1swxj4p",
+    "text": "Book Now B B o o o o k k N N o o w w"
+  },
+  {
+    "name": "Nav Link",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-10dp641",
+    "text": "Book Now B B o o o o k k N N o o w w"
+  },
+  {
+    "name": "Main",
+    "tag": "MAIN",
+    "id": "",
+    "className": "framer-jx0221",
+    "text": "Casa Momo – Designer Apartments in Graz CASA MOMO Book Your Stay B B o o o o k k Y Y o o u u "
+  },
+  {
+    "name": "SEO Heading",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-1w6hwv7",
+    "text": "Casa Momo – Designer Apartments in Graz"
+  },
+  {
+    "name": "Hero",
+    "tag": "SECTION",
+    "id": "",
+    "className": "framer-1xtxml1",
+    "text": "CASA MOMO Book Your Stay B B o o o o k k Y Y o o u u r r S S t t a a y y Boutique Apartme"
+  },
+  {
+    "name": "Variant 3",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-L8i74 framer-768yku framer-v-re9lc8",
+    "text": "CASA MOMO Book Your Stay B B o o o o k k Y Y o o u u r r S S t t a a y y Boutique Apartme"
+  },
+  {
+    "name": "Hero Tagline",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-1mzmlpu",
+    "text": "Book Your Stay B B o o o o k k Y Y o o u u r r S S t t a a y y Boutique Apartments in the H"
+  },
+  {
+    "name": "White",
+    "tag": "A",
+    "id": "",
+    "className": "framer-vO7O2 framer-9t14z3 framer-v-wf9qrl framer-1swxj4p",
+    "text": "Book Your Stay B B o o o o k k Y Y o o u u r r S S t t a a y y"
+  },
+  {
+    "name": "Nav Link",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-10dp641",
+    "text": "Book Your Stay B B o o o o k k Y Y o o u u r r S S t t a a y y"
+  },
+  {
+    "name": "Big Text",
+    "tag": "DIV",
+    "id": "bigtext",
+    "className": "framer-1ao0xob",
+    "text": "Between quiet minimalism and warm coziness a space emerges where you can arrive, breathe and let go."
+  },
+  {
+    "name": "Paragraph",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-1lldo5y-container",
+    "text": "Between"
+  },
+  {
+    "name": "Paragraph",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-18dmis9-container",
+    "text": "quiet minimalism and warm coziness a space emerges where you can arrive, breathe and let go."
+  },
+  {
+    "name": "Parallax Image",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-1c97q5r hidden-o5o8qi",
+    "text": "Boutique N°3 Living Room"
+  },
+  {
+    "name": "Image Info",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-cqdvvh",
+    "text": "Boutique N°3 Living Room"
+  },
+  {
+    "name": "Number",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-fogtff",
+    "text": "Boutique N°3"
+  },
+  {
+    "name": "Text",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-1l1bo79",
+    "text": "Living Room"
+  },
+  {
+    "name": "Header Text",
+    "tag": "SECTION",
+    "id": "apartments",
+    "className": "framer-chahzh",
+    "text": "9 Apartments Apartments"
+  },
+  {
+    "name": "Headline",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-qetptu",
+    "text": "9 Apartments"
+  },
+  {
+    "name": "Menu Title",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-rudwup",
+    "text": "9 Apartments"
+  },
+  {
+    "name": "Text",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-1ndafyl",
+    "text": "Apartments"
+  },
+  {
+    "name": "Apartments Grid",
+    "tag": "SECTION",
+    "id": "mefgjz",
+    "className": "framer-mefgjz",
+    "text": "Boutique N°1 60 m 2 3 Boutique N°2 45 m 2 3 Boutique N°3 120 m 2 6 Boutique N°4 45 "
+  },
+  {
+    "name": "Apartment List",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-cbil4k",
+    "text": "Boutique N°1 60 m 2 3 Boutique N°2 45 m 2 3 Boutique N°3 120 m 2 6 Boutique N°4 45 "
+  },
+  {
+    "name": "Apartment Item",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-fdgjuz",
+    "text": "Boutique N°1 60 m 2 3"
+  },
+  {
+    "name": "Square",
+    "tag": "A",
+    "id": "",
+    "className": "framer-ysBPc framer-yRUcs framer-prpyo3 framer-v-prpyo3 framer-187wlle",
+    "text": "Boutique N°1 60 m 2 3"
+  },
+  {
+    "name": "Details",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-pdn1cz",
+    "text": "60 m 2 3"
+  },
+  {
+    "name": "Size",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-1mzugmy",
+    "text": "60 m 2"
+  },
+  {
+    "name": "Text",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-1519zsd",
+    "text": "60 m 2"
+  },
+  {
+    "name": "Apartment Item",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-fdgjuz",
+    "text": "Boutique N°2 45 m 2 3"
+  },
+  {
+    "name": "Horizontal",
+    "tag": "A",
+    "id": "",
+    "className": "framer-ysBPc framer-yRUcs framer-prpyo3 framer-v-9fxbcc framer-187wlle",
+    "text": "Boutique N°2 45 m 2 3"
+  },
+  {
+    "name": "Details",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-pdn1cz",
+    "text": "45 m 2 3"
+  },
+  {
+    "name": "Size",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-1mzugmy",
+    "text": "45 m 2"
+  },
+  {
+    "name": "Text",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-1519zsd",
+    "text": "45 m 2"
+  },
+  {
+    "name": "Apartment Item",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-fdgjuz",
+    "text": "Boutique N°3 120 m 2 6"
+  },
+  {
+    "name": "Horizontal",
+    "tag": "A",
+    "id": "",
+    "className": "framer-ysBPc framer-yRUcs framer-prpyo3 framer-v-9fxbcc framer-187wlle",
+    "text": "Boutique N°3 120 m 2 6"
+  },
+  {
+    "name": "Details",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-pdn1cz",
+    "text": "120 m 2 6"
+  },
+  {
+    "name": "Size",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-1mzugmy",
+    "text": "120 m 2"
+  },
+  {
+    "name": "Text",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-1519zsd",
+    "text": "120 m 2"
+  },
+  {
+    "name": "Apartment Item",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-fdgjuz",
+    "text": "Boutique N°4 45 m 2 4"
+  },
+  {
+    "name": "Square",
+    "tag": "A",
+    "id": "",
+    "className": "framer-ysBPc framer-yRUcs framer-prpyo3 framer-v-prpyo3 framer-187wlle",
+    "text": "Boutique N°4 45 m 2 4"
+  },
+  {
+    "name": "Details",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-pdn1cz",
+    "text": "45 m 2 4"
+  },
+  {
+    "name": "Size",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-1mzugmy",
+    "text": "45 m 2"
+  },
+  {
+    "name": "Text",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-1519zsd",
+    "text": "45 m 2"
+  },
+  {
+    "name": "Apartment Item",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-fdgjuz",
+    "text": "Loft N°1 45 m 2 4"
+  },
+  {
+    "name": "Square",
+    "tag": "A",
+    "id": "",
+    "className": "framer-ysBPc framer-yRUcs framer-prpyo3 framer-v-prpyo3 framer-187wlle",
+    "text": "Loft N°1 45 m 2 4"
+  },
+  {
+    "name": "Details",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-pdn1cz",
+    "text": "45 m 2 4"
+  },
+  {
+    "name": "Size",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-1mzugmy",
+    "text": "45 m 2"
+  },
+  {
+    "name": "Text",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-1519zsd",
+    "text": "45 m 2"
+  },
+  {
+    "name": "Apartment Item",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-fdgjuz",
+    "text": "Loft N°2 60 m 2 4"
+  },
+  {
+    "name": "Horizontal",
+    "tag": "A",
+    "id": "",
+    "className": "framer-ysBPc framer-yRUcs framer-prpyo3 framer-v-9fxbcc framer-187wlle",
+    "text": "Loft N°2 60 m 2 4"
+  },
+  {
+    "name": "Details",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-pdn1cz",
+    "text": "60 m 2 4"
+  },
+  {
+    "name": "Size",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-1mzugmy",
+    "text": "60 m 2"
+  },
+  {
+    "name": "Text",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-1519zsd",
+    "text": "60 m 2"
+  },
+  {
+    "name": "Apartment Item",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-fdgjuz",
+    "text": "Loft N°3 80 m 2 5"
+  },
+  {
+    "name": "Horizontal",
+    "tag": "A",
+    "id": "",
+    "className": "framer-ysBPc framer-yRUcs framer-prpyo3 framer-v-9fxbcc framer-187wlle",
+    "text": "Loft N°3 80 m 2 5"
+  },
+  {
+    "name": "Details",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-pdn1cz",
+    "text": "80 m 2 5"
+  },
+  {
+    "name": "Size",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-1mzugmy",
+    "text": "80 m 2"
+  },
+  {
+    "name": "Text",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-1519zsd",
+    "text": "80 m 2"
+  },
+  {
+    "name": "Apartment Item",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-fdgjuz",
+    "text": "Garden N°1 40 m 2 3"
+  },
+  {
+    "name": "Square",
+    "tag": "A",
+    "id": "",
+    "className": "framer-ysBPc framer-yRUcs framer-prpyo3 framer-v-prpyo3 framer-187wlle",
+    "text": "Garden N°1 40 m 2 3"
+  },
+  {
+    "name": "Details",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-pdn1cz",
+    "text": "40 m 2 3"
+  },
+  {
+    "name": "Size",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-1mzugmy",
+    "text": "40 m 2"
+  },
+  {
+    "name": "Text",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-1519zsd",
+    "text": "40 m 2"
+  },
+  {
+    "name": "Apartment Item",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-fdgjuz",
+    "text": "Urban N°1 40 m 2 2"
+  },
+  {
+    "name": "Square",
+    "tag": "A",
+    "id": "",
+    "className": "framer-ysBPc framer-yRUcs framer-prpyo3 framer-v-prpyo3 framer-187wlle",
+    "text": "Urban N°1 40 m 2 2"
+  },
+  {
+    "name": "Details",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-pdn1cz",
+    "text": "40 m 2 2"
+  },
+  {
+    "name": "Size",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-1mzugmy",
+    "text": "40 m 2"
+  },
+  {
+    "name": "Text",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-1519zsd",
+    "text": "40 m 2"
+  },
+  {
+    "name": "Locations",
+    "tag": "SECTION",
+    "id": "locations",
+    "className": "framer-1cs5c92",
+    "text": "Hi, I'm Moritz I am the head and heart behind Casa Momo and hosting is what I love most. I've enjoy"
+  },
+  {
+    "name": "Paragraph/Image Wrapper",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-iuarc1",
+    "text": "I am the head and heart behind Casa Momo and hosting is what I love most. I've enjoyed having guests"
+  },
+  {
+    "name": "Text + Button",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-xl6pxg",
+    "text": "I am the head and heart behind Casa Momo and hosting is what I love most. I've enjoyed having guests"
+  },
+  {
+    "name": "White",
+    "tag": "A",
+    "id": "",
+    "className": "framer-vO7O2 framer-9t14z3 framer-v-wf9qrl framer-1swxj4p",
+    "text": "Book Your Stay B B o o o o k k Y Y o o u u r r S S t t a a y y"
+  },
+  {
+    "name": "Nav Link",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-10dp641",
+    "text": "Book Your Stay B B o o o o k k Y Y o o u u r r S S t t a a y y"
+  },
+  {
+    "name": "Big Text",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-1kqde9i",
+    "text": "I believe a temporary home deserves just as much care as your own home."
+  },
+  {
+    "name": "Paragraph",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-b143lq-container",
+    "text": "I believe"
+  },
+  {
+    "name": "Paragraph",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-1chasqs-container",
+    "text": "a temporary home deserves just as much care as your own home."
+  },
+  {
+    "name": "Parallax Image",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-lanjrj",
+    "text": "Boutique N°1 Living Room"
+  },
+  {
+    "name": "Image Info",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-18pwpi4",
+    "text": "Boutique N°1 Living Room"
+  },
+  {
+    "name": "Number",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-13jbtls",
+    "text": "Boutique N°1"
+  },
+  {
+    "name": "Text",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-kggqof",
+    "text": "Living Room"
+  },
+  {
+    "name": "Header Text",
+    "tag": "SECTION",
+    "id": "apartments-1",
+    "className": "framer-wdibp9",
+    "text": "My Philosophy"
+  },
+  {
+    "name": "Philosophy",
+    "tag": "SECTION",
+    "id": "philosophy",
+    "className": "framer-12fvlh6",
+    "text": "1 Design Lived-in, not staged. Old-building charm, clean lines and carefully chosen details, a sign"
+  },
+  {
+    "name": "Boxes Wrapper",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-1nb205x",
+    "text": "1 Design Lived-in, not staged. Old-building charm, clean lines and carefully chosen details, a sign"
+  },
+  {
+    "name": "Box",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-1wtvhr3",
+    "text": "1 Design Lived-in, not staged. Old-building charm, clean lines and carefully chosen details, a sign"
+  },
+  {
+    "name": "Text",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-877g9i",
+    "text": "Design Lived-in, not staged. Old-building charm, clean lines and carefully chosen details, a signatu"
+  },
+  {
+    "name": "Paragraph",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-atcjv0-container",
+    "text": "Design"
+  },
+  {
+    "name": "Paragraph",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-1b1t4t2-container",
+    "text": "Lived-in, not staged. Old-building charm, clean lines and carefully chosen details, a signature styl"
+  },
+  {
+    "name": "Box",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-1gxlpor",
+    "text": "2 Warmth Every apartment has its own soul. Soft light, natural tones and a personal touch turn a pl"
+  },
+  {
+    "name": "Text",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-1h6bft0",
+    "text": "Warmth Every apartment has its own soul. Soft light, natural tones and a personal touch turn a place"
+  },
+  {
+    "name": "Paragraph",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-11fhg56-container",
+    "text": "Warmth"
+  },
+  {
+    "name": "Paragraph",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-bw5qo3-container",
+    "text": "Every apartment has its own soul. Soft light, natural tones and a personal touch turn a place to sta"
+  },
+  {
+    "name": "Box",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-1qva3fx",
+    "text": "3 Vintage Flea-market finds, bentwood chairs and objects with a past. Timeless pieces that bring ch"
+  },
+  {
+    "name": "Text",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-1ewa641",
+    "text": "Vintage Flea-market finds, bentwood chairs and objects with a past. Timeless pieces that bring chara"
+  },
+  {
+    "name": "Paragraph",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-c11pm-container",
+    "text": "Vintage"
+  },
+  {
+    "name": "Paragraph",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-14nyjim-container",
+    "text": "Flea-market finds, bentwood chairs and objects with a past. Timeless pieces that bring character, el"
+  },
+  {
+    "name": "Reviews",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-c0inle",
+    "text": "Recent Reviews 6 Recent Reviews 6 Recent Reviews 6 Recent Reviews 6 Recent Reviews 6 Recen"
+  },
+  {
+    "name": "SECTION",
+    "tag": "SECTION",
+    "id": "",
+    "className": "",
+    "text": "Recent Reviews 6 Recent Reviews 6 Recent Reviews 6 Recent Reviews 6 Recent Reviews 6 Recen"
+  },
+  {
+    "name": "Recent Reviews Text",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-cglexk",
+    "text": "Recent Reviews 6"
+  },
+  {
+    "name": "Recent Reviews Text",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-cglexk",
+    "text": "Recent Reviews 6"
+  },
+  {
+    "name": "Recent Reviews Text",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-cglexk",
+    "text": "Recent Reviews 6"
+  },
+  {
+    "name": "Recent Reviews Text",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-cglexk",
+    "text": "Recent Reviews 6"
+  },
+  {
+    "name": "Recent Reviews Text",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-cglexk",
+    "text": "Recent Reviews 6"
+  },
+  {
+    "name": "Recent Reviews Text",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-cglexk",
+    "text": "Recent Reviews 6"
+  },
+  {
+    "name": "Recent Reviews Text",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-cglexk",
+    "text": "Recent Reviews 6"
+  },
+  {
+    "name": "Review Card",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-amv6x5-container",
+    "text": "5.00 / 5 “Moritz is such a gentle and wonderful host! The apartment is absolutely beautiful, cozy,"
+  },
+  {
+    "name": "Variant 1",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-nBufg framer-yRUcs framer-CiqrO framer-1ub2hqi framer-v-1ub2hqi",
+    "text": "5.00 / 5 “Moritz is such a gentle and wonderful host! The apartment is absolutely beautiful, cozy,"
+  },
+  {
+    "name": "Stars + Text",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-1kifrs3",
+    "text": "5.00 / 5 “Moritz is such a gentle and wonderful host! The apartment is absolutely beautiful, cozy,"
+  },
+  {
+    "name": "Indicator",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-10mc6n",
+    "text": "5.00 / 5"
+  },
+  {
+    "name": "Review Card",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-12ujrw1-container",
+    "text": "5.00 / 5 “A family of three adults and one infant stayed at Moritz's Graz apartment for 2 weeks. W"
+  },
+  {
+    "name": "Variant 1",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-nBufg framer-yRUcs framer-CiqrO framer-1ub2hqi framer-v-1ub2hqi",
+    "text": "5.00 / 5 “A family of three adults and one infant stayed at Moritz's Graz apartment for 2 weeks. W"
+  },
+  {
+    "name": "Stars + Text",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-1kifrs3",
+    "text": "5.00 / 5 “A family of three adults and one infant stayed at Moritz's Graz apartment for 2 weeks. W"
+  },
+  {
+    "name": "Indicator",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-10mc6n",
+    "text": "5.00 / 5"
+  },
+  {
+    "name": "Review Card",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-267b4q-container",
+    "text": "5.00 / 5 “I had a truly wonderful experience staying at this flat. The space was clean, well-maint"
+  },
+  {
+    "name": "Variant 1",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-nBufg framer-yRUcs framer-CiqrO framer-1ub2hqi framer-v-1ub2hqi",
+    "text": "5.00 / 5 “I had a truly wonderful experience staying at this flat. The space was clean, well-maint"
+  },
+  {
+    "name": "Stars + Text",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-1kifrs3",
+    "text": "5.00 / 5 “I had a truly wonderful experience staying at this flat. The space was clean, well-maint"
+  },
+  {
+    "name": "Indicator",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-10mc6n",
+    "text": "5.00 / 5"
+  },
+  {
+    "name": "Review Card",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-wgrd7x-container",
+    "text": "5.00 / 5 “A beautifully renovated, spacious, and airy apartment with phenomenal views; great locat"
+  },
+  {
+    "name": "Variant 1",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-nBufg framer-yRUcs framer-CiqrO framer-1ub2hqi framer-v-1ub2hqi",
+    "text": "5.00 / 5 “A beautifully renovated, spacious, and airy apartment with phenomenal views; great locat"
+  },
+  {
+    "name": "Stars + Text",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-1kifrs3",
+    "text": "5.00 / 5 “A beautifully renovated, spacious, and airy apartment with phenomenal views; great locat"
+  },
+  {
+    "name": "Indicator",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-10mc6n",
+    "text": "5.00 / 5"
+  },
+  {
+    "name": "Review Card",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-18i3o5j-container",
+    "text": "5.00 / 5 “Moritz's apartment is fantastic! The location couldn't be better; you can leave your car"
+  },
+  {
+    "name": "Variant 1",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-nBufg framer-yRUcs framer-CiqrO framer-1ub2hqi framer-v-1ub2hqi",
+    "text": "5.00 / 5 “Moritz's apartment is fantastic! The location couldn't be better; you can leave your car"
+  },
+  {
+    "name": "Stars + Text",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-1kifrs3",
+    "text": "5.00 / 5 “Moritz's apartment is fantastic! The location couldn't be better; you can leave your car"
+  },
+  {
+    "name": "Indicator",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-10mc6n",
+    "text": "5.00 / 5"
+  },
+  {
+    "name": "Locations",
+    "tag": "SECTION",
+    "id": "locations-1",
+    "className": "framer-10bxu26",
+    "text": "Locations Casa Momo apartments all sit in Graz's historic old town, steps from the sights and the c"
+  },
+  {
+    "name": "Paragraph/Image Wrapper",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-esm2r",
+    "text": "Casa Momo apartments all sit in Graz's historic old town, steps from the sights and the city's two f"
+  },
+  {
+    "name": "Text + Button",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-1ma6wfx",
+    "text": "Casa Momo apartments all sit in Graz's historic old town, steps from the sights and the city's two f"
+  },
+  {
+    "name": "Dark",
+    "tag": "A",
+    "id": "",
+    "className": "framer-vO7O2 framer-9t14z3 framer-v-1lavhxb framer-1swxj4p",
+    "text": "Book Now B B o o o o k k N N o o w w"
+  },
+  {
+    "name": "Nav Link",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-10dp641",
+    "text": "Book Now B B o o o o k k N N o o w w"
+  },
+  {
+    "name": "Footer",
+    "tag": "FOOTER",
+    "id": "",
+    "className": "framer-18na9ah",
+    "text": "1 Menu Apartments A A p p a a r r t t m m e e n n t t s s About A A b b o o u u t t Contact C C o "
+  },
+  {
+    "name": "Footer Test",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-192t1bg-container",
+    "text": "1 Menu Apartments A A p p a a r r t t m m e e n n t t s s About A A b b o o u u t t Contact C C o "
+  },
+  {
+    "name": "Desktop",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-zHQwT framer-yRUcs framer-1aamxx2 framer-v-1aamxx2",
+    "text": "1 Menu Apartments A A p p a a r r t t m m e e n n t t s s About A A b b o o u u t t Contact C C o "
+  },
+  {
+    "name": "Menu Title",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-pehj1a",
+    "text": "1 Menu"
+  },
+  {
+    "name": "Footer Link",
+    "tag": "A",
+    "id": "",
+    "className": "framer-7mgt1k framer-1qqdrhj",
+    "text": "Apartments A A p p a a r r t t m m e e n n t t s s"
+  },
+  {
+    "name": "Large",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-ypCW0 framer-zl1g6k framer-v-1xaaxij",
+    "text": "Apartments A A p p a a r r t t m m e e n n t t s s"
+  },
+  {
+    "name": "Footer Link",
+    "tag": "A",
+    "id": "",
+    "className": "framer-1b76xll framer-1qqdrhj",
+    "text": "About A A b b o o u u t t"
+  },
+  {
+    "name": "Large",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-ypCW0 framer-zl1g6k framer-v-1xaaxij",
+    "text": "About A A b b o o u u t t"
+  },
+  {
+    "name": "Footer Link",
+    "tag": "A",
+    "id": "",
+    "className": "framer-9xedzv framer-1qqdrhj",
+    "text": "Contact C C o o n n t t a a c c t t"
+  },
+  {
+    "name": "Large",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-ypCW0 framer-zl1g6k framer-v-1xaaxij",
+    "text": "Contact C C o o n n t t a a c c t t"
+  },
+  {
+    "name": "Menu Title",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-1jywh3h",
+    "text": "2 Socials"
+  },
+  {
+    "name": "Text",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-9xtjac",
+    "text": "Socials"
+  },
+  {
+    "name": "Footer Link",
+    "tag": "A",
+    "id": "",
+    "className": "framer-ngtltx framer-1qqdrhj",
+    "text": "Instagram I I n n s s t t a a g g r r a a m m"
+  },
+  {
+    "name": "Large",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-ypCW0 framer-zl1g6k framer-v-1xaaxij",
+    "text": "Instagram I I n n s s t t a a g g r r a a m m"
+  },
+  {
+    "name": "Footer Link",
+    "tag": "A",
+    "id": "",
+    "className": "framer-t02jwz framer-1qqdrhj",
+    "text": "LinkedIn L L i i n n k k e e d d I I n n"
+  },
+  {
+    "name": "Large",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-ypCW0 framer-zl1g6k framer-v-1xaaxij",
+    "text": "LinkedIn L L i i n n k k e e d d I I n n"
+  },
+  {
+    "name": "Menu Title",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-12uf2r5",
+    "text": "3 Contact"
+  },
+  {
+    "name": "Text",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-1rjt6vb",
+    "text": "Contact"
+  },
+  {
+    "name": "Footer Link",
+    "tag": "A",
+    "id": "",
+    "className": "framer-1szgj48 framer-1qqdrhj",
+    "text": "office@casamomo.at o o f f f f i i c c e e @ @ c c a a s s a a m m o o m m o o . . a a t t"
+  },
+  {
+    "name": "Large",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-ypCW0 framer-zl1g6k framer-v-1xaaxij",
+    "text": "office@casamomo.at o o f f f f i i c c e e @ @ c c a a s s a a m m o o m m o o . . a a t t"
+  },
+  {
+    "name": "Footer Link",
+    "tag": "A",
+    "id": "",
+    "className": "framer-8rmqe8 framer-1qqdrhj",
+    "text": "+43 664 1999605 + + 4 4 3 3 6 6 6 6 4 4 1 1 9 9 9 9 9 9 6 6 0 0 5 5"
+  },
+  {
+    "name": "Large",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-ypCW0 framer-zl1g6k framer-v-1xaaxij",
+    "text": "+43 664 1999605 + + 4 4 3 3 6 6 6 6 4 4 1 1 9 9 9 9 9 9 6 6 0 0 5 5"
+  },
+  {
+    "name": "Imprint/Legal",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-j9pwx",
+    "text": "©2026 Casa Momo Imprint I I m m p p r r i i n n t t Terms T T e e r r m m s s Privacy P P r r i i v"
+  },
+  {
+    "name": "Footer Link",
+    "tag": "A",
+    "id": "",
+    "className": "framer-p6h7uj framer-1qqdrhj",
+    "text": "Imprint I I m m p p r r i i n n t t"
+  },
+  {
+    "name": "Small",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-ypCW0 framer-zl1g6k framer-v-kzj5yp",
+    "text": "Imprint I I m m p p r r i i n n t t"
+  },
+  {
+    "name": "Footer Link",
+    "tag": "A",
+    "id": "",
+    "className": "framer-12uf7vn framer-1qqdrhj",
+    "text": "Terms T T e e r r m m s s"
+  },
+  {
+    "name": "Small",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-ypCW0 framer-zl1g6k framer-v-kzj5yp",
+    "text": "Terms T T e e r r m m s s"
+  },
+  {
+    "name": "Footer Link",
+    "tag": "A",
+    "id": "",
+    "className": "framer-d7p6ow framer-1qqdrhj",
+    "text": "Privacy P P r r i i v v a a c c y y"
+  },
+  {
+    "name": "Small",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-ypCW0 framer-zl1g6k framer-v-kzj5yp",
+    "text": "Privacy P P r r i i v v a a c c y y"
+  },
+  {
+    "name": "Footer Link",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-1ul1dls",
+    "text": "Made with love by Nexene N N e e x x e e n n e e"
+  },
+  {
+    "name": "Footer Link",
+    "tag": "A",
+    "id": "",
+    "className": "framer-10sb3hh framer-1qqdrhj",
+    "text": "Nexene N N e e x x e e n n e e"
+  },
+  {
+    "name": "Small",
+    "tag": "DIV",
+    "id": "",
+    "className": "framer-ypCW0 framer-zl1g6k framer-v-kzj5yp",
+    "text": "Nexene N N e e x x e e n n e e"
+  }
+]

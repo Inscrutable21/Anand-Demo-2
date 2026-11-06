@@ -1,0 +1,119 @@
+/* --------------------------------------------------------------------------
+   3. EDITORIAL PRELOADER
+   -------------------------------------------------------------------------- */
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10001;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: auto;
+}
+
+.preloader-curtain {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background-color: #171513;
+  transition: transform 0.9s var(--ease-in-out);
+}
+
+.preloader-curtain-top {
+  top: 0;
+  transform-origin: top;
+}
+
+.preloader-curtain-bottom {
+  bottom: 0;
+  transform-origin: bottom;
+}
+
+.preloader-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: #F7F5F0;
+  max-width: 400px;
+  width: 90%;
+}
+
+.preloader-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  color: #A8A29E;
+  margin-bottom: 24px;
+}
+
+.preloader-brand {
+  margin-bottom: 36px;
+}
+
+.preloader-title {
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  letter-spacing: 0.15em;
+  margin-bottom: 8px;
+  color: #F7F5F0;
+}
+
+.preloader-sub {
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  color: #A8A29E;
+}
+
+.preloader-progress-wrap {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.preloader-progress-bar {
+  flex: 1;
+  height: 1px;
+  background-color: rgba(247, 245, 240, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.preloader-progress-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0%;
+  background-color: #F7F5F0;
+  transition: width 0.1s linear;
+}
+
+.preloader-number {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  color: #A8A29E;
+  min-width: 38px;
+  text-align: right;
+}
+
+.preloader.finished .preloader-content {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.preloader.finished .preloader-curtain-top {
+  transform: translateY(-100%);
+}
+
+.preloader.finished .preloader-curtain-bottom {
+  transform: translateY(100%);
+}
+
+.preloader.finished {
+  pointer-events: none;
+}

@@ -1,0 +1,133 @@
+/* --------------------------------------------------------------------------
+   1. CSS RESET & VARIABLES
+   -------------------------------------------------------------------------- */
+@font-face {
+  font-family: 'EL PACRE Regular';
+  src: url('../assets/el-pacre.woff2') format('woff2'),
+       url('assets/el-pacre.woff2') format('woff2');
+  font-display: swap;
+  font-style: normal;
+  font-weight: 400;
+}
+
+:root {
+  --font-display: 'EL PACRE Regular', 'Cardo', Georgia, serif;
+  --font-serif: 'Cardo', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  
+  /* Color Palette */
+  --color-cream: #FFF0CA;
+  --bg-primary: #F7F5F0;
+  --bg-secondary: #EFECE5;
+  --bg-card: #FFFFFF;
+  --bg-dark: #151413;
+  --bg-dark-card: #1E1C1A;
+  
+  --text-primary: #1B1917;
+  --text-muted: #78716C;
+  --text-light: #A8A29E;
+  --text-inverse: #F7F5F0;
+  --text-inverse-muted: #A8A29E;
+  
+  --border-light: rgba(27, 25, 23, 0.08);
+  --border-medium: rgba(27, 25, 23, 0.16);
+  --border-dark: rgba(247, 245, 240, 0.12);
+  
+  --accent-terracotta: #9C6644;
+  --accent-terracotta-light: #C08A68;
+  --accent-olive: #4A5844;
+  --accent-gold: #C2A676;
+  
+  /* Layout & Geometry */
+  --header-height: 84px;
+  --container-max: 1360px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  --radius-full: 9999px;
+  
+  /* Transitions */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --transition-fast: 0.25s var(--ease-out-expo);
+  --transition-normal: 0.45s var(--ease-out-expo);
+  --transition-slow: 0.8s var(--ease-out-expo);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: auto; /* Handled smoothly by Lenis */
+  overflow-x: hidden;
+}
+
+body {
+  line-height: 1.6;
+  background-color: var(--bg-primary);
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Tactile Noise Texture */
+.noise-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 999;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* Typography Helpers */
+h1, h2, h3, h4, h5, .font-serif {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  line-height: 1.15;
+  color: var(--text-primary);
+}
+
+p {
+  color: var(--text-muted);
+  font-weight: 300;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: clamp(20px, 4vw, 48px);
+  padding-right: clamp(20px, 4vw, 48px);
+}

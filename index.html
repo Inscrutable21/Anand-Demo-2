@@ -1,0 +1,1203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Casa Momo • Boutique Apartments in Graz</title>
+  <meta name="description" content="Between quiet minimalism and warm coziness a space emerges where you can arrive, breathe and let go. Nine boutique designer apartments in Graz, Austria.">
+  
+  <!-- Favicon (Minimalist Luxury CM Monogram) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2246%22 fill=%22%230E0D0C%22 stroke=%22%23FFF0CA%22 stroke-width=%224%22/><text x=%2250%22 y=%2260%22 font-family=%22serif%22 font-size=%2236%22 fill=%22%23FFF0CA%22 text-anchor=%22middle%22 font-weight=%22bold%22>CM</text></svg>">
+  
+  <!-- Fonts: Cardo (Serif) & Plus Jakarta Sans (Sans) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- GSAP & ScrollTrigger (Local Zero-Latency Bundles) -->
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="assets/vendor/ScrollTrigger.min.js"></script>
+  
+  <!-- Lenis Smooth Scroll -->
+  <script src="assets/vendor/lenis.min.js"></script>
+</head>
+<body>
+
+  <!-- Custom Cursor Follower -->
+  <!-- BEGIN sections/cursor.html -->
+<!-- Custom Cursor Follower -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing">
+    <span class="cursor-text" id="cursorText"></span>
+  </div>
+
+  <!-- Noise Overlay for Tactile Boutique Texture -->
+  <div class="noise-overlay" aria-hidden="true"></div>
+<!-- END sections/cursor.html -->
+
+  <!-- Noise Overlay for Tactile Boutique Texture -->
+  <div class="noise-overlay" aria-hidden="true"></div>
+
+  <!-- Editorial Preloader -->
+  <!-- BEGIN sections/preloader.html -->
+<!-- Editorial Preloader -->
+  <div class="preloader" id="preloader">
+    <div class="preloader-curtain preloader-curtain-top"></div>
+    <div class="preloader-curtain preloader-curtain-bottom"></div>
+    <div class="preloader-content">
+      <div class="preloader-meta">
+        <span class="preloader-city">GRAZ, AUSTRIA</span>
+        <span class="preloader-coords">47°04′N 15°26′E</span>
+      </div>
+      <div class="preloader-brand">
+        <h1 class="preloader-title">CASA MOMO</h1>
+        <p class="preloader-sub">BOUTIQUE APARTMENTS</p>
+      </div>
+      <div class="preloader-progress-wrap">
+        <div class="preloader-progress-bar">
+          <div class="preloader-progress-fill" id="preloaderProgress"></div>
+        </div>
+        <span class="preloader-number" id="preloaderCount">00%</span>
+      </div>
+    </div>
+  </div>
+<!-- END sections/preloader.html -->
+
+  <!-- Sticky Luxury Navigation -->
+  <!-- BEGIN sections/header.html -->
+<!-- AUTHENTIC CASA MOMO FLOATING LUXURY NAVBAR -->
+<header class="site-header" id="siteHeader">
+  <div class="header-container">
+    
+    <!-- Top-Left Wordmark: Fades in on scroll past hero, links to top -->
+    <a href="#hero" class="brand-wordmark" id="brandWordmark" aria-label="Casa Momo Graz">
+      <span class="brand-text">CASA MOMO</span>
+    </a>
+
+    <!-- Top-Right Floating Frosted Capsule Navigation & Audio Controls -->
+    <div class="header-right-group">
+      
+      <!-- Frosted Capsule Navbar -->
+      <nav class="nav-capsule" aria-label="Main Navigation">
+        <a href="#apartments" class="nav-item">Apartments</a>
+        <a href="#host" class="nav-item">About</a>
+        <a href="#locations" class="nav-item">Contact</a>
+        <button class="nav-cta-btn" id="navBookNowBtn" type="button">
+          <span>Book Now</span>
+          <span class="cta-arrow">&#8599;</span>
+        </button>
+      </nav>
+
+      <!-- Circular Sound Toggle Button -->
+      <button class="sound-toggle-btn" id="soundToggleBtn" aria-label="Toggle Ambient Audio" title="Sound Toggle" type="button">
+        <!-- Audio ON SVG -->
+        <svg class="sound-svg sound-svg-on" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+          <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+          <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+        </svg>
+        <!-- Audio MUTED SVG -->
+        <svg class="sound-svg sound-svg-off" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display: none;">
+          <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+          <line x1="23" y1="9" x2="17" y2="15"></line>
+          <line x1="17" y1="9" x2="23" y2="15"></line>
+        </svg>
+      </button>
+
+      <!-- Mobile Hamburger Toggle -->
+      <button class="mobile-toggle-btn" id="mobileToggleBtn" aria-label="Toggle Menu" type="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+      </button>
+
+    </div>
+
+  </div>
+</header>
+<!-- END sections/header.html -->
+
+  <!-- Mobile Fullscreen Navigation Overlay -->
+  <!-- BEGIN sections/mobile-menu.html -->
+<!-- Mobile Fullscreen Navigation Overlay (Authentic Casa Momo) -->
+<div class="mobile-menu-overlay" id="mobileMenu">
+  <div class="mobile-menu-inner">
+    <div class="mobile-menu-header">
+      <span class="mobile-menu-brand">CASA MOMO</span>
+      <span class="mobile-menu-close" id="mobileMenuClose">&times;</span>
+    </div>
+    
+    <div class="mobile-nav-list">
+      <a href="#apartments" class="mobile-nav-link">
+        <span class="link-idx">01</span>
+        <span class="link-title">Apartments</span>
+      </a>
+      <a href="#host" class="mobile-nav-link">
+        <span class="link-idx">02</span>
+        <span class="link-title">About</span>
+      </a>
+      <a href="#locations" class="mobile-nav-link">
+        <span class="link-idx">03</span>
+        <span class="link-title">Contact</span>
+      </a>
+    </div>
+
+    <div class="mobile-menu-footer">
+      <div class="mobile-contact">
+        <p>Schönaugasse 76, 8010 Graz</p>
+        <a href="mailto:office@casamomo.at">office@casamomo.at</a>
+        <a href="tel:+436641999605">+43 664 1999605</a>
+      </div>
+      <button class="btn btn-primary w-100" id="mobileBookBtn">Book Now &#8599;</button>
+    </div>
+  </div>
+</div>
+<!-- END sections/mobile-menu.html -->
+
+  <main id="smooth-wrapper">
+    <div id="smooth-content">
+
+      <!-- 1. HERO SECTION (FULLSCREEN VIDEO WITH CASA & MOMO) -->
+      <!-- BEGIN sections/hero.html -->
+<!-- HERO SECTION (AUTHENTIC CASA MOMO FULLSCREEN VIDEO HERO) -->
+<section class="hero-section" id="hero">
+  
+  <!-- Fullscreen Ambient Background Video -->
+  <div class="hero-video-wrapper">
+    <video 
+      id="heroVideo"
+      class="hero-bg-video"
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="auto"
+      poster="assets/video-poster.jpg"
+      aria-label="Short film of Casa Momo designer apartments: warm interiors, Graz streets and natural light"
+    >
+      <source src="assets/casa-momo-teaser.mp4" type="video/mp4" media="(min-width: 768px)">
+      <source src="assets/casa-momo-teaser-mobile.mp4" type="video/mp4">
+    </video>
+    
+    <!-- Subtle Cinematic Scrim to ensure crisp contrast -->
+    <div class="hero-video-scrim"></div>
+  </div>
+
+  <!-- Hero Content Overlay Layout -->
+  <div class="hero-overlay-grid">
+    
+    <!-- Top-Left Giant Wordmark: CASA -->
+    <div class="hero-wordmark-top">
+      <h1 class="hero-word casa-word" data-word-reveal>
+        <span class="char-span">C</span><span class="char-span">A</span><span class="char-span">S</span><span class="char-span">A</span>
+      </h1>
+    </div>
+
+    <!-- Bottom-Left Tagline & CTA Button -->
+    <div class="hero-bottom-left" data-reveal>
+      <p class="hero-intro-text">
+        Boutique Apartments in the<br>
+        Historic Center of Graz
+      </p>
+      
+      <button class="hero-cta-btn hero-cta-main" id="heroBottomBookBtn">
+        <span>Book Your Stay</span>
+        <span class="cta-arrow">&#8599;</span>
+      </button>
+    </div>
+
+    <!-- Bottom-Right Giant Wordmark: MOMO -->
+    <div class="hero-wordmark-bottom">
+      <div class="hero-word momo-word" data-word-reveal>
+        <span class="char-span">M</span><span class="char-span">O</span><span class="char-span">M</span><span class="char-span">O</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Subtle Scroll Down Indicator -->
+  <a href="#statement" class="hero-scroll-cue" aria-label="Scroll to discover">
+    <span class="cue-label">SCROLL</span>
+    <div class="cue-line"><div class="cue-dot"></div></div>
+  </a>
+
+</section>
+<!-- END sections/hero.html -->
+
+      <!-- 2. STATEMENT SCRUB & PARALLAX SHOWCASE (BOUTIQUE N°3) -->
+      <!-- BEGIN sections/statement.html -->
+<!-- STATEMENT & ARCHITECTURAL SHOWCASE SECTION (AUTHENTIC CASA MOMO GRAZ) -->
+<section class="statement-section" id="statement">
+  
+  <div class="statement-container">
+    <!-- Authentic Casa Momo Editorial Staircase Statement -->
+    <div class="scrub-statement-block" id="scrubStatement">
+      
+      <div class="statement-line line-1">
+        <span class="scrub-word active">Between</span>
+      </div>
+
+      <div class="statement-line line-2">
+        <span class="scrub-word">quiet</span>
+        <span class="scrub-word">minimalism</span>
+        <span class="scrub-word">and</span>
+        <span class="scrub-word">warm</span>
+      </div>
+
+      <div class="statement-line line-3">
+        <span class="scrub-word">coziness</span>
+        <span class="scrub-word">a</span>
+        <span class="scrub-word">space</span>
+        <span class="scrub-word">emerges</span>
+      </div>
+
+      <div class="statement-line line-4">
+        <span class="scrub-word">where</span>
+        <span class="scrub-word">you</span>
+        <span class="scrub-word">can</span>
+        <span class="scrub-word">arrive,</span>
+      </div>
+
+      <div class="statement-line line-5">
+        <span class="scrub-word">breathe</span>
+        <span class="scrub-word">and</span>
+        <span class="scrub-word">let</span>
+        <span class="scrub-word">go.</span>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Full-Width Scroll-Expanding Showcase Frame: Starts Small & Expands to 100% Width -->
+  <div class="showcase-expand-section" id="showcaseExpand">
+    <div class="showcase-expand-inner" id="showcaseFrame">
+      <img 
+        src="assets/9jMXSAsVYwq8f382N1qGd0iM.webp" 
+        alt="Boutique N°3 • Sunlit apartment interior with herringbone parquet floor, tall windows and a wooden desk with a white lamp" 
+        class="showcase-expand-img" 
+        id="showcaseImg"
+        loading="lazy"
+      >
+      <div class="showcase-badge-group" id="showcaseBadge">
+        <span class="showcase-badge-pill">Boutique N°3</span>
+        <span class="showcase-badge-pill">Living Room</span>
+      </div>
+    </div>
+  </div>
+
+</section>
+<!-- END sections/statement.html -->
+
+      <!-- 3. APARTMENTS SHOWCASE (9 APARTMENTS) -->
+      <!-- BEGIN sections/apartments.html -->
+<!-- APARTMENTS SHOWCASE / COLLECTION (AUTHENTIC CASA MOMO 2-COLUMN GRID) -->
+<section class="apartments-section" id="apartments">
+  <div class="apartments-container">
+    
+    <!-- Section Header Block -->
+    <div class="apartments-header-row">
+      <div class="apt-badge-title-group">
+        <div class="apt-count-pill">
+          <span class="count-num">9</span>
+          <span>Apartments</span>
+        </div>
+        <h2 class="apartments-heading">Apartments</h2>
+      </div>
+
+      <!-- Category Filter Pills -->
+      <nav class="apartment-category-filters" aria-label="Filter suites">
+        <button class="filter-pill active" data-filter="all">All <span>(9)</span></button>
+        <button class="filter-pill" data-filter="boutique">Boutique <span>(4)</span></button>
+        <button class="filter-pill" data-filter="loft">Loft <span>(3)</span></button>
+        <button class="filter-pill" data-filter="garden">Garden <span>(1)</span></button>
+        <button class="filter-pill" data-filter="urban">Urban <span>(1)</span></button>
+      </nav>
+    </div>
+
+    <!-- 2-Column Grid with Top-Aligned Rows Creating Authentic Height Differences -->
+    <div class="apartments-grid" id="apartmentsGrid">
+
+      <!-- ROW 1, LEFT: 1. Boutique N°1 (Square) -->
+      <article class="apt-card apt-variant-square" data-category="boutique" data-id="boutique-1">
+        <div class="apt-image-box">
+          <img 
+            src="assets/FFMB70aKEXAkAkxXAKKQTB8epk.webp" 
+            alt="Boutique N°1 • bed with a navy headboard, tufted cushions and a green table lamp in front of a weathered wall" 
+            class="apt-main-photo" 
+            loading="lazy"
+          >
+          <div class="apt-hover-pill">
+            <span>Apartment Details</span>
+            <span class="pill-arrow">&#8599;</span>
+          </div>
+        </div>
+        <div class="apt-caption-bar">
+          <h3 class="apt-caption-title">Boutique N°1</h3>
+          <div class="apt-caption-specs">
+            <div class="apt-spec-pill" title="Living space">
+              <svg class="spec-svg" viewBox="0 0 16 16" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.5">
+                <rect x="2.5" y="2.5" width="11" height="11" rx="1.5"></rect>
+                <path d="M5.5 2.5v11M2.5 5.5h11"></path>
+              </svg>
+              <span>60 m²</span>
+            </div>
+            <div class="apt-spec-pill" title="Guest capacity">
+              <svg class="spec-svg" viewBox="0 0 16 16" width="12" height="12" fill="currentColor">
+                <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2 2H6a4 4 0 0 0-4 4v1h12v-1a4 4 0 0 0-4-4z"></path>
+              </svg>
+              <span>3</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- ROW 1, RIGHT: 2. Boutique N°2 (Horizontal) -->
+      <article class="apt-card apt-variant-horizontal" data-category="boutique" data-id="boutique-2">
+        <div class="apt-image-box">
+          <img 
+            src="assets/qwHsbwPqfdWdQUSwIKbIkRdc.webp" 
+            alt="Boutique N°2 • living room with a rust-orange velvet sofa, a green lounge chair and a sailing ship painting" 
+            class="apt-main-photo" 
+            loading="lazy"
+          >
+          <div class="apt-hover-pill">
+            <span>Apartment Details</span>
+            <span class="pill-arrow">&#8599;</span>
+          </div>
+        </div>
+        <div class="apt-caption-bar">
+          <h3 class="apt-caption-title">Boutique N°2</h3>
+          <div class="apt-caption-specs">
+            <div class="apt-spec-pill" title="Living space">
+              <svg class="spec-svg" viewBox="0 0 16 16" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.5">
+                <rect x="2.5" y="2.5" width="11" height="11" rx="1.5"></rect>
+                <path d="M5.5 2.5v11M2.5 5.5h11"></path>
+              </svg>
+              <span>45 m²</span>
+            </div>
+            <div class="apt-spec-pill" title="Guest capacity">
+              <svg class="spec-svg" viewBox="0 0 16 16" width="12" height="12" fill="currentColor">
+                <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2 2H6a4 4 0 0 0-4 4v1h12v-1a4 4 0 0 0-4-4z"></path>
+              </svg>
+              <span>3</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- ROW 2, LEFT: 3. Boutique N°3 (Horizontal) -->
+      <article class="apt-card apt-variant-horizontal" data-category="boutique" data-id="boutique-3">
+        <div class="apt-image-box">
+          <img 
+            src="assets/UayMv2I16UbQQBQkbI90HsJMv5o.webp" 
+            alt="Boutique N°3 • dining table with wooden chairs and a mountain painting, seen through a doorway" 
+            class="apt-main-photo" 
+            loading="lazy"
+          >
+          <div class="apt-hover-pill">
+            <span>Apartment Details</span>
+            <span class="pill-arrow">&#8599;</span>
+          </div>
+        </div>
+        <div class="apt-caption-bar">
+          <h3 class="apt-caption-title">Boutique N°3</h3>
+          <div class="apt-caption-specs">
+            <div class="apt-spec-pill" title="Living space">
+              <svg class="spec-svg" viewBox="0 0 16 16" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.5">
+                <rect x="2.5" y="2.5" width="11" height="11" rx="1.5"></rect>
+                <path d="M5.5 2.5v11M2.5 5.5h11"></path>
+              </svg>
+              <span>120 m²</span>
+            </div>
+            <div class="apt-spec-pill" title="Guest capacity">
+              <svg class="spec-svg" viewBox="0 0 16 16" width="12" height="12" fill="currentColor">
+                <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2 2H6a4 4 0 0 0-4 4v1h12v-1a4 4 0 0 0-4-4z"></path>
+              </svg>
+              <span>6</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- ROW 2, RIGHT: 4. Boutique N°4 (Square) -->
+      <article class="apt-card apt-variant-square" data-category="boutique" data-id="boutique-4">
+        <div class="apt-image-box">
+          <img 
+            src="assets/yBIxh7LgO2No9HDQ30impB370Y.webp" 
+            alt="Boutique N°4 • living room with a grey sofa, round side tables, a yellow rug and a large plant" 
+            class="apt-main-photo" 
+            loading="lazy"
+          >
+          <div class="apt-hover-pill">
+            <span>Apartment Details</span>
+            <span class="pill-arrow">&#8599;</span>
+          </div>
+        </div>
+        <div class="apt-caption-bar">
+          <h3 class="apt-caption-title">Boutique N°4</h3>
+          <div class="apt-caption-specs">
+            <div class="apt-spec-pill" title="Living space">
+              <svg class="spec-svg" viewBox="0 0 16 16" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.5">
+                <rect x="2.5" y="2.5" width="11" height="11" rx="1.5"></rect>
+                <path d="M5.5 2.5v11M2.5 5.5h11"></path>
+              </svg>
+              <span>45 m²</span>
+            </div>
+            <div class="apt-spec-pill" title="Guest capacity">
+              <svg class="spec-svg" viewBox="0 0 16 16" width="12" height="12" fill="currentColor">
+                <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2 2H6a4 4 0 0 0-4 4v1h12v-1a4 4 0 0 0-4-4z"></path>
+              </svg>
+              <span>4</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- ROW 3, LEFT: 5. Loft N°1 (Square) -->
+      <article class="apt-card apt-variant-square" data-category="loft" data-id="loft-1">
+        <div class="apt-image-box">
+          <img 
+            src="assets/2xHCTBMpXtVodlF5OQINb1IbM.webp" 
+            alt="Loft N°1 • bed with linen and green velvet cushions under a skylight and an olive-green wall" 
+            class="apt-main-photo" 
+            loading="lazy"
+          >
+          <div class="apt-hover-pill">
+            <span>Apartment Details</span>
+            <span class="pill-arrow">&#8599;</span>
+          </div>
+        </div>
+        <div class="apt-caption-bar">
+          <h3 class="apt-caption-title">Loft N°1</h3>
+          <div class="apt-caption-specs">
+            <div class="apt-spec-pill" title="Living space">
+              <svg class="spec-svg" viewBox="0 0 16 16" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.5">
+                <rect x="2.5" y="2.5" width="11" height="11" rx="1.5"></rect>
+                <path d="M5.5 2.5v11M2.5 5.5h11"></path>
+              </svg>
+              <span>45 m²</span>
+            </div>
+            <div class="apt-spec-pill" title="Guest capacity">
+              <svg class="spec-svg" viewBox="0 0 16 16" width="12" height="12" fill="currentColor">
+                <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2 2H6a4 4 0 0 0-4 4v1h12v-1a4 4 0 0 0-4-4z"></path>
+              </svg>
+              <span>4</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- ROW 3, RIGHT: 6. Loft N°2 (Horizontal) -->
+      <article class="apt-card apt-variant-horizontal" data-category="loft" data-id="loft-2">
+        <div class="apt-image-box">
+          <img 
+            src="assets/K9tRZVOwNnZgndmDo4Fbq4.webp" 
+            alt="Loft N°2 • attic dining corner with a blue table, wire chairs and dried eucalyptus" 
+            class="apt-main-photo" 
+            loading="lazy"
+          >
+          <div class="apt-hover-pill">
+            <span>Apartment Details</span>
+            <span class="pill-arrow">&#8599;</span>
+          </div>
+        </div>
+        <div class="apt-caption-bar">
+          <h3 class="apt-caption-title">Loft N°2</h3>
+          <div class="apt-caption-specs">
+            <div class="apt-spec-pill" title="Living space">
+              <svg class="spec-svg" viewBox="0 0 16 16" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.5">
+                <rect x="2.5" y="2.5" width="11" height="11" rx="1.5"></rect>
+                <path d="M5.5 2.5v11M2.5 5.5h11"></path>
+              </svg>
+              <span>60 m²</span>
+            </div>
+            <div class="apt-spec-pill" title="Guest capacity">
+              <svg class="spec-svg" viewBox="0 0 16 16" width="12" height="12" fill="currentColor">
+                <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2 2H6a4 4 0 0 0-4 4v1h12v-1a4 4 0 0 0-4-4z"></path>
+              </svg>
+              <span>4</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- ROW 4, LEFT: 7. Loft N°3 (Horizontal) -->
+      <article class="apt-card apt-variant-horizontal" data-category="loft" data-id="loft-3">
+        <div class="apt-image-box">
+          <img 
+            src="assets/sXyrAPMPoUMCYGjfPIyJx3amvwg.webp" 
+            alt="Loft N°3 • wooden bed with an olive-green throw, a mushroom lamp and an old timber beam" 
+            class="apt-main-photo" 
+            loading="lazy"
+          >
+          <div class="apt-hover-pill">
+            <span>Apartment Details</span>
+            <span class="pill-arrow">&#8599;</span>
+          </div>
+        </div>
+        <div class="apt-caption-bar">
+          <h3 class="apt-caption-title">Loft N°3</h3>
+          <div class="apt-caption-specs">
+            <div class="apt-spec-pill" title="Living space">
+              <svg class="spec-svg" viewBox="0 0 16 16" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.5">
+                <rect x="2.5" y="2.5" width="11" height="11" rx="1.5"></rect>
+                <path d="M5.5 2.5v11M2.5 5.5h11"></path>
+              </svg>
+              <span>80 m²</span>
+            </div>
+            <div class="apt-spec-pill" title="Guest capacity">
+              <svg class="spec-svg" viewBox="0 0 16 16" width="12" height="12" fill="currentColor">
+                <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2 2H6a4 4 0 0 0-4 4v1h12v-1a4 4 0 0 0-4-4z"></path>
+              </svg>
+              <span>5</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- ROW 4, RIGHT: 8. Garden N°1 (Square) -->
+      <article class="apt-card apt-variant-square" data-category="garden" data-id="garden-1">
+        <div class="apt-image-box">
+          <img 
+            src="assets/ok0JjrCxxM8lHi3hQ8qC8QmPys.webp" 
+            alt="Garden N°1 • round wooden dining table with woven chairs, a flower bouquet and a sofa" 
+            class="apt-main-photo" 
+            loading="lazy"
+          >
+          <div class="apt-hover-pill">
+            <span>Apartment Details</span>
+            <span class="pill-arrow">&#8599;</span>
+          </div>
+        </div>
+        <div class="apt-caption-bar">
+          <h3 class="apt-caption-title">Garden N°1</h3>
+          <div class="apt-caption-specs">
+            <div class="apt-spec-pill" title="Living space">
+              <svg class="spec-svg" viewBox="0 0 16 16" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.5">
+                <rect x="2.5" y="2.5" width="11" height="11" rx="1.5"></rect>
+                <path d="M5.5 2.5v11M2.5 5.5h11"></path>
+              </svg>
+              <span>40 m²</span>
+            </div>
+            <div class="apt-spec-pill" title="Guest capacity">
+              <svg class="spec-svg" viewBox="0 0 16 16" width="12" height="12" fill="currentColor">
+                <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2 2H6a4 4 0 0 0-4 4v1h12v-1a4 4 0 0 0-4-4z"></path>
+              </svg>
+              <span>3</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- ROW 5, LEFT: 9. Urban N°1 (Square) -->
+      <article class="apt-card apt-variant-square" data-category="urban" data-id="urban-1">
+        <div class="apt-image-box">
+          <img 
+            src="assets/nCpZHO0o6riJK75pc9xxHA2OQC4.webp" 
+            alt="Urban N°1 • living area with a brown sofa, a white arc lamp and a small dining table" 
+            class="apt-main-photo" 
+            loading="lazy"
+          >
+          <div class="apt-hover-pill">
+            <span>Apartment Details</span>
+            <span class="pill-arrow">&#8599;</span>
+          </div>
+        </div>
+        <div class="apt-caption-bar">
+          <h3 class="apt-caption-title">Urban N°1</h3>
+          <div class="apt-caption-specs">
+            <div class="apt-spec-pill" title="Living space">
+              <svg class="spec-svg" viewBox="0 0 16 16" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.5">
+                <rect x="2.5" y="2.5" width="11" height="11" rx="1.5"></rect>
+                <path d="M5.5 2.5v11M2.5 5.5h11"></path>
+              </svg>
+              <span>40 m²</span>
+            </div>
+            <div class="apt-spec-pill" title="Guest capacity">
+              <svg class="spec-svg" viewBox="0 0 16 16" width="12" height="12" fill="currentColor">
+                <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2 2H6a4 4 0 0 0-4 4v1h12v-1a4 4 0 0 0-4-4z"></path>
+              </svg>
+              <span>2</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+  </div>
+</section>
+<!-- END sections/apartments.html -->
+
+      <!-- 4. HOST SECTION: "HI, I'M MORITZ" & SHOWCASE (BOUTIQUE N°1) -->
+      <!-- BEGIN sections/host.html -->
+<!-- HOST SECTION: "HI, I'M MORITZ" (AUTHENTIC CASA MOMO GRAZ) -->
+<section class="host-section" id="host">
+  <div class="host-container">
+    
+    <!-- Giant Editorial Headline -->
+    <h2 class="host-headline">Hi, I'm Moritz</h2>
+
+    <!-- Two-Column Editorial Layout: Story on Left, Moritz Photo on Right -->
+    <div class="host-grid">
+      
+      <!-- Left Column: Story & Booking CTA -->
+      <div class="host-story-col">
+        <div class="host-paragraphs">
+          <p class="host-p">
+            I am the head and heart behind Casa Momo and hosting is what I love most. I've enjoyed having guests for as long as I can remember.
+          </p>
+          <p class="host-p">
+            What I care about is simple: that you walk in and feel looked after. My apartments aren't staged. They're warm, lively homes you can truly settle into, where comfort always comes first. I fill them with timeless pieces and special finds that carry a story of their own, and that give each apartment its own character.
+          </p>
+          <p class="host-p">
+            I look after my guests personally and with real joy, before, during and after your stay.
+          </p>
+        </div>
+
+        <button class="host-book-pill-btn" id="hostBookBtn" aria-label="Book Your Stay with Moritz">
+          <span>Book Your Stay</span>
+          <span class="btn-arrow">&#8599;</span>
+        </button>
+      </div>
+
+      <!-- Right Column: Moritz Photo Frame with Scroll Transition -->
+      <div class="host-photo-col" id="moritzPhotoSec">
+        <div class="host-photo-frame" id="moritzPhotoFrame">
+          <img 
+            src="assets/Urg4dkPDgTjDQTcsFiBUcAUnQY.webp" 
+            alt="Moritz Steinlechner - Founder & Host of Casa Momo Graz" 
+            class="host-photo-img" 
+            id="moritzPhotoImg"
+            loading="lazy"
+          >
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+<!-- END sections/host.html -->
+
+      <!-- 5. MY PHILOSOPHY (1 DESIGN, 2 WARMTH, 3 VINTAGE) -->
+      <!-- BEGIN sections/philosophy.html -->
+<!-- PHILOSOPHY SECTION (AUTHENTIC CASA MOMO GRAZ) -->
+<section class="philosophy-section" id="philosophy">
+  <div class="container">
+    
+    <div class="philosophy-header-block" data-fade>
+      <h2 class="philosophy-main-title">My Philosophy</h2>
+    </div>
+
+    <div class="pillars-grid">
+      <!-- 1 Design -->
+      <div class="pillar-card" data-fade-up>
+        <div class="pillar-number">1</div>
+        <h3 class="pillar-title">Design</h3>
+        <p class="pillar-desc">
+          Lived-in, not staged. Old-building charm, clean lines and carefully chosen details, a signature style.
+        </p>
+      </div>
+
+      <!-- 2 Warmth -->
+      <div class="pillar-card" data-fade-up>
+        <div class="pillar-number">2</div>
+        <h3 class="pillar-title">Warmth</h3>
+        <p class="pillar-desc">
+          Every apartment has its own soul. Soft light, natural tones and a personal touch turn a place to stay into a home.
+        </p>
+      </div>
+
+      <!-- 3 Vintage -->
+      <div class="pillar-card" data-fade-up>
+        <div class="pillar-number">3</div>
+        <h3 class="pillar-title">Vintage</h3>
+        <p class="pillar-desc">
+          Flea-market finds, bentwood chairs and objects with a past. Timeless pieces that bring character, elegance, and history to every room.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+<!-- END sections/philosophy.html -->
+
+      <!-- 6. GUEST REVIEWS & CONTINUOUS MARQUEE TICKER -->
+      <!-- BEGIN sections/reviews.html -->
+<!-- GUEST REVIEWS & RECOGNITION -->
+<section class="reviews-section" id="reviews">
+  
+  <!-- Continuous Authentic Marquee Ticker -->
+  <div class="reviews-ticker-wrapper" aria-hidden="true">
+    <div class="reviews-ticker-track">
+      <span class="ticker-item">Recent Reviews <strong class="ticker-accent">6</strong></span>
+      <span class="ticker-dot">•</span>
+      <span class="ticker-item">Recent Reviews <strong class="ticker-accent">6</strong></span>
+      <span class="ticker-dot">•</span>
+      <span class="ticker-item">Recent Reviews <strong class="ticker-accent">6</strong></span>
+      <span class="ticker-dot">•</span>
+      <span class="ticker-item">Recent Reviews <strong class="ticker-accent">6</strong></span>
+      <span class="ticker-dot">•</span>
+      <span class="ticker-item">Recent Reviews <strong class="ticker-accent">6</strong></span>
+      <span class="ticker-dot">•</span>
+      <span class="ticker-item">Recent Reviews <strong class="ticker-accent">6</strong></span>
+      <span class="ticker-dot">•</span>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="reviews-slider-container">
+      <div class="reviews-track" id="reviewsTrack">
+        
+        <!-- Review 1: Jiyeon -->
+        <div class="review-card active">
+          <div class="review-indicator-pill">
+            <span class="stars" aria-label="5 of 5 stars">
+              <svg class="star-icon" viewBox="0 0 20 20" width="12" height="12" fill="#BC6F45"><polygon points="10 1 12.6 6.8 18.8 7.4 14.1 11.6 15.5 17.7 10 14.5 4.5 17.7 5.9 11.6 1.2 7.4 7.4 6.8 10 1"></polygon></svg>
+              <svg class="star-icon" viewBox="0 0 20 20" width="12" height="12" fill="#BC6F45"><polygon points="10 1 12.6 6.8 18.8 7.4 14.1 11.6 15.5 17.7 10 14.5 4.5 17.7 5.9 11.6 1.2 7.4 7.4 6.8 10 1"></polygon></svg>
+              <svg class="star-icon" viewBox="0 0 20 20" width="12" height="12" fill="#BC6F45"><polygon points="10 1 12.6 6.8 18.8 7.4 14.1 11.6 15.5 17.7 10 14.5 4.5 17.7 5.9 11.6 1.2 7.4 7.4 6.8 10 1"></polygon></svg>
+              <svg class="star-icon" viewBox="0 0 20 20" width="12" height="12" fill="#BC6F45"><polygon points="10 1 12.6 6.8 18.8 7.4 14.1 11.6 15.5 17.7 10 14.5 4.5 17.7 5.9 11.6 1.2 7.4 7.4 6.8 10 1"></polygon></svg>
+              <svg class="star-icon" viewBox="0 0 20 20" width="12" height="12" fill="#BC6F45"><polygon points="10 1 12.6 6.8 18.8 7.4 14.1 11.6 15.5 17.7 10 14.5 4.5 17.7 5.9 11.6 1.2 7.4 7.4 6.8 10 1"></polygon></svg>
+            </span>
+            <span class="score-num">5.00 / 5</span>
+          </div>
+          <p class="review-quote">
+            “Moritz is such a gentle and wonderful host! The apartment is absolutely beautiful, cozy, and stylish. It was so lovely that I almost preferred staying in rather than exploring the city. The kitchenware, fridge, and other amenities were well-equipped. If I return to Graz, I will definitely choose this place again!”
+          </p>
+          <div class="review-author-wrap">
+            <img src="assets/AXYlw7CIyykoBcVsZ7oZjhKyLo.webp" alt="Jiyeon - Guest at Casa Momo" class="review-avatar">
+            <div class="review-author">
+              <strong>Jiyeon</strong>
+              <span>Verified Guest • Graz Stay</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 2: Gary -->
+        <div class="review-card">
+          <div class="review-indicator-pill">
+            <span class="stars" aria-label="5 of 5 stars">
+              <svg class="star-icon" viewBox="0 0 20 20" width="12" height="12" fill="#BC6F45"><polygon points="10 1 12.6 6.8 18.8 7.4 14.1 11.6 15.5 17.7 10 14.5 4.5 17.7 5.9 11.6 1.2 7.4 7.4 6.8 10 1"></polygon></svg>
+              <svg class="star-icon" viewBox="0 0 20 20" width="12" height="12" fill="#BC6F45"><polygon points="10 1 12.6 6.8 18.8 7.4 14.1 11.6 15.5 17.7 10 14.5 4.5 17.7 5.9 11.6 1.2 7.4 7.4 6.8 10 1"></polygon></svg>
+              <svg class="star-icon" viewBox="0 0 20 20" width="12" height="12" fill="#BC6F45"><polygon points="10 1 12.6 6.8 18.8 7.4 14.1 11.6 15.5 17.7 10 14.5 4.5 17.7 5.9 11.6 1.2 7.4 7.4 6.8 10 1"></polygon></svg>
+              <svg class="star-icon" viewBox="0 0 20 20" width="12" height="12" fill="#BC6F45"><polygon points="10 1 12.6 6.8 18.8 7.4 14.1 11.6 15.5 17.7 10 14.5 4.5 17.7 5.9 11.6 1.2 7.4 7.4 6.8 10 1"></polygon></svg>
+              <svg class="star-icon" viewBox="0 0 20 20" width="12" height="12" fill="#BC6F45"><polygon points="10 1 12.6 6.8 18.8 7.4 14.1 11.6 15.5 17.7 10 14.5 4.5 17.7 5.9 11.6 1.2 7.4 7.4 6.8 10 1"></polygon></svg>
+            </span>
+            <span class="score-num">5.00 / 5</span>
+          </div>
+          <p class="review-quote">
+            “A family of three adults and one infant stayed at Moritz's Graz apartment for 2 weeks. We were very happy with the amount of space this apartment provided. The location was within walking distance to grocery stores, restaurants and the old town area. Moritz made our stay a pleasure with his thoughtfulness and helpfulness.”
+          </p>
+          <div class="review-author-wrap">
+            <img src="assets/fXHMJMUtj5ZLIisCkeThADmEu4.webp" alt="Gary - Guest at Casa Momo" class="review-avatar">
+            <div class="review-author">
+              <strong>Gary</strong>
+              <span>Verified Guest • 2-Week Family Stay</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 3: Abishek -->
+        <div class="review-card">
+          <div class="review-indicator-pill">
+            <span class="stars" aria-label="5 of 5 stars">
+              <svg class="star-icon" viewBox="0 0 20 20" width="12" height="12" fill="#BC6F45"><polygon points="10 1 12.6 6.8 18.8 7.4 14.1 11.6 15.5 17.7 10 14.5 4.5 17.7 5.9 11.6 1.2 7.4 7.4 6.8 10 1"></polygon></svg>
+              <svg class="star-icon" viewBox="0 0 20 20" width="12" height="12" fill="#BC6F45"><polygon points="10 1 12.6 6.8 18.8 7.4 14.1 11.6 15.5 17.7 10 14.5 4.5 17.7 5.9 11.6 1.2 7.4 7.4 6.8 10 1"></polygon></svg>
+              <svg class="star-icon" viewBox="0 0 20 20" width="12" height="12" fill="#BC6F45"><polygon points="10 1 12.6 6.8 18.8 7.4 14.1 11.6 15.5 17.7 10 14.5 4.5 17.7 5.9 11.6 1.2 7.4 7.4 6.8 10 1"></polygon></svg>
+              <svg class="star-icon" viewBox="0 0 20 20" width="12" height="12" fill="#BC6F45"><polygon points="10 1 12.6 6.8 18.8 7.4 14.1 11.6 15.5 17.7 10 14.5 4.5 17.7 5.9 11.6 1.2 7.4 7.4 6.8 10 1"></polygon></svg>
+              <svg class="star-icon" viewBox="0 0 20 20" width="12" height="12" fill="#BC6F45"><polygon points="10 1 12.6 6.8 18.8 7.4 14.1 11.6 15.5 17.7 10 14.5 4.5 17.7 5.9 11.6 1.2 7.4 7.4 6.8 10 1"></polygon></svg>
+            </span>
+            <span class="score-num">5.00 / 5</span>
+          </div>
+          <p class="review-quote">
+            “I had a truly wonderful experience staying at this flat. The space was clean, well-maintained, and had everything I needed during my time in Graz. The host was responsive and helpful throughout my stay. It's a great location, and I felt very comfortable here. Thank you for a pleasant and welcoming experience!”
+          </p>
+          <div class="review-author-wrap">
+            <img src="assets/dGzaqmqe0buiA6KJq1NmnbiY4.webp" alt="Abishek - Guest at Casa Momo" class="review-avatar">
+            <div class="review-author">
+              <strong>Abishek</strong>
+              <span>Verified Guest • City Break</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 4: Monika -->
+        <div class="review-card">
+          <div class="review-indicator-pill">
+            <span class="stars" aria-label="5 of 5 stars">
+              <svg class="star-icon" viewBox="0 0 20 20" width="12" height="12" fill="#BC6F45"><polygon points="10 1 12.6 6.8 18.8 7.4 14.1 11.6 15.5 17.7 10 14.5 4.5 17.7 5.9 11.6 1.2 7.4 7.4 6.8 10 1"></polygon></svg>
+              <svg class="star-icon" viewBox="0 0 20 20" width="12" height="12" fill="#BC6F45"><polygon points="10 1 12.6 6.8 18.8 7.4 14.1 11.6 15.5 17.7 10 14.5 4.5 17.7 5.9 11.6 1.2 7.4 7.4 6.8 10 1"></polygon></svg>
+              <svg class="star-icon" viewBox="0 0 20 20" width="12" height="12" fill="#BC6F45"><polygon points="10 1 12.6 6.8 18.8 7.4 14.1 11.6 15.5 17.7 10 14.5 4.5 17.7 5.9 11.6 1.2 7.4 7.4 6.8 10 1"></polygon></svg>
+              <svg class="star-icon" viewBox="0 0 20 20" width="12" height="12" fill="#BC6F45"><polygon points="10 1 12.6 6.8 18.8 7.4 14.1 11.6 15.5 17.7 10 14.5 4.5 17.7 5.9 11.6 1.2 7.4 7.4 6.8 10 1"></polygon></svg>
+              <svg class="star-icon" viewBox="0 0 20 20" width="12" height="12" fill="#BC6F45"><polygon points="10 1 12.6 6.8 18.8 7.4 14.1 11.6 15.5 17.7 10 14.5 4.5 17.7 5.9 11.6 1.2 7.4 7.4 6.8 10 1"></polygon></svg>
+            </span>
+            <span class="score-num">5.00 / 5</span>
+          </div>
+          <p class="review-quote">
+            “A beautifully renovated, spacious, and airy apartment with phenomenal views; great location close to the old town, train station, and multiple grocery stores. Highly walkable. Moritz was extremely helpful, responsive, and flexible with regards to check-out. The apartment has great amenities and is suitable not only for vacation, but also for remote working.”
+          </p>
+          <div class="review-author-wrap">
+            <img src="assets/S6yAIpkbGOEgEHW0k7BxB4as9Q.webp" alt="Monika - Guest at Casa Momo" class="review-avatar">
+            <div class="review-author">
+              <strong>Monika</strong>
+              <span>Verified Guest • Remote Work Stay</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 5: Heike -->
+        <div class="review-card">
+          <div class="review-indicator-pill">
+            <span class="stars" aria-label="5 of 5 stars">
+              <svg class="star-icon" viewBox="0 0 20 20" width="12" height="12" fill="#BC6F45"><polygon points="10 1 12.6 6.8 18.8 7.4 14.1 11.6 15.5 17.7 10 14.5 4.5 17.7 5.9 11.6 1.2 7.4 7.4 6.8 10 1"></polygon></svg>
+              <svg class="star-icon" viewBox="0 0 20 20" width="12" height="12" fill="#BC6F45"><polygon points="10 1 12.6 6.8 18.8 7.4 14.1 11.6 15.5 17.7 10 14.5 4.5 17.7 5.9 11.6 1.2 7.4 7.4 6.8 10 1"></polygon></svg>
+              <svg class="star-icon" viewBox="0 0 20 20" width="12" height="12" fill="#BC6F45"><polygon points="10 1 12.6 6.8 18.8 7.4 14.1 11.6 15.5 17.7 10 14.5 4.5 17.7 5.9 11.6 1.2 7.4 7.4 6.8 10 1"></polygon></svg>
+              <svg class="star-icon" viewBox="0 0 20 20" width="12" height="12" fill="#BC6F45"><polygon points="10 1 12.6 6.8 18.8 7.4 14.1 11.6 15.5 17.7 10 14.5 4.5 17.7 5.9 11.6 1.2 7.4 7.4 6.8 10 1"></polygon></svg>
+              <svg class="star-icon" viewBox="0 0 20 20" width="12" height="12" fill="#BC6F45"><polygon points="10 1 12.6 6.8 18.8 7.4 14.1 11.6 15.5 17.7 10 14.5 4.5 17.7 5.9 11.6 1.2 7.4 7.4 6.8 10 1"></polygon></svg>
+            </span>
+            <span class="score-num">5.00 / 5</span>
+          </div>
+          <p class="review-quote">
+            “Moritz's apartment is fantastic! The location couldn't be better; you can leave your car in the parking space for the entire stay since everything is perfectly within walking distance. Communication with Moritz was seamless, and his recommendations were outstanding. Many thanks, Moritz—we'll be back!”
+          </p>
+          <div class="review-author-wrap">
+            <img src="assets/YtDDSnNTrnTsjZhdcUHaWTN84is.webp" alt="Heike - Guest at Casa Momo" class="review-avatar">
+            <div class="review-author">
+              <strong>Heike</strong>
+              <span>Verified Guest • Holiday in Graz</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="reviews-nav-row">
+        <button class="review-nav-btn prev" id="revPrev" aria-label="Previous Review">&#8592;</button>
+        <div class="review-counter" id="revCounter">01 / 05</div>
+        <button class="review-nav-btn next" id="revNext" aria-label="Next Review">&#8594;</button>
+      </div>
+    </div>
+  </div>
+</section>
+      </section>
+<!-- END sections/reviews.html -->
+
+      <!-- 7. LOCATIONS (GRAZ HISTORIC OLD TOWN) -->
+      <!-- BEGIN sections/graz-guide.html -->
+<!-- LOCATIONS SECTION (AUTHENTIC CASA MOMO GRAZ) -->
+<section class="locations-section" id="locations">
+  <div class="container">
+    <div class="locations-layout-grid">
+      
+      <!-- Left Column: Editorial Headline & Content -->
+      <div class="locations-content-col" data-fade-up>
+        <span class="section-tag">NEIGHBORHOOD</span>
+        <h2 class="locations-headline">Locations</h2>
+        
+        <p class="locations-lead-text">
+          Casa Momo apartments all sit in Graz's historic old town, steps from the sights and the city's two famous farmers markets, Lendplatz and Kaiser-Josef-Platz.
+        </p>
+        
+        <p class="locations-sub-text">
+          Stroll through cobblestone alleys, sip espresso in sun-drenched Renaissance courtyards, and return to your peaceful, light-filled sanctuary.
+        </p>
+
+        <div class="locations-actions">
+          <button class="hero-cta-btn locations-book-btn" id="locationsBookBtn">
+            <span>Book Now</span>
+            <span class="cta-arrow">&#8599;</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Right Column: Authentic Architectural Photo -->
+      <div class="locations-media-col" data-fade>
+        <div class="locations-media-frame">
+          <img 
+            src="assets/yARciMvkc19ipMBRHX0dYXb08.webp" 
+            alt="Bright room in a Casa Momo apartment with tall windows, parquet flooring and a wooden trestle desk" 
+            class="locations-img"
+            loading="lazy"
+          >
+          <div class="locations-badge">
+            <span class="badge-dot"></span>
+            <span>Graz Historic Old Town</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- END sections/graz-guide.html -->
+
+      <!-- 8. GRAND REFINED TERRACOTTA FOOTER -->
+      <!-- BEGIN sections/footer.html -->
+<!-- GRAND REFINED FOOTER (AUTHENTIC CASA MOMO GRAZ) -->
+<footer class="site-footer" id="footer">
+  <div class="container">
+    
+    <div class="footer-top-columns">
+      
+      <!-- Column 1: Menu -->
+      <div class="footer-col">
+        <div class="footer-col-header">
+          <span class="col-index">1</span>
+          <span class="col-name">Menu</span>
+        </div>
+        <ul class="footer-links-list">
+          <li><a href="#apartments" class="footer-nav-link">Apartments</a></li>
+          <li><a href="#host" class="footer-nav-link">About</a></li>
+          <li><a href="#locations" class="footer-nav-link">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 2: Socials -->
+      <div class="footer-col">
+        <div class="footer-col-header">
+          <span class="col-index">2</span>
+          <span class="col-name">Socials</span>
+        </div>
+        <ul class="footer-links-list">
+          <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="footer-nav-link">Instagram</a></li>
+          <li><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="footer-nav-link">LinkedIn</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 3: Contact -->
+      <div class="footer-col">
+        <div class="footer-col-header">
+          <span class="col-index">3</span>
+          <span class="col-name">Contact</span>
+        </div>
+        <ul class="footer-links-list">
+          <li><a href="mailto:office@casamomo.at" class="footer-nav-link">office@casamomo.at</a></li>
+          <li><a href="tel:+436641999605" class="footer-nav-link">+43 664 1999605</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Massive Editorial Footnote Wordmark -->
+    <div class="footer-giant-wordmark" aria-hidden="true">
+      <span>CASA MOMO</span>
+    </div>
+
+    <!-- Footer Bottom Bar -->
+    <div class="footer-bottom-row">
+      <div class="footer-copy">
+        &copy; <span id="currentYear">2026</span> Casa Momo
+      </div>
+      
+      <div class="footer-legal-links">
+        <button class="legal-btn" data-modal-target="modalImprint">Imprint</button>
+        <span class="legal-sep">•</span>
+        <button class="legal-btn" data-modal-target="modalTerms">Terms</button>
+        <span class="legal-sep">•</span>
+        <button class="legal-btn" data-modal-target="modalPrivacy">Privacy</button>
+        <span class="legal-sep">•</span>
+        <span class="footer-credits">Made with love by <a href="#" target="_blank" rel="noopener">Nexene</a></span>
+      </div>
+    </div>
+
+  </div>
+</footer>
+<!-- END sections/footer.html -->
+
+    </div>
+  </main>
+
+  <!-- MODALS -->
+  <!-- BEGIN sections/modals.html -->
+<!-- APARTMENT DETAIL MODAL (FULL EXPERIENCE) -->
+  <div class="modal-backdrop" id="aptModal" aria-hidden="true" role="dialog">
+    <div class="modal-window">
+      <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close details">&times;</button>
+      
+      <div class="modal-content-grid">
+        <!-- Modal Gallery Column -->
+        <div class="modal-gallery-col">
+          <div class="modal-main-img-wrap">
+            <img src="" alt="Suite Gallery View" id="modalMainImg" class="modal-main-img">
+          </div>
+          <div class="modal-thumbs-row" id="modalThumbs"></div>
+        </div>
+
+        <!-- Modal Info Column -->
+        <div class="modal-info-col">
+          <div class="modal-badge-row">
+            <span class="modal-category" id="modalCategory">Boutique</span>
+            <span class="modal-status">Available for Direct Booking</span>
+          </div>
+
+          <h2 class="modal-title" id="modalTitle">Boutique N°1</h2>
+          
+          <div class="modal-specs-bar">
+            <div class="m-spec"><strong id="modalArea">60 m²</strong><span>Space</span></div>
+            <div class="m-spec"><strong id="modalGuests">3 Guests</strong><span>Capacity</span></div>
+            <div class="m-spec"><strong id="modalBed">King Bed</strong><span>Comfort</span></div>
+            <div class="m-spec"><strong id="modalView">Schlossberg</strong><span>View</span></div>
+          </div>
+
+          <p class="modal-description" id="modalDesc">
+            Description goes here.
+          </p>
+
+          <div class="modal-amenities-section">
+            <h4 class="subhead">Included Amenities</h4>
+            <div class="modal-amenity-tags" id="modalAmenities">
+              <span class="m-tag">Nespresso Machine</span>
+              <span class="m-tag">Stone-washed European Linen</span>
+              <span class="m-tag">300 Mbps Fiber Wi-Fi</span>
+              <span class="m-tag">Rain Shower</span>
+              <span class="m-tag">Keyless Self Check-in</span>
+              <span class="m-tag">Full Kitchenette</span>
+            </div>
+          </div>
+
+          <div class="modal-booking-box">
+            <div class="modal-price-display">
+              <span class="m-price" id="modalPrice">€145</span>
+              <span class="m-unit">/ night (direct booking rate)</span>
+            </div>
+            <button class="btn btn-primary w-100 modal-reserve-btn" id="modalReserveBtn">
+              Book this Suite Direct
+            </button>
+            <span class="m-guarantee">
+              <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle; margin-right:4px;" aria-hidden="true">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              </svg>
+              Free cancellation up to 5 days before check-in
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DIRECT RESERVATION MODAL FORM -->
+  <div class="modal-backdrop" id="bookingModal" aria-hidden="true" role="dialog">
+    <div class="modal-window booking-modal-window">
+      <button class="modal-close-btn" id="bookingModalCloseBtn" aria-label="Close booking">&times;</button>
+      
+      <div class="booking-form-wrap">
+        <span class="section-tag">DIRECT BOOKING</span>
+        <h2 class="modal-title">Reserve with Casa Momo</h2>
+        <p class="modal-subtext">Book directly for best guaranteed rates, personal host contact with Moritz, and flexible cancellation.</p>
+
+        <form id="directReservationForm" class="direct-res-form">
+          <div class="form-row-2col">
+            <div class="form-group">
+              <label>First Name</label>
+              <input type="text" required placeholder="Elena" class="form-input" id="rfFirstName">
+            </div>
+            <div class="form-group">
+              <label>Last Name</label>
+              <input type="text" required placeholder="Kovacs" class="form-input" id="rfLastName">
+            </div>
+          </div>
+
+          <div class="form-row-2col">
+            <div class="form-group">
+              <label>Email Address</label>
+              <input type="email" required placeholder="elena@example.com" class="form-input" id="rfEmail">
+            </div>
+            <div class="form-group">
+              <label>Phone Number</label>
+              <input type="tel" required placeholder="+43 664 1234567" class="form-input" id="rfPhone">
+            </div>
+          </div>
+
+          <div class="form-row-2col">
+            <div class="form-group">
+              <label>Selected Suite</label>
+              <select class="form-select" id="rfSuiteSelect">
+                <option value="Boutique N°1">Boutique N°1 (€145/night)</option>
+                <option value="Boutique N°2">Boutique N°2 (€135/night)</option>
+                <option value="Boutique N°3">Boutique N°3 Flagship (€220/night)</option>
+                <option value="Boutique N°4">Boutique N°4 (€130/night)</option>
+                <option value="Loft N°1">Loft N°1 (€125/night)</option>
+                <option value="Loft N°2">Loft N°2 (€150/night)</option>
+                <option value="Loft N°3">Loft N°3 Panorama (€195/night)</option>
+                <option value="Garden N°1">Garden N°1 (€140/night)</option>
+                <option value="Urban N°1">Urban N°1 (€120/night)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Guests</label>
+              <select class="form-select" id="rfGuestsSelect">
+                <option value="1">1 Guest</option>
+                <option value="2" selected>2 Guests</option>
+                <option value="3">3 Guests</option>
+                <option value="4">4 Guests</option>
+                <option value="5">5 Guests</option>
+                <option value="6">6 Guests</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row-2col">
+            <div class="form-group">
+              <label>Check In</label>
+              <input type="date" required class="form-input" id="rfCheckin">
+            </div>
+            <div class="form-group">
+              <label>Check Out</label>
+              <input type="date" required class="form-input" id="rfCheckout">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Personal Note / Special Requests (Optional)</label>
+            <textarea class="form-textarea" rows="2" placeholder="Late arrival, baby crib request, courtyard parking reservation..." id="rfNotes"></textarea>
+          </div>
+
+          <div class="form-summary-pill" id="rfSummaryPill">
+            Estimated Total: <strong>€435</strong> (3 Nights, Direct 10% discount included)
+          </div>
+
+          <button type="submit" class="btn btn-primary w-100" id="btnSubmitReservation">
+            Complete Reservation Request
+          </button>
+        </form>
+
+        <!-- Success Message -->
+        <div class="booking-success-screen" id="bookingSuccessScreen" style="display:none;">
+          <div class="success-icon">
+            <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+          </div>
+          <h3 class="success-title">Your stay is reserved!</h3>
+          <p class="success-desc">
+            Vielen Dank! Moritz and the Casa Momo team have received your reservation request. A confirmation email with your digital check-in guide and entry code will arrive shortly.
+          </p>
+          <button class="btn btn-outline" id="btnCloseSuccessModal">Return to Website</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LEGAL INFO MODAL (IMPRINT, PRIVACY, TERMS) -->
+  <div class="modal-backdrop" id="legalModal" aria-hidden="true" role="dialog">
+    <div class="modal-window legal-modal-window">
+      <button class="modal-close-btn" id="legalModalCloseBtn" aria-label="Close legal modal">&times;</button>
+      <div class="legal-modal-content">
+        <span class="section-tag" id="legalModalTag">LEGAL NOTICE</span>
+        <h2 class="modal-title" id="legalModalTitle">Imprint</h2>
+        <div class="legal-modal-body" id="legalModalBody">
+          <!-- Dynamic Content Injected via JS -->
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- END sections/modals.html -->
+
+  <!-- Script -->
+  <script src="script.js"></script>
+</body>
+</html>
+

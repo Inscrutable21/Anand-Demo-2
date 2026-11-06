@@ -1,0 +1,278 @@
+/* --------------------------------------------------------------------------
+   7. STATEMENT SCRUB & PHILOSOPHY
+   Matches authentic Casa Momo Graz dark minimalist staircase layout (Image 2)
+   -------------------------------------------------------------------------- */
+.statement-section {
+  padding: clamp(140px, 18vh, 220px) 0 clamp(80px, 12vh, 160px);
+  background-color: #0E0D0C;
+  color: var(--color-cream);
+  position: relative;
+  overflow: hidden;
+}
+
+.statement-container {
+  width: 100%;
+  max-width: 1680px;
+  margin: 0 auto;
+  padding: 0 clamp(24px, 4.8vw, 72px);
+  box-sizing: border-box;
+}
+
+.scrub-statement-block {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(6px, 1.2vw, 16px);
+  margin-bottom: clamp(60px, 9vh, 120px);
+  user-select: none;
+}
+
+.statement-line {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: clamp(10px, 1.2vw, 24px);
+  font-family: var(--font-sans);
+  font-size: clamp(2.8rem, 6.4vw, 6.8rem);
+  line-height: 1.08;
+  letter-spacing: -0.025em;
+  font-weight: 400;
+}
+
+/* Staggered staircase indentations matching Image 2 */
+.statement-line.line-1 {
+  padding-left: 0;
+}
+
+.statement-line.line-2 {
+  padding-left: clamp(40px, 8.5vw, 150px);
+}
+
+.statement-line.line-3 {
+  padding-left: clamp(20px, 4.5vw, 80px);
+}
+
+.statement-line.line-4 {
+  padding-left: clamp(80px, 17vw, 290px);
+}
+
+.statement-line.line-5 {
+  padding-left: clamp(120px, 23vw, 390px);
+}
+
+.scrub-word {
+  color: rgba(255, 240, 202, 0.18);
+  display: inline-block;
+  transition: color 0.4s ease, opacity 0.4s ease, text-shadow 0.4s ease;
+  will-change: color, opacity;
+}
+
+.scrub-word.active {
+  color: #FFF0CA;
+  opacity: 1;
+  text-shadow: 0 0 24px rgba(255, 240, 202, 0.35);
+}
+
+@media (max-width: 900px) {
+  .statement-line {
+    font-size: clamp(2.2rem, 8vw, 3.8rem);
+    line-height: 1.15;
+  }
+  
+  .statement-line.line-2 {
+    padding-left: clamp(20px, 5vw, 50px);
+  }
+  
+  .statement-line.line-3 {
+    padding-left: clamp(10px, 3vw, 30px);
+  }
+  
+  .statement-line.line-4 {
+    padding-left: clamp(30px, 8vw, 80px);
+  }
+  
+  .statement-line.line-5 {
+    padding-left: clamp(40px, 12vw, 110px);
+  }
+}
+
+@media (max-width: 580px) {
+  .statement-line {
+    font-size: clamp(1.8rem, 8.5vw, 2.5rem);
+    padding-left: 0 !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   FULL-WIDTH SCROLL-EXPANDING SHOWCASE FRAME
+   Starts small with rounded borders (scale 0.5), expands to 100% full viewport width on scroll
+   Matches authentic Casa Momo Graz (Images 1 - 5)
+   -------------------------------------------------------------------------- */
+.showcase-expand-section {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 0 clamp(80px, 12vh, 160px);
+}
+
+.showcase-expand-inner {
+  position: relative;
+  width: 100vw;
+  max-width: 100vw;
+  height: clamp(520px, 88vh, 880px);
+  border-radius: 56px;
+  overflow: hidden;
+  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.7);
+  transform: scale(0.5);
+  transform-origin: center center;
+  will-change: transform, border-radius;
+}
+
+.showcase-expand-img {
+  width: 100%;
+  height: 125%;
+  position: absolute;
+  top: -12%;
+  left: 0;
+  object-fit: cover;
+  display: block;
+  transform: scale(1.12);
+  will-change: transform;
+}
+
+@media (max-width: 768px) {
+  .showcase-expand-inner {
+    height: clamp(380px, 60vh, 520px);
+    border-radius: 32px;
+    transform: scale(0.72);
+  }
+}
+
+/* Authentic Casa Momo Showcase Badges (Bottom-Right Dual Pills) */
+.showcase-badge-group {
+  position: absolute;
+  bottom: clamp(20px, 3.2vw, 36px);
+  right: clamp(20px, 3.2vw, 36px);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 5;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  pointer-events: none;
+}
+
+.showcase-badge-group.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.showcase-badge-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 18px;
+  background-color: rgba(14, 13, 12, 0.78);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 240, 202, 0.2);
+  border-radius: 100px;
+  font-family: var(--font-sans);
+  font-size: clamp(12px, 0.95vw, 13.5px);
+  font-weight: 400;
+  color: #FFF0CA;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .showcase-badge-group {
+    bottom: 16px;
+    right: 16px;
+    gap: 6px;
+  }
+  .showcase-badge-pill {
+    padding: 6px 14px;
+    font-size: 11.5px;
+  }
+}
+
+.showcase-badge .badge-sep {
+  opacity: 0.4;
+}
+
+.showcase-badge .badge-title {
+  font-weight: 400;
+  opacity: 0.9;
+}
+
+/* Philosophy 3-Pillar Section */
+.philosophy-section {
+  padding: clamp(90px, 10vw, 150px) 0;
+  background-color: #0D0D0A;
+  color: var(--color-cream);
+  position: relative;
+  overflow: hidden;
+}
+
+.philosophy-header-block {
+  margin-bottom: clamp(40px, 6vw, 70px);
+}
+
+.philosophy-main-title {
+  font-family: var(--font-sans);
+  font-size: clamp(2.4rem, 5vw, 4.2rem);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: var(--color-cream);
+  line-height: 1.05;
+  margin: 0;
+}
+
+.pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(24px, 4vw, 48px);
+  border-top: 1px solid rgba(255, 240, 202, 0.15);
+  padding-top: clamp(36px, 5vw, 64px);
+}
+
+.pillar-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.pillar-number {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  color: #BC6F45;
+  margin-bottom: 16px;
+  line-height: 1;
+}
+
+.pillar-title {
+  font-family: var(--font-sans);
+  font-size: clamp(1.4rem, 2vw, 1.85rem);
+  font-weight: 500;
+  color: var(--color-cream);
+  margin-bottom: 14px;
+  letter-spacing: -0.01em;
+}
+
+.pillar-desc {
+  font-family: var(--font-sans);
+  font-size: 0.98rem;
+  line-height: 1.65;
+  color: rgba(255, 240, 202, 0.72);
+  margin: 0;
+  font-weight: 400;
+}
+
+@media (max-width: 900px) {
+  .pillars-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+}

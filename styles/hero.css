@@ -1,0 +1,263 @@
+/* --------------------------------------------------------------------------
+   5. HERO SECTION (FULLSCREEN VIDEO & EDITORIAL WORDMARKS)
+   Matches the authentic Casa Momo Graz layout with EL PACRE Regular typography
+   -------------------------------------------------------------------------- */
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 600px;
+  overflow: hidden;
+  background-color: #0E0D0C;
+  color: var(--color-cream);
+  display: flex;
+  align-items: stretch;
+  justify-content: stretch;
+}
+
+/* Background Video Player */
+.hero-video-wrapper {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.hero-bg-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  display: block;
+}
+
+/* Subtle Cinematic Scrim to ensure the cream typography has pristine contrast */
+.hero-video-scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(14, 13, 12, 0.28) 0%,
+    rgba(14, 13, 12, 0.08) 25%,
+    rgba(14, 13, 12, 0.12) 70%,
+    rgba(14, 13, 12, 0.45) 100%
+  );
+  pointer-events: none;
+}
+
+/* Overlay Grid containing all corner elements */
+.hero-overlay-grid {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  pointer-events: none; /* Children opt-in */
+}
+
+/* Top-Left: CASA Wordmark */
+.hero-wordmark-top {
+  position: absolute;
+  top: clamp(20px, 3.8vw, 48px);
+  left: clamp(24px, 4.2vw, 56px);
+  pointer-events: auto;
+  user-select: none;
+}
+
+/* Bottom-Right: MOMO Wordmark */
+.hero-wordmark-bottom {
+  position: absolute;
+  bottom: clamp(20px, 3.8vw, 48px);
+  right: clamp(24px, 4.2vw, 56px);
+  pointer-events: auto;
+  user-select: none;
+  text-align: right;
+}
+
+/* Giant Editorial Typography */
+.hero-word {
+  font-family: var(--font-display);
+  font-size: clamp(4.5rem, 12.5vw, 11.25rem);
+  line-height: 0.82;
+  letter-spacing: -0.01em;
+  color: var(--color-cream);
+  margin: 0;
+  padding: 0;
+  font-weight: 400;
+  text-shadow: 0 4px 28px rgba(0, 0, 0, 0.4);
+  display: flex;
+}
+
+.momo-word {
+  justify-content: flex-end;
+}
+
+.char-span {
+  display: inline-block;
+  will-change: transform, opacity, filter;
+  transition: transform 0.8s var(--ease-out-expo), opacity 0.8s ease, filter 0.8s ease;
+}
+
+
+
+/* CTA Buttons styled with authentic cream (#FFF0CA) pill */
+.hero-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: var(--color-cream);
+  color: #141312;
+  border-radius: var(--radius-full);
+  padding: 8px 18px;
+  font-family: var(--font-sans);
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  border: none;
+  cursor: pointer;
+  transition: transform var(--transition-fast), background-color var(--transition-fast), box-shadow var(--transition-fast);
+  white-space: nowrap;
+}
+
+.hero-cta-btn:hover {
+  background-color: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+.cta-arrow {
+  font-size: 14px;
+  line-height: 1;
+  transition: transform var(--transition-fast);
+}
+
+.hero-cta-btn:hover .cta-arrow {
+  transform: translate(2px, -2px);
+}
+
+
+
+/* Bottom-Left: Tagline & Main Book Button */
+.hero-bottom-left {
+  position: absolute;
+  bottom: clamp(24px, 4.2vw, 56px);
+  left: clamp(24px, 4.2vw, 56px);
+  pointer-events: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 18px;
+  max-width: 440px;
+}
+
+.hero-intro-text {
+  font-family: var(--font-sans);
+  font-size: clamp(1.25rem, 1.95vw, 1.8rem);
+  line-height: 1.25;
+  color: var(--color-cream);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  margin: 0;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.6);
+}
+
+.hero-cta-main {
+  padding: 12px 26px;
+  font-size: 13.5px;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
+}
+
+/* Scroll Cue centered at the bottom */
+.hero-scroll-cue {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  color: var(--color-cream);
+  z-index: 15;
+  text-decoration: none;
+  opacity: 0.75;
+  transition: opacity var(--transition-fast);
+}
+
+.hero-scroll-cue:hover {
+  opacity: 1;
+}
+
+.hero-scroll-cue .cue-label {
+  font-size: 9px;
+  letter-spacing: 0.25em;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.hero-scroll-cue .cue-line {
+  width: 1px;
+  height: 28px;
+  background-color: rgba(255, 240, 202, 0.35);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-scroll-cue .cue-dot {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 8px;
+  background-color: var(--color-cream);
+  animation: scrollDownCue 2s infinite ease-in-out;
+}
+
+@keyframes scrollDownCue {
+  0% { transform: translateY(-100%); }
+  50% { transform: translateY(120%); }
+  100% { transform: translateY(300%); }
+}
+
+/* --------------------------------------------------------------------------
+   RESPONSIVE HERO ADJUSTMENTS
+   -------------------------------------------------------------------------- */
+@media (max-width: 900px) {
+
+
+  .hero-word {
+    font-size: clamp(4.2rem, 20vw, 8.5rem);
+  }
+
+  .hero-intro-text {
+    font-size: 1.15rem;
+  }
+}
+
+@media (max-width: 580px) {
+  .hero-bottom-left {
+    bottom: 28px;
+    left: 20px;
+    right: 20px;
+    max-width: calc(100% - 40px);
+  }
+
+  .hero-wordmark-bottom {
+    bottom: 120px;
+    right: 20px;
+  }
+
+  .hero-word {
+    font-size: clamp(3.8rem, 24vw, 6.5rem);
+  }
+
+  .hero-scroll-cue {
+    display: none;
+  }
+}

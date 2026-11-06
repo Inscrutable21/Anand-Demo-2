@@ -1,0 +1,63 @@
+<!-- HERO SECTION (AUTHENTIC CASA MOMO FULLSCREEN VIDEO HERO) -->
+<section class="hero-section" id="hero">
+  
+  <!-- Fullscreen Ambient Background Video -->
+  <div class="hero-video-wrapper">
+    <video 
+      id="heroVideo"
+      class="hero-bg-video"
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="auto"
+      poster="assets/video-poster.jpg"
+      aria-label="Short film of Casa Momo designer apartments: warm interiors, Graz streets and natural light"
+    >
+      <source src="assets/casa-momo-teaser.mp4" type="video/mp4" media="(min-width: 768px)">
+      <source src="assets/casa-momo-teaser-mobile.mp4" type="video/mp4">
+    </video>
+    
+    <!-- Subtle Cinematic Scrim to ensure crisp contrast -->
+    <div class="hero-video-scrim"></div>
+  </div>
+
+  <!-- Hero Content Overlay Layout -->
+  <div class="hero-overlay-grid">
+    
+    <!-- Top-Left Giant Wordmark: CASA -->
+    <div class="hero-wordmark-top">
+      <h1 class="hero-word casa-word" data-word-reveal>
+        <span class="char-span">C</span><span class="char-span">A</span><span class="char-span">S</span><span class="char-span">A</span>
+      </h1>
+    </div>
+
+    <!-- Bottom-Left Tagline & CTA Button -->
+    <div class="hero-bottom-left" data-reveal>
+      <p class="hero-intro-text">
+        Boutique Apartments in the<br>
+        Historic Center of Graz
+      </p>
+      
+      <button class="hero-cta-btn hero-cta-main" id="heroBottomBookBtn">
+        <span>Book Your Stay</span>
+        <span class="cta-arrow">&#8599;</span>
+      </button>
+    </div>
+
+    <!-- Bottom-Right Giant Wordmark: MOMO -->
+    <div class="hero-wordmark-bottom">
+      <div class="hero-word momo-word" data-word-reveal>
+        <span class="char-span">M</span><span class="char-span">O</span><span class="char-span">M</span><span class="char-span">O</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Subtle Scroll Down Indicator -->
+  <a href="#statement" class="hero-scroll-cue" aria-label="Scroll to discover">
+    <span class="cue-label">SCROLL</span>
+    <div class="cue-line"><div class="cue-dot"></div></div>
+  </a>
+
+</section>
