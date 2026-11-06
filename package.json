@@ -3,9 +3,11 @@
   "version": "1.0.0",
   "private": true,
   "description": "Pixel-perfect modular replica of Casa Momo • Boutique Apartments in Graz",
+  "main": "server.js",
   "scripts": {
     "build": "node build.js",
     "dev": "node server.js",
+    "start": "node server.js",
     "watch": "node build.js --watch"
   },
   "keywords": [

@@ -1,14 +1,14 @@
 /**
- * CASA MOMO • ZERO-DEPENDENCY LOCAL DEV SERVER
- * Serves files at http://localhost:3000 with auto-rebuild on file changes.
+ * CASA MOMO • ZERO-DEPENDENCY SERVER & VERCEL ENTRYPOINT
+ * Handles both local development (node server.js)
+ * and Vercel Serverless Function deployments.
  */
 
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
-const { exec } = require('child_process');
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 const MIME_TYPES = {
   '.html': 'text/html; charset=utf-8',
@@ -27,42 +27,39 @@ const MIME_TYPES = {
   '.woff': 'font/woff'
 };
 
-// Rebuild on file changes in /sections, /styles, template.html
-function rebuild() {
-  exec('node build.js', (err, stdout, stderr) => {
-    if (err) console.error('Build error:', stderr);
-    else console.log(stdout.trim());
-  });
-}
+function handleRequest(req, res) {
+  let reqUrl = (req.url || '/').split('?')[0];
+  if (reqUrl === '/' || reqUrl === '') reqUrl = '/index.html';
 
-// Watchers
-['sections', 'styles', 'template.html'].forEach(item => {
-  const target = path.join(__dirname, item);
-  if (fs.existsSync(target)) {
-    fs.watch(target, { recursive: true }, (event, filename) => {
-      console.log(`[DEV] File change in ${filename}. Rebuilding...`);
-      rebuild();
-    });
+  // Search in public folder, then root folder
+  let filePath = path.join(__dirname, 'public', reqUrl);
+  if (!fs.existsSync(filePath)) {
+    filePath = path.join(__dirname, reqUrl);
   }
-});
 
-const server = http.createServer((req, res) => {
-  let reqUrl = req.url.split('?')[0];
-  if (reqUrl === '/') reqUrl = '/index.html';
+  // Fallback to index.html for SPA/clean URLs if not found
+  if (!fs.existsSync(filePath) && !path.extname(reqUrl)) {
+    filePath = path.join(__dirname, 'index.html');
+  }
 
-  const filePath = path.join(__dirname, reqUrl);
   const ext = path.extname(filePath).toLowerCase();
   const contentType = MIME_TYPES[ext] || 'application/octet-stream';
 
   fs.stat(filePath, (err, stats) => {
     if (err) {
-      if (err.code === 'ENOENT') {
-        res.writeHead(404, { 'Content-Type': 'text/plain' });
-        res.end('404 Not Found');
-      } else {
-        res.writeHead(500, { 'Content-Type': 'text/plain' });
-        res.end(`Server Error: ${err.code}`);
-      }
+      res.writeHead(404, { 'Content-Type': 'text/plain; charset=utf-8' });
+      res.end('404 Not Found');
+      return;
+    }
+
+    // CORS & Content Security Headers
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, HEAD, OPTIONS');
+    res.setHeader('X-Content-Type-Options', 'nosniff');
+
+    if (req.method === 'OPTIONS') {
+      res.writeHead(204);
+      res.end();
       return;
     }
 
@@ -75,44 +72,60 @@ const server = http.createServer((req, res) => {
         const end = parts[1] ? parseInt(parts[1], 10) : fileSize - 1;
         const chunksize = (end - start) + 1;
         const file = fs.createReadStream(filePath, { start, end });
-        const head = {
+        res.writeHead(206, {
           'Content-Range': `bytes ${start}-${end}/${fileSize}`,
           'Accept-Ranges': 'bytes',
           'Content-Length': chunksize,
           'Content-Type': 'video/mp4',
-        };
-        res.writeHead(206, head);
+        });
         file.pipe(res);
         return;
       } else {
-        const head = {
+        res.writeHead(200, {
           'Content-Length': fileSize,
           'Content-Type': 'video/mp4',
           'Accept-Ranges': 'bytes'
-        };
-        res.writeHead(200, head);
+        });
         fs.createReadStream(filePath).pipe(res);
         return;
       }
     }
 
-    fs.readFile(filePath, (err, content) => {
-      if (err) {
-        res.writeHead(500, { 'Content-Type': 'text/plain' });
-        res.end(`Server Error: ${err.code}`);
-      } else {
-        res.writeHead(200, { 'Content-Type': contentType });
-        res.end(content);
-      }
-    });
+    // Cache control
+    if (reqUrl.startsWith('/assets/')) {
+      res.setHeader('Cache-Control', 'public, max-age=31536000, immutable');
+    } else {
+      res.setHeader('Cache-Control', 'public, max-age=0, must-revalidate');
+    }
+
+    res.writeHead(200, { 'Content-Type': contentType });
+    fs.createReadStream(filePath).pipe(res);
   });
-});
+}
 
-server.listen(PORT, () => {
-  console.log(`\n======================================================`);
-  console.log(`CASA MOMO GRAZ • Dev Server Running!`);
-  console.log(`Local URL: http://localhost:${PORT}`);
-  console.log(`Watching /sections and /styles for live edits...`);
-  console.log(`======================================================\n`);
-});
+// Export for Vercel Serverless Function entrypoint
+module.exports = handleRequest;
 
+// Run standalone server if started via node server.js
+if (require.main === module) {
+  // Rebuild on file changes in /sections, /styles, template.html when run locally
+  const { exec } = require('child_process');
+  ['sections', 'styles', 'template.html'].forEach(item => {
+    const target = path.join(__dirname, item);
+    if (fs.existsSync(target)) {
+      fs.watch(target, { recursive: true }, (event, filename) => {
+        exec('node build.js', (err, stdout) => {
+          if (!err && stdout) console.log(stdout.trim());
+        });
+      });
+    }
+  });
+
+  const server = http.createServer(handleRequest);
+  server.listen(PORT, () => {
+    console.log(`\n======================================================`);
+    console.log(`CASA MOMO GRAZ • Dev Server Running!`);
+    console.log(`Local URL: http://localhost:${PORT}`);
+    console.log(`======================================================\n`);
+  });
+}
