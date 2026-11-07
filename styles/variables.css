@@ -17,11 +17,12 @@
   
   /* Color Palette */
   --color-cream: #FFF0CA;
+  --color-bg-dark: #0e1201;
   --bg-primary: #F7F5F0;
   --bg-secondary: #EFECE5;
   --bg-card: #FFFFFF;
-  --bg-dark: #151413;
-  --bg-dark-card: #1E1C1A;
+  --bg-dark: #0e1201;
+  --bg-dark-card: #0e1201;
   
   --text-primary: #1B1917;
   --text-muted: #78716C;

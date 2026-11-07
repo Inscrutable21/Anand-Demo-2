@@ -4,7 +4,7 @@
    -------------------------------------------------------------------------- */
 .reviews-section {
   padding: clamp(90px, 10vw, 150px) 0;
-  background-color: #0E0D0C;
+  background-color: var(--color-bg-dark, #0e1201);
   color: var(--color-cream);
   overflow: hidden;
   position: relative;

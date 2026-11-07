@@ -5,7 +5,7 @@
    -------------------------------------------------------------------------- */
 .apartments-section {
   padding: clamp(100px, 12vh, 160px) 0 clamp(90px, 12vw, 160px);
-  background-color: #0E0D0C;
+  background-color: var(--color-bg-dark, #0e1201);
   color: var(--color-cream);
   position: relative;
 }

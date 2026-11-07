@@ -4,7 +4,7 @@
    -------------------------------------------------------------------------- */
 .statement-section {
   padding: clamp(140px, 18vh, 220px) 0 clamp(80px, 12vh, 160px);
-  background-color: #0E0D0C;
+  background-color: var(--color-bg-dark, #0e1201);
   color: var(--color-cream);
   position: relative;
   overflow: hidden;
@@ -208,71 +208,169 @@
   opacity: 0.9;
 }
 
-/* Philosophy 3-Pillar Section */
+/* --------------------------------------------------------------------------
+   PHILOSOPHY 3-CARD SECTION
+   Matches authentic Casa Momo Graz reference layout and typography
+   -------------------------------------------------------------------------- */
 .philosophy-section {
-  padding: clamp(90px, 10vw, 150px) 0;
-  background-color: #0D0D0A;
-  color: var(--color-cream);
+  padding: clamp(80px, 10vw, 150px) 0 clamp(90px, 12vw, 160px);
+  background-color: var(--color-cream, #FFF0CA);
+  color: var(--color-bg-dark, #0e1201);
   position: relative;
   overflow: hidden;
+  z-index: 20;
+}
+
+.philosophy-container {
+  width: 100%;
+  max-width: 1680px;
+  margin: 0 auto;
+  padding: 0 clamp(16px, 2.8vw, 48px);
+  box-sizing: border-box;
 }
 
 .philosophy-header-block {
-  margin-bottom: clamp(40px, 6vw, 70px);
+  margin-bottom: clamp(32px, 4.5vw, 64px);
+  display: flex;
+  align-items: baseline;
+  justify-content: flex-start;
 }
 
 .philosophy-main-title {
   font-family: var(--font-sans);
-  font-size: clamp(2.4rem, 5vw, 4.2rem);
-  font-weight: 500;
-  letter-spacing: -0.02em;
-  color: var(--color-cream);
+  font-size: clamp(2.4rem, 5.2vw, 4.6rem);
+  font-weight: 400;
+  letter-spacing: -0.025em;
+  color: var(--color-bg-dark, #0e1201);
   line-height: 1.05;
   margin: 0;
 }
 
-.pillars-grid {
+.philosophy-cards-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: clamp(24px, 4vw, 48px);
-  border-top: 1px solid rgba(255, 240, 202, 0.15);
-  padding-top: clamp(36px, 5vw, 64px);
+  gap: clamp(12px, 1.6vw, 24px);
+  width: 100%;
 }
 
-.pillar-card {
+.philosophy-card {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  min-height: clamp(480px, 58vh, 600px);
+  padding: clamp(36px, 4.2vw, 56px);
+  border-radius: 4px;
+  box-sizing: border-box;
+  position: relative;
+  transition: transform 0.4s var(--ease-out-expo), box-shadow 0.4s var(--ease-out-expo);
 }
 
-.pillar-number {
-  font-family: var(--font-display);
-  font-size: 2.2rem;
+.philosophy-card:hover {
+  transform: translateY(-4px);
+}
+
+/* Card 1: Design (Deep Dark Olive) */
+.philosophy-card.card-design {
+  background-color: #0e1201;
   color: #BC6F45;
-  margin-bottom: 16px;
+}
+
+.philosophy-card.card-design .card-badge {
+  background: rgba(188, 111, 69, 0.16);
+  color: #BC6F45;
+}
+
+/* Card 2: Warmth (Terracotta Bronze) */
+.philosophy-card.card-warmth {
+  background-color: #BC6F45;
+  color: #FFF0CA;
+}
+
+.philosophy-card.card-warmth .card-badge {
+  background: rgba(255, 240, 202, 0.22);
+  color: #FFF0CA;
+}
+
+/* Card 3: Vintage (Butter Cream) */
+.philosophy-card.card-vintage {
+  background-color: #F5E6C8;
+  color: #0e1201;
+}
+
+.philosophy-card.card-vintage .card-badge {
+  background: rgba(14, 18, 1, 0.1);
+  color: #0e1201;
+}
+
+.card-top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.card-icon {
+  width: clamp(56px, 5.5vw, 76px);
+  height: clamp(56px, 5.5vw, 76px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-icon svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.card-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 4px;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 500;
   line-height: 1;
 }
 
-.pillar-title {
-  font-family: var(--font-sans);
-  font-size: clamp(1.4rem, 2vw, 1.85rem);
-  font-weight: 500;
-  color: var(--color-cream);
-  margin-bottom: 14px;
-  letter-spacing: -0.01em;
+.card-bottom-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: clamp(36px, 5vw, 64px);
 }
 
-.pillar-desc {
+.card-title {
   font-family: var(--font-sans);
-  font-size: 0.98rem;
-  line-height: 1.65;
-  color: rgba(255, 240, 202, 0.72);
-  margin: 0;
+  font-size: clamp(2.2rem, 3vw, 2.9rem);
   font-weight: 400;
+  letter-spacing: -0.025em;
+  line-height: 1.08;
+  color: inherit;
+  margin: 0;
 }
 
-@media (max-width: 900px) {
-  .pillars-grid {
+.card-desc {
+  font-family: var(--font-sans);
+  font-size: clamp(0.96rem, 1.1vw, 1.06rem);
+  line-height: 1.48;
+  letter-spacing: -0.01em;
+  color: inherit;
+  opacity: 0.95;
+  font-weight: 400;
+  margin: 0;
+}
+
+@media (max-width: 960px) {
+  .philosophy-cards-grid {
     grid-template-columns: 1fr;
-    gap: 36px;
+    gap: 18px;
+  }
+  .philosophy-card {
+    min-height: 400px;
+    padding: 36px 28px;
   }
 }

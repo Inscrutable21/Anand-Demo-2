@@ -7,7 +7,7 @@
    -------------------------------------------------------------------------- */
 .host-section {
   padding: clamp(100px, 14vh, 180px) 0 clamp(80px, 12vh, 140px);
-  background-color: #0E0D0C;
+  background-color: var(--color-bg-dark, #0e1201);
   color: var(--color-cream);
   position: relative;
   overflow: hidden;
@@ -67,7 +67,7 @@
   align-items: center;
   gap: 8px;
   background-color: #FFF0CA;
-  color: #0E0D0C;
+  color: #0e1201;
   border: none;
   border-radius: 100px;
   padding: 10px 22px;
