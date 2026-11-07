@@ -441,6 +441,112 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  // =========================================================================
+  // 7d. 3D TUNNEL PARALLAX: "FEEL AT HOME. BEAUTIFULLY."
+  // Floating furniture items fly in from 3D depth as words cascade up
+  // =========================================================================
+  const feelSection = document.getElementById('feelAtHome');
+  const feelSticky = document.getElementById('feelSticky');
+
+  if (feelSection && feelSticky && typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+    const feelItems = [
+      { id: '#feelItemArmchair', startScale: 0.15, endScale: 1.08, startX: '-4vw', endX: '-22vw', startY: '-2.8vh', endY: '-14vh', startRot: -3, endRot: -7 },
+      { id: '#feelItemLamp',     startScale: 0.13, endScale: 1.02, startX: '3.8vw', endX: '18vw',   startY: '2.5vh',  endY: '9vh',   startRot: 2.5, endRot: 4.5 },
+      { id: '#feelItemCushion',  startScale: 0.11, endScale: 0.90, startX: '-2.7vw', endX: '-9vw',  startY: '2.8vh',  endY: '11vh',  startRot: 2,   endRot: 5.5 },
+      { id: '#feelItemJug',      startScale: 0.10, endScale: 0.85, startX: '2.7vw',  endX: '5vw',   startY: '-2.5vh', endY: '-6vh',  startRot: -2,  endRot: -4 },
+      { id: '#feelItemVase',     startScale: 0.09, endScale: 0.82, startX: '-2.8vw', endX: '9vw',   startY: '-0.3vh', endY: '-8vh',  startRot: -2.5, endRot: -3 },
+      { id: '#feelItemRadio',    startScale: 0.08, endScale: 0.74, startX: '1.6vw',  endX: '-4vw',  startY: '-2.5vh', endY: '1vh',   startRot: 3,   endRot: 6 },
+      { id: '#feelItemCandle',   startScale: 0.07, endScale: 0.68, startX: '-1.3vw', endX: '-14vw', startY: '-2.3vh', endY: '-3vh',  startRot: 1.5, endRot: 3 },
+      { id: '#feelItemDish',     startScale: 0.07, endScale: 0.64, startX: '2.1vw',  endX: '22vw',  startY: '0.4vh',  endY: '-5vh',  startRot: -3,  endRot: -5 }
+    ];
+
+    // Master scrub timeline with PINNING: screen stays stuck on Feel at Home while scrolling down
+    const feelTl = gsap.timeline({
+      scrollTrigger: {
+        trigger: '#feelAtHome',
+        start: 'top top',
+        end: '+=400%',
+        pin: true,
+        pinSpacing: true,
+        anticipatePin: 1,
+        scrub: 1.2,
+        invalidateOnRefresh: true
+      }
+    });
+
+    // 1. Initial state setup: all objects start deep in perspective
+    feelItems.forEach((item) => {
+      gsap.set(item.id, {
+        autoAlpha: 0,
+        scale: item.startScale,
+        x: item.startX,
+        y: item.startY,
+        rotation: item.startRot,
+        transformOrigin: 'center center'
+      });
+    });
+
+    // 2. Animate items flying forward in 3D perspective as user scrolls down
+    feelItems.forEach((item, idx) => {
+      // Fade in early so objects are visible emerging from distance
+      feelTl.to(item.id, {
+        autoAlpha: 1,
+        duration: 0.20,
+        ease: 'power1.in'
+      }, 0.02 + idx * 0.012);
+
+      // Zoom outward to final prominent position
+      feelTl.to(item.id, {
+        scale: item.endScale,
+        x: item.endX,
+        y: item.endY,
+        rotation: item.endRot,
+        duration: 0.75,
+        ease: 'power2.out'
+      }, 0.05);
+    });
+
+    // 3. Staggered Masked Typography: "Feel at Home. Beautifully."
+    // Initial states: masked below
+    gsap.set('.feel-word', { yPercent: 115, rotation: 8 });
+
+    // Word 1: "Feel"
+    feelTl.to('#feelWord1', {
+      yPercent: 0,
+      rotation: 0,
+      duration: 0.22,
+      ease: 'power2.out'
+    }, 0.16);
+
+    // Word 2: "at"
+    feelTl.to('#feelWord2', {
+      yPercent: 0,
+      rotation: 0,
+      duration: 0.20,
+      ease: 'power2.out'
+    }, 0.28);
+
+    // Word 3: "Home."
+    feelTl.to('#feelWord3', {
+      yPercent: 0,
+      rotation: 0,
+      duration: 0.22,
+      ease: 'power2.out'
+    }, 0.42);
+
+    // Word 4: "Beautifully."
+    feelTl.to('#feelWord4', {
+      yPercent: 0,
+      rotation: 0,
+      duration: 0.24,
+      ease: 'power2.out'
+    }, 0.56);
+
+    // The full composition (all 8 objects + full headline) remains fully assembled
+    // and holds prominently on screen from progress 0.70 to 1.0!
+    // As the user scrolls past 1.0, the pinned section naturally unpins and scrolls away into Philosophy.
+  }
+
   // Fade Up Elements
   gsap.utils.toArray('[data-fade-up]').forEach((el) => {
     gsap.fromTo(el,

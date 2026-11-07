@@ -49,6 +49,7 @@ function buildCSS() {
     'philosophy.css',
     'apartments.css',
     'host.css',
+    'feel-at-home.css',
     'graz-guide.css',
     'reviews.css',
     'footer.css',

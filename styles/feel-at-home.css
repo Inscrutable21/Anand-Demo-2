@@ -1,0 +1,235 @@
+/* ==========================================================================
+   FEEL AT HOME. BEAUTIFULLY. • 3D TUNNEL PARALLAX STYLES
+   Exact replica of Casa Momo Graz 3D perspective scroll experience.
+   Section is pinned (stuck) via GSAP ScrollTrigger while scrolling down.
+   ========================================================================== */
+
+.feel-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  background-color: var(--color-bg-dark, #0E0D0C);
+  z-index: 15;
+  overflow: hidden;
+}
+
+.feel-sticky-viewport {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #0E0D0C;
+  z-index: 20;
+}
+
+/* Subtle Architectural Linework Background */
+.feel-blueprint-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.12;
+  color: var(--color-accent, #FFF0CA);
+}
+
+.feel-blueprint-bg svg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  overflow: visible;
+}
+
+/* 3D Flying Cutout Stage */
+.feel-stage {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 10;
+  perspective: 1200px;
+  transform-style: preserve-3d;
+}
+
+/* Base item wrapper placed dead-center */
+.feel-item {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  will-change: transform, opacity;
+  transform-origin: center center;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.feel-cutout-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  user-select: none;
+  filter: drop-shadow(0 25px 40px rgba(0, 0, 0, 0.7));
+}
+
+/* 1. Armchair: Top Left Foreground */
+.feel-item-armchair {
+  width: 25.5vw;
+  height: 23.7vw;
+  margin-left: -12.75vw;
+  margin-top: -11.85vw;
+  z-index: 1000;
+}
+
+/* 2. Turned Table Lamp: Right Foreground */
+.feel-item-lamp {
+  width: 21vw;
+  height: 25.3vw;
+  margin-left: -10.5vw;
+  margin-top: -12.65vw;
+  z-index: 905;
+}
+
+/* 3. Embroidered Cushion: Center Left */
+.feel-item-cushion {
+  width: 20vw;
+  height: 20vw;
+  margin-left: -10vw;
+  margin-top: -10vw;
+  z-index: 810;
+}
+
+/* 4. Ceramic Jug: Center Midground */
+.feel-item-jug {
+  width: 22vw;
+  height: 22vw;
+  margin-left: -11vw;
+  margin-top: -11vw;
+  z-index: 715;
+}
+
+/* 5. Flower Vase with Lilies: Center Right */
+.feel-item-vase {
+  width: 21.3vw;
+  height: 21.3vw;
+  margin-left: -10.65vw;
+  margin-top: -10.65vw;
+  z-index: 620;
+}
+
+/* 6. Vintage Wood Accent Box / Radio: Midground Left */
+.feel-item-radio {
+  width: 24.6vw;
+  height: 24.6vw;
+  margin-left: -12.3vw;
+  margin-top: -12.3vw;
+  z-index: 525;
+}
+
+/* 7. Brass Candleholder: Background Left */
+.feel-item-candle {
+  width: 16vw;
+  height: 24vw;
+  margin-left: -8vw;
+  margin-top: -12vw;
+  z-index: 430;
+}
+
+/* 8. Sculptural Ceramic Dish: Background Right */
+.feel-item-dish {
+  width: 19.5vw;
+  height: 25.7vw;
+  margin-left: -9.75vw;
+  margin-top: -12.85vw;
+  z-index: 335;
+}
+
+/* Headline Overlay with Difference Blend Mode */
+.feel-headline-wrapper {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  pointer-events: none;
+  padding: 0 4vw;
+  mix-blend-mode: difference;
+}
+
+.feel-headline {
+  font-family: var(--font-sans, 'Plus Jakarta Sans', sans-serif);
+  font-size: clamp(44px, 6.5vw, 100px);
+  line-height: 1.05;
+  letter-spacing: -0.028em;
+  font-weight: 400;
+  color: var(--color-accent, #FFF0CA);
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  column-gap: 0.28em;
+  text-align: center;
+  user-select: none;
+}
+
+/* Masked Word Reveal */
+.feel-word-mask {
+  display: inline-flex;
+  overflow: hidden;
+  padding-bottom: 0.14em;
+  margin-bottom: -0.14em;
+}
+
+.feel-word {
+  display: inline-block;
+  white-space: pre;
+  transform-origin: 0% 100%;
+  will-change: transform;
+  transform: translateY(115%) rotate(8deg);
+}
+
+/* Responsive adjustments for tablet & mobile */
+@media (max-width: 900px) {
+  .feel-headline {
+    font-size: clamp(38px, 8.5vw, 68px);
+    column-gap: 0.22em;
+  }
+  
+  .feel-item-armchair {
+    width: 38vw;
+    height: 35vw;
+    margin-left: -19vw;
+    margin-top: -17.5vw;
+  }
+  
+  .feel-item-lamp {
+    width: 32vw;
+    height: 38vw;
+    margin-left: -16vw;
+    margin-top: -19vw;
+  }
+
+  .feel-item-cushion {
+    width: 30vw;
+    height: 30vw;
+    margin-left: -15vw;
+    margin-top: -15vw;
+  }
+}
+
+@media (max-width: 600px) {
+  .feel-headline {
+    font-size: clamp(32px, 10vw, 52px);
+    letter-spacing: -0.02em;
+  }
+}
