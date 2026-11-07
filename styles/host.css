@@ -23,13 +23,15 @@
 
 .host-headline {
   font-family: var(--font-sans);
-  font-size: clamp(3.6rem, 9.2vw, 8.5rem);
+  font-size: clamp(3.8rem, 9.5vw, 8.5rem);
   line-height: 1.0;
-  letter-spacing: -0.025em;
+  letter-spacing: -0.03em;
   font-weight: 400;
   color: #FFF0CA;
   margin: 0 0 clamp(40px, 6vh, 70px) 0;
   user-select: none;
+  opacity: 1 !important;
+  visibility: visible !important;
 }
 
 .host-grid {

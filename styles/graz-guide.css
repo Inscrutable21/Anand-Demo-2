@@ -22,12 +22,14 @@
 
 .locations-headline {
   font-family: var(--font-sans);
-  font-size: clamp(3rem, 7vw, 6.5rem);
-  font-weight: 500;
-  letter-spacing: -0.025em;
-  color: var(--color-cream);
-  line-height: 0.98;
+  font-size: clamp(3.8rem, 9.2vw, 8.5rem);
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  color: #FFF0CA;
+  line-height: 1.0;
   margin: 0 0 28px;
+  opacity: 1 !important;
+  visibility: visible !important;
 }
 
 .locations-lead-text {

@@ -238,12 +238,14 @@
 
 .philosophy-main-title {
   font-family: var(--font-sans);
-  font-size: clamp(2.4rem, 5.2vw, 4.6rem);
+  font-size: clamp(3.8rem, 9.2vw, 8.5rem);
   font-weight: 400;
-  letter-spacing: -0.025em;
-  color: var(--color-bg-dark, #0e1201);
-  line-height: 1.05;
+  letter-spacing: -0.03em;
+  color: #FFF0CA;
+  line-height: 1.0;
   margin: 0;
+  opacity: 1 !important;
+  visibility: visible !important;
 }
 
 .philosophy-cards-grid {

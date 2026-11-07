@@ -154,21 +154,11 @@ img {
 .split-word {
   display: inline-block;
   will-change: transform, opacity;
-  transform: translateY(115%) rotate(5deg);
-  opacity: 0;
   transform-origin: left bottom;
 }
 
 .reveal-p {
-  opacity: 0;
-  transform: translateY(28px);
   will-change: transform, opacity;
-  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.reveal-p.is-revealed {
-  opacity: 1;
-  transform: translateY(0);
 }
 
 /* --- File: styles/cursor.css --- */
@@ -1196,12 +1186,14 @@ img {
 
 .philosophy-main-title {
   font-family: var(--font-sans);
-  font-size: clamp(2.4rem, 5.2vw, 4.6rem);
+  font-size: clamp(3.8rem, 9.2vw, 8.5rem);
   font-weight: 400;
-  letter-spacing: -0.025em;
-  color: var(--color-bg-dark, #0e1201);
-  line-height: 1.05;
+  letter-spacing: -0.03em;
+  color: #FFF0CA;
+  line-height: 1.0;
   margin: 0;
+  opacity: 1 !important;
+  visibility: visible !important;
 }
 
 .philosophy-cards-grid {
@@ -1354,52 +1346,24 @@ img {
   box-sizing: border-box;
 }
 
-/* Header row with 9 Apartments counter & Category filter */
+/* Header row with 9 Apartments headline */
 .apartments-header-row {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  gap: 32px;
-  margin-bottom: clamp(48px, 6vw, 80px);
-  flex-wrap: wrap;
-}
-
-.apt-badge-title-group {
-  display: flex;
-  align-items: center;
-  gap: 24px;
-  flex-wrap: wrap;
-}
-
-.apt-count-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background-color: rgba(22, 21, 19, 0.65);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border: 1px solid rgba(255, 240, 202, 0.18);
-  border-radius: var(--radius-full);
-  padding: 7px 18px;
-  font-family: var(--font-sans);
-  font-size: 13px;
-  color: var(--color-cream);
-  letter-spacing: 0.03em;
-}
-
-.apt-count-pill .count-num {
-  color: #BC6F45;
-  font-weight: 600;
+  justify-content: flex-start;
+  align-items: baseline;
+  margin-bottom: clamp(40px, 6vw, 70px);
 }
 
 .apartments-heading {
   font-family: var(--font-sans);
-  font-size: clamp(2.4rem, 5vw, 4.5rem);
-  font-weight: 500;
-  letter-spacing: -0.025em;
-  color: var(--color-cream);
-  line-height: 1;
+  font-size: clamp(3.8rem, 9.2vw, 8.5rem);
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  color: #FFF0CA;
+  line-height: 1.0;
   margin: 0;
+  opacity: 1 !important;
+  visibility: visible !important;
 }
 
 /* Category Filter Pills */
@@ -1638,13 +1602,15 @@ img {
 
 .host-headline {
   font-family: var(--font-sans);
-  font-size: clamp(3.6rem, 9.2vw, 8.5rem);
+  font-size: clamp(3.8rem, 9.5vw, 8.5rem);
   line-height: 1.0;
-  letter-spacing: -0.025em;
+  letter-spacing: -0.03em;
   font-weight: 400;
   color: #FFF0CA;
   margin: 0 0 clamp(40px, 6vh, 70px) 0;
   user-select: none;
+  opacity: 1 !important;
+  visibility: visible !important;
 }
 
 .host-grid {
@@ -2061,12 +2027,14 @@ img {
 
 .locations-headline {
   font-family: var(--font-sans);
-  font-size: clamp(3rem, 7vw, 6.5rem);
-  font-weight: 500;
-  letter-spacing: -0.025em;
-  color: var(--color-cream);
-  line-height: 0.98;
+  font-size: clamp(3.8rem, 9.2vw, 8.5rem);
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  color: #FFF0CA;
+  line-height: 1.0;
   margin: 0 0 28px;
+  opacity: 1 !important;
+  visibility: visible !important;
 }
 
 .locations-lead-text {
