@@ -1920,37 +1920,87 @@ img {
 
 /* Responsive adjustments for tablet & mobile */
 @media (max-width: 900px) {
+  .feel-section {
+    height: 100vh;
+    height: 100dvh;
+  }
+
   .feel-headline {
-    font-size: clamp(38px, 8.5vw, 68px);
+    font-size: clamp(32px, 8.5vw, 60px);
     column-gap: 0.22em;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 92vw;
+    text-align: center;
   }
   
   .feel-item-armchair {
-    width: 38vw;
-    height: 35vw;
-    margin-left: -19vw;
-    margin-top: -17.5vw;
+    width: 44vw;
+    height: 41vw;
+    margin-left: -22vw;
+    margin-top: -20.5vw;
   }
   
   .feel-item-lamp {
-    width: 32vw;
-    height: 38vw;
-    margin-left: -16vw;
-    margin-top: -19vw;
+    width: 36vw;
+    height: 43vw;
+    margin-left: -18vw;
+    margin-top: -21.5vw;
   }
 
   .feel-item-cushion {
-    width: 30vw;
-    height: 30vw;
-    margin-left: -15vw;
-    margin-top: -15vw;
+    width: 34vw;
+    height: 34vw;
+    margin-left: -17vw;
+    margin-top: -17vw;
+  }
+
+  .feel-item-jug {
+    width: 32vw;
+    height: 32vw;
+    margin-left: -16vw;
+    margin-top: -16vw;
+  }
+
+  .feel-item-vase {
+    width: 32vw;
+    height: 42vw;
+    margin-left: -16vw;
+    margin-top: -21vw;
+  }
+
+  .feel-item-radio {
+    width: 36vw;
+    height: 36vw;
+    margin-left: -18vw;
+    margin-top: -18vw;
+  }
+
+  .feel-item-candle {
+    width: 26vw;
+    height: 38vw;
+    margin-left: -13vw;
+    margin-top: -19vw;
+  }
+
+  .feel-item-dish {
+    width: 32vw;
+    height: 42vw;
+    margin-left: -16vw;
+    margin-top: -21vw;
   }
 }
 
 @media (max-width: 600px) {
   .feel-headline {
-    font-size: clamp(32px, 10vw, 52px);
+    font-size: clamp(26px, 8vw, 38px);
     letter-spacing: -0.02em;
+    line-height: 1.15;
+    row-gap: 0.15em;
+  }
+
+  .feel-word-mask {
+    padding: 0 0.05em;
   }
 }
 

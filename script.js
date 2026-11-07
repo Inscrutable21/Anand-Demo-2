@@ -5,17 +5,28 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
+  // Configure ScrollTrigger for rock-solid mobile performance
+  if (typeof ScrollTrigger !== 'undefined') {
+    try {
+      ScrollTrigger.config({ ignoreMobileResize: true });
+    } catch (e) {
+      console.warn('ScrollTrigger config warning:', e);
+    }
+  }
+
   // =========================================================================
   // 1. LENIS SMOOTH SCROLL & GSAP SYNC
   // =========================================================================
   let lenis;
+  const isTouchDevice = 'ontouchstart' in window || (navigator.maxTouchPoints > 0) || window.innerWidth <= 768;
+
   try {
     lenis = new Lenis({
-      duration: 1.15,
+      duration: isTouchDevice ? 0.75 : 1.15,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       smoothWheel: true,
       wheelMultiplier: 0.9,
-      touchMultiplier: 1.5,
+      syncTouch: false,
     });
 
     lenis.on('scroll', ScrollTrigger.update);
@@ -450,102 +461,103 @@ document.addEventListener('DOMContentLoaded', () => {
   const feelSticky = document.getElementById('feelSticky');
 
   if (feelSection && feelSticky && typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+    const isMobileFeel = window.innerWidth <= 768;
+
     // 8 Cutout Objects with custom 3D flight paths:
-    // They arrive strictly ONE AFTER ANOTHER in sequence (0.02 -> 0.72)
-    // Then fly past camera as we enter into the next section (0.82 -> 1.00)
+    // Tailored for desktop vs mobile portrait proportions
     const feelItems = [
       // 1. Armchair: First arrival (top-left)
       { 
         id: '#feelItemArmchair', 
-        startScale: 0.08, endScale: 1.08, 
-        startX: '-4vw', endX: '-22vw', 
-        startY: '-2.8vh', endY: '-14vh', 
+        startScale: 0.08, endScale: isMobileFeel ? 1.15 : 1.08, 
+        startX: isMobileFeel ? '-5vw' : '-4vw', endX: isMobileFeel ? '-28vw' : '-22vw', 
+        startY: isMobileFeel ? '-3vh' : '-2.8vh', endY: isMobileFeel ? '-22vh' : '-14vh', 
         startRot: -3, endRot: -7,
         enterStart: 0.02, enterEnd: 0.18,
-        exitX: '-50vw', exitY: '-36vh', exitScale: 2.6
+        exitX: isMobileFeel ? '-65vw' : '-50vw', exitY: isMobileFeel ? '-42vh' : '-36vh', exitScale: 2.6
       },
       // 2. Table Lamp: Second arrival (right)
       { 
         id: '#feelItemLamp',     
-        startScale: 0.08, endScale: 1.02, 
-        startX: '3.8vw', endX: '18vw',   
-        startY: '2.5vh', endY: '9vh',   
+        startScale: 0.08, endScale: isMobileFeel ? 1.12 : 1.02, 
+        startX: isMobileFeel ? '5vw' : '3.8vw', endX: isMobileFeel ? '28vw' : '18vw',   
+        startY: isMobileFeel ? '3vh' : '2.5vh', endY: isMobileFeel ? '18vh' : '9vh',   
         startRot: 2.5, endRot: 4.5,
         enterStart: 0.10, enterEnd: 0.26,
-        exitX: '50vw', exitY: '32vh', exitScale: 2.4
+        exitX: isMobileFeel ? '65vw' : '50vw', exitY: isMobileFeel ? '38vh' : '32vh', exitScale: 2.4
       },
       // 3. Embroidered Cushion: Third arrival (center-left)
       { 
         id: '#feelItemCushion',  
-        startScale: 0.07, endScale: 0.90, 
-        startX: '-2.7vw', endX: '-9vw',  
-        startY: '2.8vh', endY: '11vh',  
+        startScale: 0.07, endScale: isMobileFeel ? 1.05 : 0.90, 
+        startX: isMobileFeel ? '-3vw' : '-2.7vw', endX: isMobileFeel ? '-25vw' : '-9vw',  
+        startY: isMobileFeel ? '3vh' : '2.8vh', endY: isMobileFeel ? '20vh' : '11vh',  
         startRot: 2, endRot: 5.5,
         enterStart: 0.18, enterEnd: 0.34,
-        exitX: '-30vw', exitY: '38vh', exitScale: 2.1
+        exitX: isMobileFeel ? '-45vw' : '-30vw', exitY: isMobileFeel ? '45vh' : '38vh', exitScale: 2.1
       },
       // 4. Ceramic Jug: Fourth arrival (midground center)
       { 
         id: '#feelItemJug',      
-        startScale: 0.06, endScale: 0.85, 
-        startX: '2.7vw', endX: '5vw',   
-        startY: '-2.5vh', endY: '-6vh',  
+        startScale: 0.06, endScale: isMobileFeel ? 0.95 : 0.85, 
+        startX: isMobileFeel ? '3vw' : '2.7vw', endX: isMobileFeel ? '12vw' : '5vw',   
+        startY: isMobileFeel ? '-3vh' : '-2.5vh', endY: isMobileFeel ? '-15vh' : '-6vh',  
         startRot: -2, endRot: -4,
         enterStart: 0.26, enterEnd: 0.42,
-        exitX: '20vw', exitY: '-30vh', exitScale: 1.9
+        exitX: isMobileFeel ? '25vw' : '20vw', exitY: isMobileFeel ? '-35vh' : '-30vh', exitScale: 1.9
       },
       // 5. Flower Vase with Lilies: Fifth arrival (center-right)
       { 
         id: '#feelItemVase',     
-        startScale: 0.06, endScale: 0.82, 
-        startX: '-2.8vw', endX: '9vw',   
-        startY: '-0.3vh', endY: '-8vh',  
+        startScale: 0.06, endScale: isMobileFeel ? 0.95 : 0.82, 
+        startX: isMobileFeel ? '-3vw' : '-2.8vw', endX: isMobileFeel ? '25vw' : '9vw',   
+        startY: isMobileFeel ? '-1vh' : '-0.3vh', endY: isMobileFeel ? '-22vh' : '-8vh',  
         startRot: -2.5, endRot: -3,
         enterStart: 0.34, enterEnd: 0.50,
-        exitX: '32vw', exitY: '-32vh', exitScale: 1.9
+        exitX: isMobileFeel ? '45vw' : '32vw', exitY: isMobileFeel ? '-40vh' : '-32vh', exitScale: 1.9
       },
       // 6. Vintage Wood Radio: Sixth arrival (midground left)
       { 
         id: '#feelItemRadio',    
-        startScale: 0.05, endScale: 0.74, 
-        startX: '1.6vw', endX: '-4vw',  
-        startY: '-2.5vh', endY: '1vh',   
+        startScale: 0.05, endScale: isMobileFeel ? 0.88 : 0.74, 
+        startX: isMobileFeel ? '2vw' : '1.6vw', endX: isMobileFeel ? '-18vw' : '-4vw',  
+        startY: isMobileFeel ? '-3vh' : '-2.5vh', endY: isMobileFeel ? '-6vh' : '1vh',   
         startRot: 3, endRot: 6,
         enterStart: 0.42, enterEnd: 0.58,
-        exitX: '-25vw', exitY: '15vh', exitScale: 1.8
+        exitX: isMobileFeel ? '-35vw' : '-25vw', exitY: isMobileFeel ? '20vh' : '15vh', exitScale: 1.8
       },
       // 7. Brass Candlestick: Seventh arrival (background left)
       { 
         id: '#feelItemCandle',   
-        startScale: 0.05, endScale: 0.68, 
-        startX: '-1.3vw', endX: '-14vw', 
-        startY: '-2.3vh', endY: '-3vh',  
+        startScale: 0.05, endScale: isMobileFeel ? 0.85 : 0.68, 
+        startX: isMobileFeel ? '-2vw' : '-1.3vw', endX: isMobileFeel ? '-28vw' : '-14vw', 
+        startY: isMobileFeel ? '-2vh' : '-2.3vh', endY: isMobileFeel ? '5vh' : '-3vh',  
         startRot: 1.5, endRot: 3,
         enterStart: 0.50, enterEnd: 0.64,
-        exitX: '-35vw', exitY: '-15vh', exitScale: 1.7
+        exitX: isMobileFeel ? '-48vw' : '-35vw', exitY: isMobileFeel ? '-15vh' : '-15vh', exitScale: 1.7
       },
       // 8. Sculptural Dish: Eighth arrival (background right)
       { 
         id: '#feelItemDish',     
-        startScale: 0.05, endScale: 0.64, 
-        startX: '2.1vw', endX: '22vw',  
-        startY: '0.4vh', endY: '-5vh',  
+        startScale: 0.05, endScale: isMobileFeel ? 0.85 : 0.64, 
+        startX: isMobileFeel ? '3vw' : '2.1vw', endX: isMobileFeel ? '28vw' : '22vw',  
+        startY: isMobileFeel ? '1vh' : '0.4vh', endY: isMobileFeel ? '-4vh' : '-5vh',  
         startRot: -3, endRot: -5,
         enterStart: 0.58, enterEnd: 0.72,
-        exitX: '42vw', exitY: '-22vh', exitScale: 1.6
+        exitX: isMobileFeel ? '52vw' : '42vw', exitY: isMobileFeel ? '-25vh' : '-22vh', exitScale: 1.6
       }
     ];
 
-    // Master scrub timeline pinned for 420% scroll depth
+    // Master scrub timeline pinned: 240% scroll on mobile, 420% on desktop
     const feelTl = gsap.timeline({
       scrollTrigger: {
         trigger: '#feelAtHome',
         start: 'top top',
-        end: '+=420%',
+        end: isMobileFeel ? '+=240%' : '+=420%',
         pin: true,
         pinSpacing: true,
         anticipatePin: 1,
-        scrub: 1.2,
+        scrub: isMobileFeel ? 0.6 : 1.2,
         invalidateOnRefresh: true
       }
     });
@@ -1318,6 +1330,13 @@ document.addEventListener('DOMContentLoaded', () => {
       closeBookingModal();
       closeLegalModal();
       closeMobileMenu();
+    }
+  });
+
+  // Mobile / Image Load Refresh: Ensure all pinned ScrollTriggers have exact heights
+  window.addEventListener('load', () => {
+    if (typeof ScrollTrigger !== 'undefined') {
+      ScrollTrigger.refresh();
     }
   });
 
