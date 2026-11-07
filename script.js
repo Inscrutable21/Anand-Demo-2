@@ -443,29 +443,105 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // =========================================================================
   // 7d. 3D TUNNEL PARALLAX: "FEEL AT HOME. BEAUTIFULLY."
-  // Floating furniture items fly in from 3D depth as words cascade up
+  // Objects fly in ONE AFTER ANOTHER in sequence as you scroll down,
+  // then camera pushes forward like entering through a doorway into Philosophy
   // =========================================================================
   const feelSection = document.getElementById('feelAtHome');
   const feelSticky = document.getElementById('feelSticky');
 
   if (feelSection && feelSticky && typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+    // 8 Cutout Objects with custom 3D flight paths:
+    // They arrive strictly ONE AFTER ANOTHER in sequence (0.02 -> 0.72)
+    // Then fly past camera as we enter into the next section (0.82 -> 1.00)
     const feelItems = [
-      { id: '#feelItemArmchair', startScale: 0.15, endScale: 1.08, startX: '-4vw', endX: '-22vw', startY: '-2.8vh', endY: '-14vh', startRot: -3, endRot: -7 },
-      { id: '#feelItemLamp',     startScale: 0.13, endScale: 1.02, startX: '3.8vw', endX: '18vw',   startY: '2.5vh',  endY: '9vh',   startRot: 2.5, endRot: 4.5 },
-      { id: '#feelItemCushion',  startScale: 0.11, endScale: 0.90, startX: '-2.7vw', endX: '-9vw',  startY: '2.8vh',  endY: '11vh',  startRot: 2,   endRot: 5.5 },
-      { id: '#feelItemJug',      startScale: 0.10, endScale: 0.85, startX: '2.7vw',  endX: '5vw',   startY: '-2.5vh', endY: '-6vh',  startRot: -2,  endRot: -4 },
-      { id: '#feelItemVase',     startScale: 0.09, endScale: 0.82, startX: '-2.8vw', endX: '9vw',   startY: '-0.3vh', endY: '-8vh',  startRot: -2.5, endRot: -3 },
-      { id: '#feelItemRadio',    startScale: 0.08, endScale: 0.74, startX: '1.6vw',  endX: '-4vw',  startY: '-2.5vh', endY: '1vh',   startRot: 3,   endRot: 6 },
-      { id: '#feelItemCandle',   startScale: 0.07, endScale: 0.68, startX: '-1.3vw', endX: '-14vw', startY: '-2.3vh', endY: '-3vh',  startRot: 1.5, endRot: 3 },
-      { id: '#feelItemDish',     startScale: 0.07, endScale: 0.64, startX: '2.1vw',  endX: '22vw',  startY: '0.4vh',  endY: '-5vh',  startRot: -3,  endRot: -5 }
+      // 1. Armchair: First arrival (top-left)
+      { 
+        id: '#feelItemArmchair', 
+        startScale: 0.08, endScale: 1.08, 
+        startX: '-4vw', endX: '-22vw', 
+        startY: '-2.8vh', endY: '-14vh', 
+        startRot: -3, endRot: -7,
+        enterStart: 0.02, enterEnd: 0.18,
+        exitX: '-50vw', exitY: '-36vh', exitScale: 2.6
+      },
+      // 2. Table Lamp: Second arrival (right)
+      { 
+        id: '#feelItemLamp',     
+        startScale: 0.08, endScale: 1.02, 
+        startX: '3.8vw', endX: '18vw',   
+        startY: '2.5vh', endY: '9vh',   
+        startRot: 2.5, endRot: 4.5,
+        enterStart: 0.10, enterEnd: 0.26,
+        exitX: '50vw', exitY: '32vh', exitScale: 2.4
+      },
+      // 3. Embroidered Cushion: Third arrival (center-left)
+      { 
+        id: '#feelItemCushion',  
+        startScale: 0.07, endScale: 0.90, 
+        startX: '-2.7vw', endX: '-9vw',  
+        startY: '2.8vh', endY: '11vh',  
+        startRot: 2, endRot: 5.5,
+        enterStart: 0.18, enterEnd: 0.34,
+        exitX: '-30vw', exitY: '38vh', exitScale: 2.1
+      },
+      // 4. Ceramic Jug: Fourth arrival (midground center)
+      { 
+        id: '#feelItemJug',      
+        startScale: 0.06, endScale: 0.85, 
+        startX: '2.7vw', endX: '5vw',   
+        startY: '-2.5vh', endY: '-6vh',  
+        startRot: -2, endRot: -4,
+        enterStart: 0.26, enterEnd: 0.42,
+        exitX: '20vw', exitY: '-30vh', exitScale: 1.9
+      },
+      // 5. Flower Vase with Lilies: Fifth arrival (center-right)
+      { 
+        id: '#feelItemVase',     
+        startScale: 0.06, endScale: 0.82, 
+        startX: '-2.8vw', endX: '9vw',   
+        startY: '-0.3vh', endY: '-8vh',  
+        startRot: -2.5, endRot: -3,
+        enterStart: 0.34, enterEnd: 0.50,
+        exitX: '32vw', exitY: '-32vh', exitScale: 1.9
+      },
+      // 6. Vintage Wood Radio: Sixth arrival (midground left)
+      { 
+        id: '#feelItemRadio',    
+        startScale: 0.05, endScale: 0.74, 
+        startX: '1.6vw', endX: '-4vw',  
+        startY: '-2.5vh', endY: '1vh',   
+        startRot: 3, endRot: 6,
+        enterStart: 0.42, enterEnd: 0.58,
+        exitX: '-25vw', exitY: '15vh', exitScale: 1.8
+      },
+      // 7. Brass Candlestick: Seventh arrival (background left)
+      { 
+        id: '#feelItemCandle',   
+        startScale: 0.05, endScale: 0.68, 
+        startX: '-1.3vw', endX: '-14vw', 
+        startY: '-2.3vh', endY: '-3vh',  
+        startRot: 1.5, endRot: 3,
+        enterStart: 0.50, enterEnd: 0.64,
+        exitX: '-35vw', exitY: '-15vh', exitScale: 1.7
+      },
+      // 8. Sculptural Dish: Eighth arrival (background right)
+      { 
+        id: '#feelItemDish',     
+        startScale: 0.05, endScale: 0.64, 
+        startX: '2.1vw', endX: '22vw',  
+        startY: '0.4vh', endY: '-5vh',  
+        startRot: -3, endRot: -5,
+        enterStart: 0.58, enterEnd: 0.72,
+        exitX: '42vw', exitY: '-22vh', exitScale: 1.6
+      }
     ];
 
-    // Master scrub timeline with PINNING: screen stays stuck on Feel at Home while scrolling down
+    // Master scrub timeline pinned for 420% scroll depth
     const feelTl = gsap.timeline({
       scrollTrigger: {
         trigger: '#feelAtHome',
         start: 'top top',
-        end: '+=400%',
+        end: '+=420%',
         pin: true,
         pinSpacing: true,
         anticipatePin: 1,
@@ -474,7 +550,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    // 1. Initial state setup: all objects start deep in perspective
+    // 1. Initial state setup: all objects start tiny and hidden in distance
     feelItems.forEach((item) => {
       gsap.set(item.id, {
         autoAlpha: 0,
@@ -486,65 +562,106 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
 
-    // 2. Animate items flying forward in 3D perspective as user scrolls down
-    feelItems.forEach((item, idx) => {
-      // Fade in early so objects are visible emerging from distance
+    // 2. Sequential Arrival: EACH OBJECT FLIES IN ONE AFTER ANOTHER
+    feelItems.forEach((item) => {
+      const enterDur = item.enterEnd - item.enterStart;
+
+      // Object fades in as it begins moving
       feelTl.to(item.id, {
         autoAlpha: 1,
-        duration: 0.20,
+        duration: enterDur * 0.45,
         ease: 'power1.in'
-      }, 0.02 + idx * 0.012);
+      }, item.enterStart);
 
-      // Zoom outward to final prominent position
+      // Object zooms forward from distance to its resting spot
       feelTl.to(item.id, {
         scale: item.endScale,
         x: item.endX,
         y: item.endY,
         rotation: item.endRot,
-        duration: 0.75,
+        duration: enterDur,
         ease: 'power2.out'
-      }, 0.05);
+      }, item.enterStart);
     });
 
     // 3. Staggered Masked Typography: "Feel at Home. Beautifully."
-    // Initial states: masked below
     gsap.set('.feel-word', { yPercent: 115, rotation: 8 });
 
-    // Word 1: "Feel"
+    // Word 1: "Feel" (syncs with Armchair & Lamp)
     feelTl.to('#feelWord1', {
       yPercent: 0,
       rotation: 0,
-      duration: 0.22,
+      duration: 0.16,
       ease: 'power2.out'
-    }, 0.16);
+    }, 0.12);
 
-    // Word 2: "at"
+    // Word 2: "at" (syncs with Cushion & Jug)
     feelTl.to('#feelWord2', {
       yPercent: 0,
       rotation: 0,
-      duration: 0.20,
+      duration: 0.14,
       ease: 'power2.out'
-    }, 0.28);
+    }, 0.24);
 
-    // Word 3: "Home."
+    // Word 3: "Home." (syncs with Flower Vase)
     feelTl.to('#feelWord3', {
       yPercent: 0,
       rotation: 0,
-      duration: 0.22,
+      duration: 0.16,
       ease: 'power2.out'
-    }, 0.42);
+    }, 0.38);
 
-    // Word 4: "Beautifully."
+    // Word 4: "Beautifully." (syncs with final objects completing assembly)
     feelTl.to('#feelWord4', {
       yPercent: 0,
       rotation: 0,
-      duration: 0.24,
+      duration: 0.18,
       ease: 'power2.out'
-    }, 0.56);
+    }, 0.54);
 
-    // The full composition (all 8 objects + full headline) remains fully assembled
-    // and holds prominently on screen from progress 0.70 to 1.0!
-    // As the user scrolls past 1.0, the pinned section naturally unpins and scrolls away into Philosophy.
+    // 4. "NEXT SECTION COMES UP LIKE WE ENTERED IN IT" (0.80 -> 1.00)
+    // Camera pushes forward through the scene:
+    // Floating objects zoom past the camera outwards off-screen
+    feelItems.forEach((item) => {
+      feelTl.to(item.id, {
+        scale: item.exitScale,
+        x: item.exitX,
+        y: item.exitY,
+        autoAlpha: 0,
+        duration: 0.18,
+        ease: 'power2.in'
+      }, 0.82);
+    });
+
+    // Text pushes slightly forward and dissolves
+    feelTl.to('.feel-headline-wrapper', {
+      scale: 1.22,
+      letterSpacing: '0.02em',
+      autoAlpha: 0,
+      duration: 0.16,
+      ease: 'power2.in'
+    }, 0.82);
+
+    // Next section (Philosophy) rises up and expands like stepping through a doorway!
+    const philosophySection = document.getElementById('philosophy');
+    if (philosophySection) {
+      feelTl.fromTo(philosophySection,
+        {
+          yPercent: 25,
+          scale: 0.90,
+          transformOrigin: 'center top',
+          autoAlpha: 0.6
+        },
+        {
+          yPercent: 0,
+          scale: 1.0,
+          autoAlpha: 1.0,
+          duration: 0.18,
+          ease: 'power2.out'
+        },
+        0.82
+      );
+    }
   }
 
   // Fade Up Elements
