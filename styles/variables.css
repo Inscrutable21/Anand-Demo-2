@@ -132,3 +132,35 @@ img {
   padding-left: clamp(20px, 4vw, 48px);
   padding-right: clamp(20px, 4vw, 48px);
 }
+
+/* --------------------------------------------------------------------------
+   EDITORIAL REVEAL TEXT ANIMATIONS
+   -------------------------------------------------------------------------- */
+.split-word-mask {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: top;
+  padding-bottom: 0.14em;
+  margin-bottom: -0.14em;
+  line-height: 1.15;
+}
+
+.split-word {
+  display: inline-block;
+  will-change: transform, opacity;
+  transform: translateY(115%) rotate(5deg);
+  opacity: 0;
+  transform-origin: left bottom;
+}
+
+.reveal-p {
+  opacity: 0;
+  transform: translateY(28px);
+  will-change: transform, opacity;
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-p.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}

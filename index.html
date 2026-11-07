@@ -303,7 +303,7 @@
           <span class="count-num">9</span>
           <span>Apartments</span>
         </div>
-        <h2 class="apartments-heading">Apartments</h2>
+        <h2 class="apartments-heading reveal-title">Apartments</h2>
       </div>
 
       <!-- Category Filter Pills -->
@@ -638,7 +638,7 @@
   <div class="host-container">
     
     <!-- Giant Editorial Headline -->
-    <h2 class="host-headline">Hi, I'm Moritz</h2>
+    <h2 class="host-headline reveal-title">Hi, I'm Moritz</h2>
 
     <!-- Two-Column Editorial Layout: Story on Left, Moritz Photo on Right -->
     <div class="host-grid">
@@ -646,13 +646,13 @@
       <!-- Left Column: Story & Booking CTA -->
       <div class="host-story-col">
         <div class="host-paragraphs">
-          <p class="host-p">
+          <p class="host-p reveal-p">
             I am the head and heart behind Casa Momo and hosting is what I love most. I've enjoyed having guests for as long as I can remember.
           </p>
-          <p class="host-p">
+          <p class="host-p reveal-p">
             What I care about is simple: that you walk in and feel looked after. My apartments aren't staged. They're warm, lively homes you can truly settle into, where comfort always comes first. I fill them with timeless pieces and special finds that carry a story of their own, and that give each apartment its own character.
           </p>
-          <p class="host-p">
+          <p class="host-p reveal-p">
             I look after my guests personally and with real joy, before, during and after your stay.
           </p>
         </div>
@@ -823,7 +823,7 @@
   <div class="philosophy-container">
     
     <div class="philosophy-header-block" data-fade>
-      <h2 class="philosophy-main-title">My Philosophy</h2>
+      <h2 class="philosophy-main-title reveal-title">My Philosophy</h2>
     </div>
 
     <div class="philosophy-cards-grid">
@@ -1050,7 +1050,7 @@
       <!-- Left Column: Editorial Headline & Content -->
       <div class="locations-content-col" data-fade-up>
         <span class="section-tag">NEIGHBORHOOD</span>
-        <h2 class="locations-headline">Locations</h2>
+        <h2 class="locations-headline reveal-title">Locations</h2>
         
         <p class="locations-lead-text">
           Casa Momo apartments all sit in Graz's historic old town, steps from the sights and the city's two famous farmers markets, Lendplatz and Kaiser-Josef-Platz.
@@ -1314,9 +1314,39 @@
             Estimated Total: <strong>€435</strong> (3 Nights, Direct 10% discount included)
           </div>
 
-          <button type="submit" class="btn btn-primary w-100" id="btnSubmitReservation">
-            Complete Reservation Request
+          <button type="submit" class="btn-submit-booking" id="btnSubmitReservation">
+            <span>Complete Reservation Request</span>
+            <span class="btn-arrow">&#8599;</span>
           </button>
+
+          <div class="booking-perks-row">
+            <div class="b-perk">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              </svg>
+              <span>Best direct price guarantee (-10%)</span>
+            </div>
+            <div class="b-perk">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              <span>Free cancellation up to 5 days</span>
+            </div>
+            <div class="b-perk">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+              </svg>
+              <span>Instant digital key & self check-in</span>
+            </div>
+            <div class="b-perk">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+              <span>Personal host service with Moritz</span>
+            </div>
+          </div>
         </form>
 
         <!-- Success Message -->

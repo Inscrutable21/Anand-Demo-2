@@ -317,6 +317,72 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // =========================================================================
+  // 6B. EDITORIAL TEXT REVEAL ANIMATIONS (WORD-BY-WORD MASKED ROLL-UP)
+  // =========================================================================
+  function initTextAnimations() {
+    if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
+
+    // 1. Process all headings with .reveal-title
+    const revealTitles = document.querySelectorAll('.reveal-title');
+    revealTitles.forEach((titleEl) => {
+      if (titleEl.dataset.splitDone) return;
+      titleEl.dataset.splitDone = 'true';
+
+      const originalText = titleEl.textContent.trim();
+      const words = originalText.split(/\s+/);
+      titleEl.innerHTML = words.map(word => 
+        `<span class="split-word-mask"><span class="split-word">${word}</span></span>`
+      ).join(' ');
+
+      const wordSpans = titleEl.querySelectorAll('.split-word');
+      gsap.fromTo(wordSpans, 
+        {
+          yPercent: 115,
+          rotationZ: 5,
+          opacity: 0
+        },
+        {
+          yPercent: 0,
+          rotationZ: 0,
+          opacity: 1,
+          duration: 0.95,
+          ease: 'power3.out',
+          stagger: 0.06,
+          scrollTrigger: {
+            trigger: titleEl,
+            start: 'top 88%',
+            toggleActions: 'play none none none'
+          }
+        }
+      );
+    });
+
+    // 2. Process paragraphs with .reveal-p (Host section story)
+    const revealParagraphs = document.querySelectorAll('.reveal-p');
+    revealParagraphs.forEach((p) => {
+      gsap.fromTo(p, 
+        {
+          y: 32,
+          opacity: 0
+        },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.85,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: p,
+            start: 'top 88%',
+            toggleActions: 'play none none none'
+          }
+        }
+      );
+    });
+  }
+
+  initTextAnimations();
+
+  // =========================================================================
   // 7. SCROLL-SCRUBBED TEXT REVEAL (STATEMENT - MATCHES IMAGE 2)
   // =========================================================================
   const scrubWords = document.querySelectorAll('.scrub-word');
@@ -1116,8 +1182,21 @@ document.addEventListener('DOMContentLoaded', () => {
     if (bookingSuccessScreen) bookingSuccessScreen.style.display = 'none';
     if (directReservationForm) directReservationForm.style.display = 'flex';
 
-    if (rfCheckin) rfCheckin.value = prefillData?.checkin || calcCheckin?.value || formatDate(tomorrow);
-    if (rfCheckout) rfCheckout.value = prefillData?.checkout || calcCheckout?.value || formatDate(departureDate);
+    const defaultCheckin = formatDate(tomorrow);
+    const defaultCheckout = formatDate(departureDate);
+
+    if (rfCheckin) {
+      rfCheckin.value = prefillData?.checkin || heroCheckin?.value || defaultCheckin;
+      rfCheckin.min = formatDate(today);
+    }
+    if (rfCheckout) {
+      rfCheckout.value = prefillData?.checkout || heroCheckout?.value || defaultCheckout;
+      if (rfCheckin?.value) {
+        const nextDay = new Date(rfCheckin.value);
+        nextDay.setDate(nextDay.getDate() + 1);
+        rfCheckout.min = formatDate(nextDay);
+      }
+    }
     if (rfGuestsSelect && prefillData) rfGuestsSelect.value = prefillData.guests;
 
     // Match Suite Select
@@ -1151,20 +1230,70 @@ document.addEventListener('DOMContentLoaded', () => {
     let nights = Math.round((outDate - inDate) / (1000 * 60 * 60 * 24));
     if (isNaN(nights) || nights < 1) nights = 1;
 
-    rfSummaryPill.innerHTML = `Selected: <strong>${rfSuiteSelect?.value || 'Suite'}</strong> • <strong>${nights} Night${nights > 1 ? 's' : ''}</strong> (10% Direct Booking Discount included)`;
+    const suiteRates = {
+      'Boutique N°1': 145,
+      'Boutique N°2': 135,
+      'Boutique N°3 Flagship': 220,
+      'Boutique N°4': 130,
+      'Loft N°1': 125,
+      'Loft N°2': 150,
+      'Loft N°3 Panorama': 195,
+      'Garden N°1': 140,
+      'Urban N°1': 120
+    };
+
+    const selText = rfSuiteSelect?.options[rfSuiteSelect.selectedIndex]?.text || 'Boutique N°1';
+    let rate = 145;
+    for (const [name, price] of Object.entries(suiteRates)) {
+      if (selText.includes(name) || (rfSuiteSelect?.value && rfSuiteSelect.value.includes(name))) {
+        rate = price;
+        break;
+      }
+    }
+
+    const baseTotal = rate * nights;
+    const directDiscount = Math.round(baseTotal * 0.10);
+    const finalTotal = baseTotal - directDiscount;
+
+    rfSummaryPill.innerHTML = `
+      <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
+        <span>Estimated Total: <strong style="font-size:1.15rem; color:#FFF0CA;">€${finalTotal}</strong> <span style="font-size:12px; opacity:0.8;">(${nights} Night${nights > 1 ? 's' : ''} at €${rate}/nt)</span></span>
+        <span style="background:rgba(188,111,69,0.3); color:#FFF0CA; border:1px solid #BC6F45; padding:3px 10px; border-radius:9999px; font-size:11px; font-weight:600; letter-spacing:0.05em; text-transform:uppercase;">10% Direct Discount</span>
+      </div>
+    `;
   }
 
   [rfSuiteSelect, rfGuestsSelect, rfCheckin, rfCheckout].forEach((elem) => {
     elem?.addEventListener('change', updateReservationSummaryPill);
   });
 
+  if (rfCheckin) {
+    rfCheckin.addEventListener('change', () => {
+      if (rfCheckin.value) {
+        const d = new Date(rfCheckin.value);
+        d.setDate(d.getDate() + 1);
+        const minOut = formatDate(d);
+        if (rfCheckout) {
+          rfCheckout.min = minOut;
+          if (!rfCheckout.value || new Date(rfCheckout.value) <= new Date(rfCheckin.value)) {
+            rfCheckout.value = minOut;
+          }
+        }
+      }
+      updateReservationSummaryPill();
+    });
+  }
+
   bookingModalCloseBtn?.addEventListener('click', closeBookingModal);
   bookingModal?.addEventListener('click', (e) => {
     if (e.target === bookingModal) closeBookingModal();
   });
 
-  document.getElementById('openBookingModalBtn')?.addEventListener('click', () => {
-    openBookingModal();
+  document.querySelectorAll('#openBookingModalBtn, [data-open-booking], .open-booking-modal, a[href="#book"]').forEach((elem) => {
+    elem?.addEventListener('click', (e) => {
+      e.preventDefault();
+      openBookingModal();
+    });
   });
 
   directReservationForm?.addEventListener('submit', (e) => {
@@ -1176,6 +1305,15 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   btnCloseSuccessModal?.addEventListener('click', closeBookingModal);
+
+  // Close modals on Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      if (bookingModal?.classList.contains('active')) closeBookingModal();
+      if (typeof closeApartmentModal === 'function') closeApartmentModal();
+      if (typeof closeLegalModal === 'function') closeLegalModal();
+    }
+  });
 
   // =========================================================================
   // 12. GUEST REVIEWS SLIDER
