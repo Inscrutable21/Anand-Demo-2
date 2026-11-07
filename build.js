@@ -54,6 +54,7 @@ function buildCSS() {
     'reviews.css',
     'footer.css',
     'modals.css',
+    'book.css',
     'responsive.css'
   ];
 
@@ -81,8 +82,8 @@ function syncDirectories() {
       fs.mkdirSync(targetDir, { recursive: true });
     }
 
-    // Copy index.html, style.css, script.js
-    ['index.html', 'style.css', 'script.js'].forEach(file => {
+    // Copy index.html, book.html, style.css, script.js
+    ['index.html', 'book.html', 'style.css', 'script.js'].forEach(file => {
       const src = path.join(__dirname, file);
       const dest = path.join(targetDir, file);
       if (fs.existsSync(src)) {

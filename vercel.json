@@ -1,11 +1,15 @@
 {
   "buildCommand": "node build.js",
+  "cleanUrls": true,
+  "rewrites": [
+    { "source": "/book", "destination": "/book.html" }
+  ],
   "functions": {
     "server.js": {
-      "includeFiles": "{assets/**,public/**,style.css,script.js,index.html}"
+      "includeFiles": "{assets/**,public/**,style.css,script.js,index.html,book.html}"
     },
     "index.js": {
-      "includeFiles": "{assets/**,public/**,style.css,script.js,index.html}"
+      "includeFiles": "{assets/**,public/**,style.css,script.js,index.html,book.html}"
     }
   }
 }

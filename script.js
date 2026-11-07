@@ -172,26 +172,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Unified Navbar & Hero Booking CTAs
-  document.getElementById('navBookNowBtn')?.addEventListener('click', (e) => {
-    e.preventDefault();
-    openBookingModal();
-  });
-
-  document.getElementById('heroBottomBookBtn')?.addEventListener('click', (e) => {
-    e.preventDefault();
-    openBookingModal();
-  });
-
-  document.getElementById('hostBookBtn')?.addEventListener('click', (e) => {
-    e.preventDefault();
-    openBookingModal();
-  });
-
-  document.getElementById('locationsBookBtn')?.addEventListener('click', (e) => {
-    e.preventDefault();
-    openBookingModal();
-  });
+  // Unified Navbar & Hero Booking CTAs - Navigates to Book Your Stay page (/book)
+  // (Direct reservation modal remains available via [data-open-booking] and suite card buttons)
 
   // =========================================================================
   // 4. CUSTOM MAGNETIC & FOLLOWER CURSOR
@@ -313,7 +295,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   mobileBookBtn?.addEventListener('click', () => {
     closeMobileMenu();
-    openBookingModal();
   });
 
   // =========================================================================

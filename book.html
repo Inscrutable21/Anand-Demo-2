@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Your Stay • Casa Momo Apartments Graz</title>
+  <meta name="description" content="Book your stay at Casa Momo. Nine boutique designer apartments in Graz, Austria. Guaranteed best direct booking rate, personal hosting by Moritz.">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2246%22 fill=%22%230E0D0C%22 stroke=%22%23FFF0CA%22 stroke-width=%224%22/><text x=%2250%22 y=%2260%22 font-family=%22serif%22 font-size=%2236%22 fill=%22%23FFF0CA%22 text-anchor=%22middle%22 font-weight=%22bold%22>CM</text></svg>">
+  
+  <!-- Fonts: Cardo (Serif) & Plus Jakarta Sans (Sans) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- GSAP & ScrollTrigger -->
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="assets/vendor/ScrollTrigger.min.js"></script>
+  <script src="assets/vendor/lenis.min.js"></script>
+</head>
+<body style="background-color: #0e1201; color: #FFF0CA;">
+
+  <!-- Custom Cursor Follower -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing">
+    <span class="cursor-text" id="cursorText"></span>
+  </div>
+
+  <!-- Tactile Noise Texture -->
+  <div class="noise-overlay" aria-hidden="true"></div>
+
+  <!-- AUTHENTIC CASA MOMO FLOATING NAVBAR -->
+  <header class="site-header" id="siteHeader" style="opacity: 1; transform: none;">
+    <div class="header-container">
+      
+      <!-- Top-Left Wordmark: Links back to Homepage -->
+      <a href="index.html" class="brand-wordmark" aria-label="Casa Momo Graz Home">
+        <span class="brand-text">CASA MOMO</span>
+      </a>
+
+      <!-- Top-Right Floating Frosted Capsule Navigation -->
+      <div class="header-right-group">
+        <nav class="nav-capsule" aria-label="Main Navigation">
+          <a href="index.html#apartments" class="nav-item">Apartments</a>
+          <a href="index.html#host" class="nav-item">About</a>
+          <a href="index.html#locations" class="nav-item">Contact</a>
+          <a href="book.html" class="nav-cta-btn active" style="background-color: #FFF0CA; color: #0e1201;">
+            <span>Book Now</span>
+            <span class="cta-arrow">&#8599;</span>
+          </a>
+        </nav>
+
+        <!-- Sound Toggle -->
+        <button class="sound-toggle-btn" id="soundToggleBtn" aria-label="Toggle Ambient Audio" type="button">
+          <svg class="sound-svg sound-svg-on" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+            <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+            <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+          </svg>
+          <svg class="sound-svg sound-svg-off" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display: none;">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+            <line x1="23" y1="9" x2="17" y2="15"></line>
+            <line x1="17" y1="9" x2="23" y2="15"></line>
+          </svg>
+        </button>
+
+        <!-- Mobile Hamburger Toggle -->
+        <button class="mobile-toggle-btn" id="mobileToggleBtn" aria-label="Toggle Menu" type="button">
+          <span class="toggle-line"></span>
+          <span class="toggle-line"></span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Mobile Fullscreen Navigation Overlay -->
+  <div class="mobile-menu-overlay" id="mobileMenu" aria-hidden="true">
+    <div class="mobile-menu-inner">
+      <div class="mobile-menu-top">
+        <span class="brand-text">CASA MOMO</span>
+        <button class="mobile-close-btn" id="mobileMenuClose" aria-label="Close Navigation">&times;</button>
+      </div>
+      <nav class="mobile-nav-links">
+        <a href="index.html#apartments" class="mobile-nav-link"><span>01</span> Apartments</a>
+        <a href="index.html#host" class="mobile-nav-link"><span>02</span> About</a>
+        <a href="index.html#locations" class="mobile-nav-link"><span>03</span> Contact</a>
+      </nav>
+      <div class="mobile-menu-bottom">
+        <a href="book.html" class="btn btn-primary w-100" style="text-align: center;">Book Now &#8599;</a>
+      </div>
+    </div>
+  </div>
+
+  <main class="book-page">
+    
+    <!-- Hero / Booking Search Bar Section -->
+    <div class="book-hero-container">
+      <h1 class="book-main-title">Book Your Stay</h1>
+      <p class="book-subtitle">
+        Choose your dates and reserve directly with Moritz for the best guaranteed rate, flexible cancellation, and personal boutique hospitality in Graz.
+      </p>
+
+      <!-- Interactive Search / Filter Bar -->
+      <form class="book-search-bar" id="pageBookSearchBar" onsubmit="event.preventDefault();">
+        <div class="search-field-group">
+          <label class="search-label" for="pageCheckin">Arrival</label>
+          <input type="date" class="search-input" id="pageCheckin" required>
+        </div>
+        <div class="search-field-group">
+          <label class="search-label" for="pageCheckout">Departure</label>
+          <input type="date" class="search-input" id="pageCheckout" required>
+        </div>
+        <div class="search-field-group">
+          <label class="search-label" for="pageGuests">Guests</label>
+          <select class="search-select" id="pageGuests">
+            <option value="1">1 Guest</option>
+            <option value="2" selected>2 Adults</option>
+            <option value="3">3 Guests</option>
+            <option value="4">4 Guests</option>
+            <option value="5">5 Guests</option>
+            <option value="6">6 Guests</option>
+          </select>
+        </div>
+        <button type="button" class="book-search-btn" id="btnPageSearch">
+          <span>Search</span>
+          <span class="btn-arrow">&#8599;</span>
+        </button>
+      </form>
+
+      <!-- Direct Booking Advantage Badges -->
+      <div class="book-guarantee-bar">
+        <div class="guarantee-item">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+          </svg>
+          <span>Best Direct Rate (-10% discount included)</span>
+        </div>
+        <div class="guarantee-item">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+          <span>Free Cancellation up to 5 days before arrival</span>
+        </div>
+        <div class="guarantee-item">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+          </svg>
+          <span>Digital Key & Seamless Self Check-in</span>
+        </div>
+        <div class="guarantee-item">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+          <span>Personal Host Service with Moritz</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 9 Suites List Container -->
+    <div class="book-suites-container">
+
+      <!-- 1. Boutique N°1 -->
+      <article class="book-suite-card" data-suite-id="boutique-1">
+        <div class="suite-card-media">
+          <img src="assets/FFMB70aKEXAkAkxXAKKQTB8epk.webp" alt="Boutique N°1 Graz" loading="lazy">
+          <span class="suite-card-badge">Boutique Collection</span>
+        </div>
+        <div class="suite-card-body">
+          <div class="suite-card-header">
+            <h2 class="suite-card-title">Boutique N°1</h2>
+            <div class="suite-specs-row">
+              <span class="suite-spec-tag"><strong>60 m²</strong> Living Space</span>
+              <span class="suite-spec-tag">Up to <strong>3 Guests</strong></span>
+              <span class="suite-spec-tag">Schlossberg View</span>
+              <span class="suite-spec-tag">Private Balcony</span>
+            </div>
+            <p class="suite-card-desc">
+              Boutique N°1 in central Graz: 60 m² for up to 3 guests with a balcony, Schlossberg view, vintage finds and walls with a natural mossy patina.
+            </p>
+          </div>
+          <div class="suite-card-footer">
+            <div class="suite-price-wrap">
+              <span class="suite-price-main">€145</span>
+              <span class="suite-price-unit">per night • Direct booking rate</span>
+            </div>
+            <div class="suite-actions">
+              <button class="btn-details-suite" data-id="boutique-1">Suite Details</button>
+              <button class="btn-book-suite" data-suite-name="Boutique N°1" data-suite-id="boutique-1">
+                <span>Check Dates</span>
+                <span>&#8599;</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 2. Boutique N°2 -->
+      <article class="book-suite-card" data-suite-id="boutique-2">
+        <div class="suite-card-media">
+          <img src="assets/qwHsbwPqfdWdQUSwIKbIkRdc.webp" alt="Boutique N°2 Graz" loading="lazy">
+          <span class="suite-card-badge">Boutique Collection</span>
+        </div>
+        <div class="suite-card-body">
+          <div class="suite-card-header">
+            <h2 class="suite-card-title">Boutique N°2</h2>
+            <div class="suite-specs-row">
+              <span class="suite-spec-tag"><strong>45 m²</strong> Living Space</span>
+              <span class="suite-spec-tag">Up to <strong>3 Guests</strong></span>
+              <span class="suite-spec-tag">19th-Century Ceiling</span>
+              <span class="suite-spec-tag">Crystal Chandelier</span>
+            </div>
+            <p class="suite-card-desc">
+              Boutique N°2 in Graz: 45 m² for up to 3 guests under an original 19th-century painted ceiling with a crystal chandelier and a Schlossberg view.
+            </p>
+          </div>
+          <div class="suite-card-footer">
+            <div class="suite-price-wrap">
+              <span class="suite-price-main">€135</span>
+              <span class="suite-price-unit">per night • Direct booking rate</span>
+            </div>
+            <div class="suite-actions">
+              <button class="btn-details-suite" data-id="boutique-2">Suite Details</button>
+              <button class="btn-book-suite" data-suite-name="Boutique N°2" data-suite-id="boutique-2">
+                <span>Check Dates</span>
+                <span>&#8599;</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 3. Boutique N°3 Flagship -->
+      <article class="book-suite-card" data-suite-id="boutique-3">
+        <div class="suite-card-media">
+          <img src="assets/UayMv2I16UbQQBQkbI90HsJMv5o.webp" alt="Boutique N°3 Flagship Graz" loading="lazy">
+          <span class="suite-card-badge" style="background:#BC6F45; color:#FFF0CA;">Flagship Residence</span>
+        </div>
+        <div class="suite-card-body">
+          <div class="suite-card-header">
+            <h2 class="suite-card-title">Boutique N°3 Flagship</h2>
+            <div class="suite-specs-row">
+              <span class="suite-spec-tag"><strong>120 m²</strong> Flagship</span>
+              <span class="suite-spec-tag">Up to <strong>6 Guests</strong></span>
+              <span class="suite-spec-tag">Two Bedrooms</span>
+              <span class="suite-spec-tag">Portuguese Tiles</span>
+            </div>
+            <p class="suite-card-desc">
+              Boutique N°3, the 120 m² flagship in Graz: two bedrooms for up to 6 guests, Portuguese tiles, a balcony and a reading chair facing the Schlossberg.
+            </p>
+          </div>
+          <div class="suite-card-footer">
+            <div class="suite-price-wrap">
+              <span class="suite-price-main">€220</span>
+              <span class="suite-price-unit">per night • Direct booking rate</span>
+            </div>
+            <div class="suite-actions">
+              <button class="btn-details-suite" data-id="boutique-3">Suite Details</button>
+              <button class="btn-book-suite" data-suite-name="Boutique N°3 Flagship" data-suite-id="boutique-3">
+                <span>Check Dates</span>
+                <span>&#8599;</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 4. Boutique N°4 -->
+      <article class="book-suite-card" data-suite-id="boutique-4">
+        <div class="suite-card-media">
+          <img src="assets/yBIxh7LgO2No9HDQ30impB370Y.webp" alt="Boutique N°4 Graz" loading="lazy">
+          <span class="suite-card-badge">Boutique Collection</span>
+        </div>
+        <div class="suite-card-body">
+          <div class="suite-card-header">
+            <h2 class="suite-card-title">Boutique N°4</h2>
+            <div class="suite-specs-row">
+              <span class="suite-spec-tag"><strong>40 m²</strong> Studio</span>
+              <span class="suite-spec-tag">Up to <strong>2 Guests</strong></span>
+              <span class="suite-spec-tag">Exposed Brick</span>
+              <span class="suite-spec-tag">Courtyard Quiet</span>
+            </div>
+            <p class="suite-card-desc">
+              Boutique N°4: intimate 40 m² sanctuary with exposed historic brickwork, plush velvet seating, and peaceful courtyard tranquility.
+            </p>
+          </div>
+          <div class="suite-card-footer">
+            <div class="suite-price-wrap">
+              <span class="suite-price-main">€130</span>
+              <span class="suite-price-unit">per night • Direct booking rate</span>
+            </div>
+            <div class="suite-actions">
+              <button class="btn-details-suite" data-id="boutique-4">Suite Details</button>
+              <button class="btn-book-suite" data-suite-name="Boutique N°4" data-suite-id="boutique-4">
+                <span>Check Dates</span>
+                <span>&#8599;</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 5. Loft N°1 -->
+      <article class="book-suite-card" data-suite-id="loft-1">
+        <div class="suite-card-media">
+          <img src="assets/2xHCTBMpXtVodlF5OQINb1IbM.webp" alt="Loft N°1 Graz" loading="lazy">
+          <span class="suite-card-badge">Loft Collection</span>
+        </div>
+        <div class="suite-card-body">
+          <div class="suite-card-header">
+            <h2 class="suite-card-title">Loft N°1</h2>
+            <div class="suite-specs-row">
+              <span class="suite-spec-tag"><strong>70 m²</strong> Split-Level</span>
+              <span class="suite-spec-tag">Up to <strong>4 Guests</strong></span>
+              <span class="suite-spec-tag">Industrial Steel</span>
+              <span class="suite-spec-tag">Skylights</span>
+            </div>
+            <p class="suite-card-desc">
+              Loft N°1 in Graz's historic old town: open-concept 70 m² split-level loft with industrial black steel accents, oversized skylights, and custom oak furniture.
+            </p>
+          </div>
+          <div class="suite-card-footer">
+            <div class="suite-price-wrap">
+              <span class="suite-price-main">€125</span>
+              <span class="suite-price-unit">per night • Direct booking rate</span>
+            </div>
+            <div class="suite-actions">
+              <button class="btn-details-suite" data-id="loft-1">Suite Details</button>
+              <button class="btn-book-suite" data-suite-name="Loft N°1" data-suite-id="loft-1">
+                <span>Check Dates</span>
+                <span>&#8599;</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 6. Loft N°2 -->
+      <article class="book-suite-card" data-suite-id="loft-2">
+        <div class="suite-card-media">
+          <img src="assets/K9tRZVOwNnZgndmDo4Fbq4.webp" alt="Loft N°2 Graz" loading="lazy">
+          <span class="suite-card-badge">Loft Collection</span>
+        </div>
+        <div class="suite-card-body">
+          <div class="suite-card-header">
+            <h2 class="suite-card-title">Loft N°2</h2>
+            <div class="suite-specs-row">
+              <span class="suite-spec-tag"><strong>85 m²</strong> Duplex</span>
+              <span class="suite-spec-tag">Up to <strong>4 Guests</strong></span>
+              <span class="suite-spec-tag">Restored Beams</span>
+              <span class="suite-spec-tag">Rooftop Terrace</span>
+            </div>
+            <p class="suite-card-desc">
+              Loft N°2: 85 m² duplex featuring original restored wooden roof beams, curated mid-century Danish furniture, and a private rooftop sunset terrace.
+            </p>
+          </div>
+          <div class="suite-card-footer">
+            <div class="suite-price-wrap">
+              <span class="suite-price-main">€150</span>
+              <span class="suite-price-unit">per night • Direct booking rate</span>
+            </div>
+            <div class="suite-actions">
+              <button class="btn-details-suite" data-id="loft-2">Suite Details</button>
+              <button class="btn-book-suite" data-suite-name="Loft N°2" data-suite-id="loft-2">
+                <span>Check Dates</span>
+                <span>&#8599;</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 7. Loft N°3 Panorama -->
+      <article class="book-suite-card" data-suite-id="loft-3">
+        <div class="suite-card-media">
+          <img src="assets/sXyrAPMPoUMCYGjfPIyJx3amvwg.webp" alt="Loft N°3 Panorama Graz" loading="lazy">
+          <span class="suite-card-badge" style="background:#BC6F45; color:#FFF0CA;">Crown Penthouse</span>
+        </div>
+        <div class="suite-card-body">
+          <div class="suite-card-header">
+            <h2 class="suite-card-title">Loft N°3 Panorama</h2>
+            <div class="suite-specs-row">
+              <span class="suite-spec-tag"><strong>105 m²</strong> Penthouse</span>
+              <span class="suite-spec-tag">Up to <strong>5 Guests</strong></span>
+              <span class="suite-spec-tag">Cathedral Ceiling</span>
+              <span class="suite-spec-tag">360° Panorama</span>
+            </div>
+            <p class="suite-card-desc">
+              Loft N°3 is our crown penthouse accommodation. Soaring 5-meter cathedral timber ceilings, private library reading wall, and panoramic 360° views across Graz.
+            </p>
+          </div>
+          <div class="suite-card-footer">
+            <div class="suite-price-wrap">
+              <span class="suite-price-main">€195</span>
+              <span class="suite-price-unit">per night • Direct booking rate</span>
+            </div>
+            <div class="suite-actions">
+              <button class="btn-details-suite" data-id="loft-3">Suite Details</button>
+              <button class="btn-book-suite" data-suite-name="Loft N°3 Panorama" data-suite-id="loft-3">
+                <span>Check Dates</span>
+                <span>&#8599;</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 8. Garden N°1 -->
+      <article class="book-suite-card" data-suite-id="garden-1">
+        <div class="suite-card-media">
+          <img src="assets/ok0JjrCxxM8lHi3hQ8qC8QmPys.webp" alt="Garden N°1 Graz" loading="lazy">
+          <span class="suite-card-badge">Garden Collection</span>
+        </div>
+        <div class="suite-card-body">
+          <div class="suite-card-header">
+            <h2 class="suite-card-title">Garden N°1</h2>
+            <div class="suite-specs-row">
+              <span class="suite-spec-tag"><strong>65 m²</strong> Garden Suite</span>
+              <span class="suite-spec-tag">Up to <strong>3 Guests</strong></span>
+              <span class="suite-spec-tag">Courtyard Access</span>
+              <span class="suite-spec-tag">Fig Tree Shade</span>
+            </div>
+            <p class="suite-card-desc">
+              Garden N°1: ground-floor sanctuary opening directly onto our secluded heritage cobblestone courtyard shaded by fig trees and wild jasmine.
+            </p>
+          </div>
+          <div class="suite-card-footer">
+            <div class="suite-price-wrap">
+              <span class="suite-price-main">€140</span>
+              <span class="suite-price-unit">per night • Direct booking rate</span>
+            </div>
+            <div class="suite-actions">
+              <button class="btn-details-suite" data-id="garden-1">Suite Details</button>
+              <button class="btn-book-suite" data-suite-name="Garden N°1" data-suite-id="garden-1">
+                <span>Check Dates</span>
+                <span>&#8599;</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 9. Urban N°1 -->
+      <article class="book-suite-card" data-suite-id="urban-1">
+        <div class="suite-card-media">
+          <img src="assets/nCpZHO0o6riJK75pc9xxHA2OQC4.webp" alt="Urban N°1 Graz" loading="lazy">
+          <span class="suite-card-badge">Urban Collection</span>
+        </div>
+        <div class="suite-card-body">
+          <div class="suite-card-header">
+            <h2 class="suite-card-title">Urban N°1</h2>
+            <div class="suite-specs-row">
+              <span class="suite-spec-tag"><strong>50 m²</strong> Studio</span>
+              <span class="suite-spec-tag">Up to <strong>2 Guests</strong></span>
+              <span class="suite-spec-tag">Terrazzo Bath</span>
+              <span class="suite-spec-tag">Artisanal Ceramics</span>
+            </div>
+            <p class="suite-card-desc">
+              Urban N°1: minimalist, light-drenched studio curated for modern creative travelers, featuring terrazzo bathrooms and artisanal ceramics.
+            </p>
+          </div>
+          <div class="suite-card-footer">
+            <div class="suite-price-wrap">
+              <span class="suite-price-main">€120</span>
+              <span class="suite-price-unit">per night • Direct booking rate</span>
+            </div>
+            <div class="suite-actions">
+              <button class="btn-details-suite" data-id="urban-1">Suite Details</button>
+              <button class="btn-book-suite" data-suite-name="Urban N°1" data-suite-id="urban-1">
+                <span>Check Dates</span>
+                <span>&#8599;</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+  </main>
+
+  <!-- GRAND CASA MOMO FOOTER -->
+  <footer class="site-footer" id="footer">
+    <div class="container">
+      <div class="footer-top-columns">
+        <div class="footer-col">
+          <div class="footer-col-header">
+            <span class="col-index">1</span>
+            <span class="col-name">Menu</span>
+          </div>
+          <ul class="footer-links-list">
+            <li><a href="index.html#apartments" class="footer-nav-link">Apartments</a></li>
+            <li><a href="index.html#host" class="footer-nav-link">About</a></li>
+            <li><a href="index.html#locations" class="footer-nav-link">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <div class="footer-col-header">
+            <span class="col-index">2</span>
+            <span class="col-name">Socials</span>
+          </div>
+          <ul class="footer-links-list">
+            <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="footer-nav-link">Instagram</a></li>
+            <li><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="footer-nav-link">LinkedIn</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <div class="footer-col-header">
+            <span class="col-index">3</span>
+            <span class="col-name">Contact</span>
+          </div>
+          <ul class="footer-links-list">
+            <li><a href="mailto:office@casamomo.at" class="footer-nav-link">office@casamomo.at</a></li>
+            <li><a href="tel:+436641999605" class="footer-nav-link">+43 664 1999605</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-giant-wordmark" aria-hidden="true">
+        <span>CASA MOMO</span>
+      </div>
+
+      <div class="footer-bottom-row">
+        <div class="footer-copy">&copy; 2026 Casa Momo Boutique Apartments Graz</div>
+        <div class="footer-legal-links">
+          <button class="legal-btn" data-modal-target="modalImprint">Imprint</button>
+          <span class="legal-sep">•</span>
+          <button class="legal-btn" data-modal-target="modalTerms">Terms</button>
+          <span class="legal-sep">•</span>
+          <button class="legal-btn" data-modal-target="modalPrivacy">Privacy</button>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MODALS -->
+  <!-- Direct Reservation Modal -->
+  <div class="modal-backdrop" id="bookingModal" aria-hidden="true" role="dialog">
+    <div class="modal-window booking-modal-window">
+      <button class="modal-close-btn" id="bookingModalCloseBtn" aria-label="Close booking">&times;</button>
+      
+      <div class="booking-form-wrap">
+        <span class="section-tag">DIRECT BOOKING</span>
+        <h2 class="modal-title">Reserve with Casa Momo</h2>
+        <p class="modal-subtext">Book directly for best guaranteed rates, personal host contact with Moritz, and flexible cancellation.</p>
+
+        <form id="directReservationForm" class="direct-res-form">
+          <div class="form-row-2col">
+            <div class="form-group">
+              <label>First Name</label>
+              <input type="text" required placeholder="Elena" class="form-input" id="rfFirstName">
+            </div>
+            <div class="form-group">
+              <label>Last Name</label>
+              <input type="text" required placeholder="Kovacs" class="form-input" id="rfLastName">
+            </div>
+          </div>
+
+          <div class="form-row-2col">
+            <div class="form-group">
+              <label>Email Address</label>
+              <input type="email" required placeholder="elena@example.com" class="form-input" id="rfEmail">
+            </div>
+            <div class="form-group">
+              <label>Phone Number</label>
+              <input type="tel" required placeholder="+43 664 1234567" class="form-input" id="rfPhone">
+            </div>
+          </div>
+
+          <div class="form-row-2col">
+            <div class="form-group">
+              <label>Selected Suite</label>
+              <select class="form-select" id="rfSuiteSelect">
+                <option value="Boutique N°1">Boutique N°1 (€145/night)</option>
+                <option value="Boutique N°2">Boutique N°2 (€135/night)</option>
+                <option value="Boutique N°3 Flagship">Boutique N°3 Flagship (€220/night)</option>
+                <option value="Boutique N°4">Boutique N°4 (€130/night)</option>
+                <option value="Loft N°1">Loft N°1 (€125/night)</option>
+                <option value="Loft N°2">Loft N°2 (€150/night)</option>
+                <option value="Loft N°3 Panorama">Loft N°3 Panorama (€195/night)</option>
+                <option value="Garden N°1">Garden N°1 (€140/night)</option>
+                <option value="Urban N°1">Urban N°1 (€120/night)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Guests</label>
+              <select class="form-select" id="rfGuestsSelect">
+                <option value="1">1 Guest</option>
+                <option value="2" selected>2 Guests</option>
+                <option value="3">3 Guests</option>
+                <option value="4">4 Guests</option>
+                <option value="5">5 Guests</option>
+                <option value="6">6 Guests</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row-2col">
+            <div class="form-group">
+              <label>Check In</label>
+              <input type="date" required class="form-input" id="rfCheckin">
+            </div>
+            <div class="form-group">
+              <label>Check Out</label>
+              <input type="date" required class="form-input" id="rfCheckout">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Personal Note / Special Requests (Optional)</label>
+            <textarea class="form-textarea" rows="2" placeholder="Late arrival, baby crib request, courtyard parking reservation..." id="rfNotes"></textarea>
+          </div>
+
+          <div class="form-summary-pill" id="rfSummaryPill">
+            Estimated Total: <strong>€435</strong> (3 Nights, Direct 10% discount included)
+          </div>
+
+          <button type="submit" class="btn-submit-booking" id="btnSubmitReservation">
+            <span>Complete Reservation Request</span>
+            <span class="btn-arrow">&#8599;</span>
+          </button>
+
+          <div class="booking-perks-row">
+            <div class="b-perk">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              </svg>
+              <span>Best direct price guarantee (-10%)</span>
+            </div>
+            <div class="b-perk">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              <span>Free cancellation up to 5 days</span>
+            </div>
+            <div class="b-perk">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+              </svg>
+              <span>Instant digital key & self check-in</span>
+            </div>
+            <div class="b-perk">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+              <span>Personal host service with Moritz</span>
+            </div>
+          </div>
+        </form>
+
+        <!-- Success Message -->
+        <div class="booking-success-screen" id="bookingSuccessScreen" style="display:none;">
+          <div class="success-icon">
+            <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+          </div>
+          <h3 class="success-title">Your stay is reserved!</h3>
+          <p class="success-desc">
+            Vielen Dank! Moritz and the Casa Momo team have received your reservation request. A confirmation email with your digital check-in guide and entry code will arrive shortly.
+          </p>
+          <button class="btn btn-outline" id="btnCloseSuccessModal">Return to Website</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Apartment Detail Modal -->
+  <div class="modal-backdrop" id="apartmentModal" aria-hidden="true" role="dialog">
+    <div class="modal-window">
+      <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close modal">&times;</button>
+      <div class="modal-content-grid">
+        <div class="modal-gallery-col">
+          <div class="modal-main-img-wrap">
+            <img src="assets/FFMB70aKEXAkAkxXAKKQTB8epk.webp" alt="Suite Preview" class="modal-main-img" id="modalMainImg">
+          </div>
+          <div class="modal-thumbs-row" id="modalThumbsRow"></div>
+        </div>
+        <div class="modal-info-col">
+          <div class="modal-badge-row">
+            <span class="modal-category" id="modalCategory">Boutique Collection</span>
+            <span class="modal-status">Available for Direct Booking</span>
+          </div>
+          <h2 class="modal-title" id="modalTitle">Boutique N°1</h2>
+          <div class="modal-specs-bar">
+            <div class="m-spec"><strong id="mSpecArea">60 m²</strong><span>Area</span></div>
+            <div class="m-spec"><strong id="mSpecGuests">3 Guests</strong><span>Capacity</span></div>
+            <div class="m-spec"><strong id="mSpecBed">King Bed</strong><span>Bed Type</span></div>
+            <div class="m-spec"><strong id="mSpecView">Schlossberg</strong><span>View</span></div>
+          </div>
+          <p class="modal-description" id="modalDesc"></p>
+          <div class="modal-amenities-section">
+            <span class="subhead">Curated Features</span>
+            <div class="modal-amenity-tags" id="modalAmenities"></div>
+          </div>
+          <div class="modal-booking-box">
+            <div class="modal-price-display">
+              <span class="m-price" id="modalPrice">€145</span>
+              <span class="m-unit">/ night (direct booking rate)</span>
+            </div>
+            <button class="btn btn-primary w-100 modal-reserve-btn" id="modalReserveBtn">
+              Book this Suite Direct
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+  <script>
+    // Wire search bar on /book page
+    document.addEventListener('DOMContentLoaded', () => {
+      const today = new Date();
+      const tomorrow = new Date(today);
+      tomorrow.setDate(tomorrow.getDate() + 1);
+      const departure = new Date(tomorrow);
+      departure.setDate(departure.getDate() + 3);
+      const formatDate = (d) => d.toISOString().split('T')[0];
+
+      const pageCheckin = document.getElementById('pageCheckin');
+      const pageCheckout = document.getElementById('pageCheckout');
+      const pageGuests = document.getElementById('pageGuests');
+      const btnPageSearch = document.getElementById('btnPageSearch');
+
+      if (pageCheckin) {
+        pageCheckin.value = formatDate(tomorrow);
+        pageCheckin.min = formatDate(today);
+        pageCheckin.addEventListener('change', () => {
+          const nextDay = new Date(pageCheckin.value);
+          nextDay.setDate(nextDay.getDate() + 1);
+          if (pageCheckout) {
+            pageCheckout.min = formatDate(nextDay);
+            if (new Date(pageCheckout.value) <= new Date(pageCheckin.value)) {
+              pageCheckout.value = formatDate(nextDay);
+            }
+          }
+        });
+      }
+
+      if (pageCheckout) {
+        pageCheckout.value = formatDate(departure);
+        pageCheckout.min = formatDate(tomorrow);
+      }
+
+      // Suite "Check Dates" / "Book" buttons
+      document.querySelectorAll('.btn-book-suite').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const suiteId = btn.getAttribute('data-suite-id');
+          if (typeof openBookingModal === 'function') {
+            openBookingModal(suiteId, {
+              checkin: pageCheckin?.value,
+              checkout: pageCheckout?.value,
+              guests: pageGuests?.value || '2'
+            });
+          }
+        });
+      });
+
+      // Search button opens booking modal with selected dates
+      btnPageSearch?.addEventListener('click', () => {
+        if (typeof openBookingModal === 'function') {
+          openBookingModal('boutique-1', {
+            checkin: pageCheckin?.value,
+            checkout: pageCheckout?.value,
+            guests: pageGuests?.value || '2'
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
